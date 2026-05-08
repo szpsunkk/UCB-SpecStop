@@ -12,7 +12,7 @@ Protocol:
     when absent, falls back to greedy argmax comparison (faster approximation)
 
 Usage:
-  python cloud_server.py --model Qwen/Qwen2.5-7B --host 0.0.0.0 --port 8000
+  python cloud_server.py --model Qwen/Qwen2.5-7B-Instruct --host 0.0.0.0 --port 8000
 """
 
 from __future__ import annotations
@@ -21,6 +21,7 @@ import argparse
 import math
 import random
 import time
+from pathlib import Path
 from typing import List, Optional
 
 import torch
@@ -121,27 +122,36 @@ def verify(req: VerifyRequest):
 # Startup
 # ---------------------------------------------------------------------------
 
-def load_model(model_name: str):
+def load_model(model_name: str, allow_download: bool = False):
     global _model, _tokenizer
-    print(f"Loading target model: {model_name}  device={_device}")
-    _tokenizer = AutoTokenizer.from_pretrained(model_name)
-    _model = AutoModelForCausalLM.from_pretrained(
-        model_name,
-        torch_dtype=torch.float16,
-        device_map="auto",
-    )
+    model_ref = str(model_name)
+    local_only = not allow_download or Path(model_ref).expanduser().exists()
+    print(f"Loading target model: {model_ref}  device={_device} local_only={local_only}")
+    try:
+        _tokenizer = AutoTokenizer.from_pretrained(model_ref, local_files_only=local_only)
+        _model = AutoModelForCausalLM.from_pretrained(
+            model_ref,
+            torch_dtype=torch.float16,
+            device_map="auto",
+            local_files_only=local_only,
+        )
+    except Exception as e:
+        raise RuntimeError(
+            f"Could not load cloud model '{model_name}'. Use local path or pass --allow-download after fixing network."
+        ) from e
     _model.eval()
     print("Target model loaded.")
 
 
 def main():
     parser = argparse.ArgumentParser()
-    parser.add_argument("--model", default="Qwen/Qwen2.5-7B")
+    parser.add_argument("--model", default="Qwen/Qwen2.5-7B-Instruct")
     parser.add_argument("--host", default="0.0.0.0")
     parser.add_argument("--port", type=int, default=8000)
+    parser.add_argument("--allow-download", action="store_true", default=False)
     args = parser.parse_args()
 
-    load_model(args.model)
+    load_model(args.model, allow_download=args.allow_download)
     uvicorn.run(app, host=args.host, port=args.port, log_level="warning")
 
 

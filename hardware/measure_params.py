@@ -35,22 +35,34 @@ _tokenizer = None
 _device = "cuda" if torch.cuda.is_available() else "cpu"
 
 
-def load_model(name: str):
+def load_model(name: str, allow_download: bool = False):
     global _model, _tokenizer
-    _tokenizer = AutoTokenizer.from_pretrained(name)
-    _model = AutoModelForCausalLM.from_pretrained(
-        name, torch_dtype=torch.float16
-    ).to(_device)
+    model_ref = str(Path(name).expanduser())
+    local_only = not allow_download or Path(model_ref).exists()
+    try:
+        _tokenizer = AutoTokenizer.from_pretrained(model_ref, local_files_only=local_only)
+        _model = AutoModelForCausalLM.from_pretrained(
+            model_ref,
+            torch_dtype=torch.float16,
+            local_files_only=local_only,
+        ).to(_device)
+    except Exception as e:
+        raise RuntimeError(
+            f"Could not load model '{name}'. Use a local path or rerun with --allow-download after ensuring network access."
+        ) from e
     _model.eval()
 
 
 def measure_cd(n: int = 500) -> float:
-    dummy = _tokenizer("The quick brown fox", return_tensors="pt").input_ids.to(_device)
+    enc = _tokenizer("The quick brown fox", return_tensors="pt")
+    dummy = enc.input_ids.to(_device)
+    attn  = enc.attention_mask.to(_device)
     latencies = []
     for _ in range(n):
         t0 = time.perf_counter()
         with torch.no_grad():
-            _model.generate(dummy, max_new_tokens=1, do_sample=False,
+            _model.generate(dummy, attention_mask=attn,
+                            max_new_tokens=1, do_sample=False,
                             pad_token_id=_tokenizer.eos_token_id)
         latencies.append((time.perf_counter() - t0) * 1000.0)
     return float(np.median(latencies))
@@ -64,12 +76,15 @@ def measure_alpha_per_position(server: str, prompts: list[str], k_max: int = 10)
     position_accepts: dict[int, list[int]] = {i: [] for i in range(k_max)}
 
     for prompt in prompts:
-        input_ids = _tokenizer(prompt, return_tensors="pt").input_ids.to(_device)
+        enc = _tokenizer(prompt, return_tensors="pt")
+        input_ids = enc.input_ids.to(_device)
+        attn      = enc.attention_mask.to(_device)
         context_ids = input_ids[0].tolist()
 
         with torch.no_grad():
             out = _model.generate(
-                input_ids, max_new_tokens=k_max, do_sample=False,
+                input_ids, attention_mask=attn,
+                max_new_tokens=k_max, do_sample=False,
                 pad_token_id=_tokenizer.eos_token_id,
             )
         draft_ids = out[0, len(context_ids):].tolist()
@@ -95,11 +110,14 @@ def measure_alpha_per_position(server: str, prompts: list[str], k_max: int = 10)
 
 
 def measure_cv(server: str, n: int = 200) -> float:
-    dummy = _tokenizer("The quick brown fox", return_tensors="pt").input_ids.to(_device)
+    enc = _tokenizer("The quick brown fox", return_tensors="pt")
+    dummy = enc.input_ids.to(_device)
+    attn  = enc.attention_mask.to(_device)
     context_ids = dummy[0].tolist()
     with torch.no_grad():
         draft_ids = _model.generate(
-            dummy, max_new_tokens=5, do_sample=False,
+            dummy, attention_mask=attn,
+            max_new_tokens=5, do_sample=False,
             pad_token_id=_tokenizer.eos_token_id,
         )[0, len(context_ids):].tolist()
 
@@ -140,12 +158,13 @@ def main():
     parser.add_argument("--server", default="http://192.168.1.100:8000")
     parser.add_argument("--prompts", default="prompts.txt")
     parser.add_argument("--k-max", type=int, default=10)
+    parser.add_argument("--allow-download", action="store_true", default=False)
     args = parser.parse_args()
 
     prompts = Path(args.prompts).read_text().strip().split("\n")
 
     print("Loading draft model...")
-    load_model(args.draft_model)
+    load_model(args.draft_model, allow_download=args.allow_download)
 
     print("Measuring cd (draft latency)...")
     cd = measure_cd()

@@ -58,6 +58,11 @@ _draft_model = None
 _tokenizer = None
 _device = "cuda" if torch.cuda.is_available() else "cpu"
 
+# Software-injected one-way delay (ms).  Set by set_delay(); read by
+# verify_on_cloud() to sleep before/after the HTTP request so that the
+# wall-clock round-trip reflects the target d value even without tc netem.
+_injected_delay_ms: float = 0.0
+
 
 # ---------------------------------------------------------------------------
 # Hardware helpers (shared)
@@ -74,21 +79,27 @@ def load_draft_model(name: str):
     print("[HW] Draft model loaded.")
 
 
-def generate_draft(input_ids: torch.Tensor, k: int) -> list[int]:
+def generate_draft(
+    input_ids: torch.Tensor, k: int,
+    attention_mask: torch.Tensor | None = None,
+) -> list[int]:
     with torch.no_grad():
         out = _draft_model.generate(
-            input_ids, max_new_tokens=k, do_sample=False,
+            input_ids, attention_mask=attention_mask,
+            max_new_tokens=k, do_sample=False,
             pad_token_id=_tokenizer.eos_token_id,
         )
     return out[0, input_ids.shape[1]:].tolist()
 
 
 def generate_draft_with_log_probs(
-    input_ids: torch.Tensor, k: int
+    input_ids: torch.Tensor, k: int,
+    attention_mask: torch.Tensor | None = None,
 ) -> tuple[list[int], list[float]]:
     with torch.no_grad():
         out = _draft_model.generate(
-            input_ids, max_new_tokens=k, do_sample=False,
+            input_ids, attention_mask=attention_mask,
+            max_new_tokens=k, do_sample=False,
             return_dict_in_generate=True, output_scores=True,
             pad_token_id=_tokenizer.eos_token_id,
         )
@@ -107,8 +118,13 @@ def verify_on_cloud(
     payload: dict = {"context_ids": context_ids, "draft_ids": draft_ids}
     if draft_log_probs is not None:
         payload["draft_log_probs"] = draft_log_probs
+    # Software delay injection: simulate one-way delay before and after request
+    if _injected_delay_ms > 0:
+        time.sleep(_injected_delay_ms / 1000.0)
     resp = requests.post(f"{server}/verify", json=payload, timeout=30)
     resp.raise_for_status()
+    if _injected_delay_ms > 0:
+        time.sleep(_injected_delay_ms / 1000.0)
     return resp.json()
 
 
@@ -122,38 +138,56 @@ def measure_rtt(server: str, n: int = 50) -> float:
     return float(np.median(rtts)) / 2.0
 
 
-def set_netem(iface: str, delay_ms: int, jitter_ms: int = 0,
-              dist: str = "", server_user: str = "") -> None:
-    """Configure tc netem locally or via SSH."""
-    netem_script = Path(__file__).parent / "setup_netem.sh"
-    dist_arg = [dist] if dist else []
+def set_delay(delay_ms: int, iface: str = "", server_user: str = "") -> None:
+    """Set the target one-way delay for subsequent rounds.
 
-    if server_user:
-        # Configure on the remote server (SSH)
-        cmd = ["ssh", server_user,
-               f"sudo bash -s change {iface} {delay_ms} {jitter_ms} " +
-               (" ".join(dist_arg))]
-        subprocess.run(cmd, check=True, timeout=10)
-    else:
-        # Configure locally (Jetson outgoing interface)
-        args = ["sudo", "bash", str(netem_script), "change",
-                iface, str(delay_ms), str(jitter_ms)] + dist_arg
-        subprocess.run(args, check=True, timeout=10)
-    time.sleep(0.3)
+    Tries tc netem first (requires sch_netem kernel module).  If netem is
+    unavailable (e.g. JetPack kernels that omit sch_netem), falls back to
+    software delay injection: verify_on_cloud() will sleep half of the
+    round-trip before sending and half after receiving, making N_t reflect
+    the target d value without any kernel support.
+    """
+    global _injected_delay_ms
+    _injected_delay_ms = 0.0          # reset; will be set below if netem fails
+
+    if not iface:
+        # No interface specified → always use software injection
+        _injected_delay_ms = float(delay_ms)
+        print(f"  [delay] software-injected {delay_ms} ms one-way")
+        return
+
+    # Try netem
+    netem_script = Path(__file__).parent / "setup_netem.sh"
+    try:
+        if server_user:
+            cmd = ["ssh", server_user,
+                   f"sudo bash -s change {iface} {delay_ms} 0"]
+        else:
+            cmd = ["sudo", "bash", str(netem_script), "change",
+                   iface, str(delay_ms), "0"]
+        subprocess.run(cmd, check=True, timeout=10,
+                       capture_output=True)
+        time.sleep(0.3)
+        print(f"  [delay] tc netem {delay_ms} ms on {iface}")
+    except (subprocess.CalledProcessError, FileNotFoundError):
+        _injected_delay_ms = float(delay_ms)
+        print(f"  [delay] netem unavailable → software-injected {delay_ms} ms")
 
 
 def run_one_round(
     server: str, prompt: str, k: int, rejection_sampling: bool = True,
 ) -> dict:
     """Execute one draft-verify round; return timing and acceptance metrics."""
-    input_ids = _tokenizer(prompt, return_tensors="pt").input_ids.to(_device)
+    enc = _tokenizer(prompt, return_tensors="pt")
+    input_ids = enc.input_ids.to(_device)
+    attn      = enc.attention_mask.to(_device)
     context_ids = input_ids[0].tolist()
 
     t0 = time.perf_counter()
     if rejection_sampling:
-        draft_ids, draft_lp = generate_draft_with_log_probs(input_ids, k)
+        draft_ids, draft_lp = generate_draft_with_log_probs(input_ids, k, attn)
     else:
-        draft_ids = generate_draft(input_ids, k)
+        draft_ids = generate_draft(input_ids, k, attn)
         draft_lp = None
     t_draft = (time.perf_counter() - t0) * 1000.0
 
@@ -199,7 +233,7 @@ def experiment_h1_kstar_sweep(
           f"cd={cd:.2f}, cv={cv:.2f}")
 
     for delay_ms in delays:
-        set_netem(iface, delay_ms, server_user=server_user)
+        set_delay(delay_ms, iface=iface, server_user=server_user)
         rtt = measure_rtt(server)
         print(f"\n  d={delay_ms}ms  measured_rtt={rtt:.1f}ms")
 
@@ -271,7 +305,7 @@ def experiment_h2_phase_transition(
     rows = []
     n_sweep = min(20, len(prompts))
     for delay_ms in fine_delays:
-        set_netem(iface, delay_ms, server_user=server_user)
+        set_delay(delay_ms, iface=iface, server_user=server_user)
         k_theory = compute_kstar(alpha, cd, cv, float(delay_ms), k_max)
 
         sweep_costs = {}
@@ -377,7 +411,7 @@ def experiment_h3_strategy_compare(
     all_rows = []
     for delay_ms in delays:
         print(f"\n  Delay = {delay_ms} ms")
-        set_netem(iface, delay_ms, server_user=server_user)
+        set_delay(delay_ms, iface=iface, server_user=server_user)
         k_oracle = compute_kstar(alpha, cd, cv, float(delay_ms), k_max)
         c_oracle = float(C(k_oracle, float(delay_ms), alpha, cd, cv))
 
@@ -426,7 +460,7 @@ def experiment_h3_strategy_compare(
     # E3: Regret curve — UCB-SpecStop vs NaiveUCB vs EXP3 at fixed delay
     d_regret = delays[len(delays) // 2]   # middle delay
     print(f"\n  E3: Regret curve at d={d_regret}ms, T={n_regret_rounds} rounds")
-    set_netem(iface, d_regret, server_user=server_user)
+    set_delay(d_regret, iface=iface, server_user=server_user)
     k_oracle = compute_kstar(alpha, cd, cv, float(d_regret), k_max)
     c_oracle_val = float(C(k_oracle, float(d_regret), alpha, cd, cv))
 
@@ -506,7 +540,7 @@ def experiment_h4_markov(
                 state = "good"
 
         delay_ms = d_good if state == "good" else d_bad
-        set_netem(iface, delay_ms, server_user=server_user)
+        set_delay(delay_ms, iface=iface, server_user=server_user)
 
         # Blind strategy
         k_blind = ucb_blind.select_arm(t)

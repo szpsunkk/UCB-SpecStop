@@ -77,10 +77,14 @@ def load_draft_model(model_name: str):
     print("Draft model loaded.")
 
 
-def generate_draft(input_ids: torch.Tensor, k: int) -> list[int]:
+def generate_draft(
+    input_ids: torch.Tensor, k: int,
+    attention_mask: torch.Tensor | None = None,
+) -> list[int]:
     with torch.no_grad():
         out = _draft_model.generate(
             input_ids,
+            attention_mask=attention_mask,
             max_new_tokens=k,
             do_sample=False,
             pad_token_id=_tokenizer.eos_token_id,
@@ -89,12 +93,14 @@ def generate_draft(input_ids: torch.Tensor, k: int) -> list[int]:
 
 
 def generate_draft_with_log_probs(
-    input_ids: torch.Tensor, k: int
+    input_ids: torch.Tensor, k: int,
+    attention_mask: torch.Tensor | None = None,
 ) -> tuple[list[int], list[float]]:
     """Generate k tokens; return (token_ids, per-token log-probs under draft model)."""
     with torch.no_grad():
         out = _draft_model.generate(
             input_ids,
+            attention_mask=attention_mask,
             max_new_tokens=k,
             do_sample=False,
             return_dict_in_generate=True,
@@ -111,13 +117,15 @@ def generate_draft_with_log_probs(
 
 def measure_cd(n_warmup: int = 10, n_measure: int = 200) -> float:
     """Measure per-token draft latency (cd) in ms via 1-token generation."""
-    dummy = _tokenizer("Hello", return_tensors="pt").input_ids.to(_device)
+    enc = _tokenizer("Hello", return_tensors="pt")
+    dummy = enc.input_ids.to(_device)
+    attn  = enc.attention_mask.to(_device)
     for _ in range(n_warmup):
-        generate_draft(dummy, 1)
+        generate_draft(dummy, 1, attn)
     latencies = []
     for _ in range(n_measure):
         t0 = time.perf_counter()
-        generate_draft(dummy, 1)
+        generate_draft(dummy, 1, attn)
         latencies.append((time.perf_counter() - t0) * 1000.0)
     return float(np.median(latencies))
 
@@ -255,14 +263,16 @@ def run_experiment(args):
 
     for t, prompt in enumerate(prompts, start=1):
         k = get_k(strategy, t, last_rtt_ms, rng)
-        input_ids = _tokenizer(prompt, return_tensors="pt").input_ids.to(_device)
+        enc = _tokenizer(prompt, return_tensors="pt")
+        input_ids = enc.input_ids.to(_device)
+        attn      = enc.attention_mask.to(_device)
         context_ids = input_ids[0].tolist()
 
         t_draft_start = time.perf_counter()
         if args.rejection_sampling:
-            draft_ids, draft_log_probs = generate_draft_with_log_probs(input_ids, k)
+            draft_ids, draft_log_probs = generate_draft_with_log_probs(input_ids, k, attn)
         else:
-            draft_ids = generate_draft(input_ids, k)
+            draft_ids = generate_draft(input_ids, k, attn)
             draft_log_probs = None
         t_draft = (time.perf_counter() - t_draft_start) * 1000.0
 

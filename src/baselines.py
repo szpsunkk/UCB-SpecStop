@@ -142,15 +142,29 @@ class EXP3Ratio:
 
     def select_arm(self, t: int, rng: np.random.Generator) -> int:
         self._t = t
-        probs = self.weights / self.weights.sum()
+        w_sum = self.weights.sum()
+        if w_sum == 0 or not np.isfinite(w_sum):
+            self.weights[:] = 1.0
+            w_sum = float(self.k_max)
+        probs = self.weights / w_sum
+        probs = np.clip(probs, 0, None)
+        probs /= probs.sum()
         return int(rng.choice(self.k_max, p=probs)) + 1
 
     def update(self, k: int, n_t: float, a_t: float, cost_scale: float = 1.0) -> None:
-        probs = self.weights / self.weights.sum()
+        w_sum = self.weights.sum()
+        if w_sum == 0 or not np.isfinite(w_sum):
+            self.weights[:] = 1.0
+            w_sum = float(self.k_max)
+        probs = self.weights / w_sum
         idx = k - 1
         loss = (n_t / a_t) / cost_scale
         eta = self._current_eta()
-        self.weights[idx] *= np.exp(-eta * loss / probs[idx])
+        self.weights[idx] *= np.exp(-eta * loss / max(probs[idx], 1e-10))
+        # Rescale to prevent underflow: keep max weight = 1
+        w_max = self.weights.max()
+        if w_max > 0:
+            self.weights /= w_max
 
 
 # ---------------------------------------------------------------------------

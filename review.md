@@ -1,656 +1,530 @@
-# 论文硬伤修改方案(纯文本修改,不编实验数据)
 
-我已完整阅读您的 LaTeX 源码 [3]、PDF 版本 [1] 和审稿意见 [2]。下面我**只列出可以立即修改的纯文本硬伤**,所有需要重新跑实验的地方我都标注 `[待实验补充]` 占位,实验思路放在最后。
+下面只说**实验怎么重跑**，**不碰论文文字**。
 
----
-
-## 一、必须立即修改的硬伤清单
-
-| # | 问题 | 位置 | 类型 |
-|---|------|------|------|
-| H1 | Table I/II/III 在 d=50, α=0.7 时 k\* 自相矛盾(Table I 写 k\*=8,Table II 写 k\*=7,Table III 写 k\*=8) | §VI-C, 附录 D | 🔴 数据矛盾 |
-| H2 | 摘要"reduces per-token latency by up to 42%"和正文"42.7%"声称在 Table I 中**完全没有对应数据**(Table I 全部是 α=0.7,42% 是 α=0.9 的,但 α=0.9 的表格不存在) | Abstract, §VI-C | 🔴 数据缺失 |
-| H3 | "first optimal stopping formulation"、"No existing work provides..." 过度声称 | Abstract, §I, §II-A | 🔴 过度声称 |
-| H4 | 缺失 5 篇必引文献(FlexSpec, PicoSpec, ConfigSpec, Fast Edge-Cloud SD, Stern et al. 2018) | §II | 🔴 文献遗漏 |
-| H5 | Theorem 4 证明中"continuation kernel is stochastically monotone in s"被使用但未声明为假设 | §IV-C, Assumption 2 | 🟠 证明缺陷 |
-| H6 | 摘要 regret 写 $O(\sqrt{T\log T})$,正文写 $O(\sqrt{K_{\max}T\log T})$,不一致 | Abstract vs §V-C | 🟡 表述不一致 |
-| H7 | EXP3 引用 [19] 实际是 Auer 2002 UCB1 论文,EXP3 应另引 | §VI-A | 🟡 引用错误 |
-| H8 | §VI-C 第二段第 (i) 条说"$k^* = 3$ already improves 3.2% over $k=5$",但 Table I 写的是 3.3%,且 Δ 的定义是"vs best fixed baseline"而非 vs k=5,叙述与表格定义脱节 | §VI-C | 🟡 表述错误 |
-| H9 | Table I 中 d=100 行 $k=10$ 用粗体标 65.95,Ours 也是 65.95——这表示 Ours 没赢却标"best per row",违反表格说明 | §VI-C Table I | 🟡 表格错误 |
-| H10 | 所有定理仍是 "Proof Sketch" | §IV, §V | 🟠 严谨性 |
+先给结论：  
+你这版数据已经比上一版好很多，但如果你要“重新跑一轮，尽量保证数据合理”，核心不是让结果更漂亮，而是先把**实验口径、控制变量、日志结构**彻底统一。  
+**我不能保证你一定跑出“理论完美匹配”的结果**，但可以把实验设计改成：即使理论和硬件不完全一致，数据也会**自洽、可解释、经得住检查**。
 
 ---
 
-## 二、可立即执行的纯文本修改(不需要新实验)
+# 一、你现在重跑前，先定三个总原则
 
-### H3:删除所有 "first" 类过度声称
+## 1) 只保留一套参数口径
+你现在历史上有两套参数：
 
-**修改 1**(§I 第 4 段最后一句):
+- 旧参数：`cd≈79ms, cv≈20.8ms, alpha≈0.80` [8]
+- 新校准参数：`median_cd≈116-123ms, median_cv≈37-40ms`，并且注入延迟后总往返时间随配置 delay 上升 [9]
 
-```latex
-% 原文
-No existing work provides a \textit{theoretically principled} 
-answer to the question of how long to speculate under 
-communication uncertainty.
+**重跑时只能留一套。**  
+建议你后续所有实验都以**同一批最终 calibration**为准，不要再混用 [8][9]。
 
-% 改为
-While recent systems work~\cite{sled2025,flexspec2026,
-configspec2026,venkatesha2025fastedge} provides engineering 
-evidence and profiling-based heuristics for communication-aware 
-speculation, a closed-form structural characterization of the 
-optimal draft length under stochastic communication, with provable 
-regret guarantees for the online learning variant, has not been 
-established. We close this gap with a tractable analytical model.
-```
-
-**修改 2**(§I-A 第 1 条 contribution):
-
-```latex
-% 原文
-\item \textit{Novel formulation.} We provide the first optimal 
-stopping formulation of the speculative decoding draft length problem 
-under communication uncertainty. ...
-
-% 改为
-\item \textit{Analytical formulation.} We formulate distributed 
-speculative decoding draft length selection as a ratio-type optimal 
-stopping problem under stochastic communication delay 
-(\S\ref{sec:model}). Under a tractable geometric-acceptance model, 
-this formulation admits closed-form structural results that 
-complement the profiling-based and system-level treatments in 
-recent edge-cloud speculative decoding 
-work~\cite{sled2025,flexspec2026,configspec2026}.
-```
-
-**修改 3**(§II-A 最后一段):
-
-```latex
-% 原文
-All existing speculative decoding methods assume a centralized 
-computing environment with negligible communication overhead. 
-None models stochastic communication delay or provides optimality 
-guarantees for the draft length under network uncertainty.
-
-% 改为
-Most centralized speculative decoding methods treat communication 
-overhead as negligible; recent edge-cloud extensions (reviewed 
-in \S\ref{subsec:related_commaware}) introduce network awareness 
-primarily through profiling and engineering heuristics. Our work 
-complements these systems by providing a closed-form structural 
-analysis of the draft-length tradeoff and regret guarantees for 
-online learning under a simplified stochastic delay model.
-```
-
-**修改 4**(摘要开头):删除"We provide the first..."这类语气。摘要主体保留,但**关于 42% 数字的声明先注释掉**(等实验数据出来再填,见 H2 处理):
-
-```latex
-% 原句
-In simulation with a high-acceptance regime ($\alpha=0.9$) and
-high-delay ($d=100$\,ms), the communication-aware optimal strategy
-reduces per-token latency by up to \textbf{42\%} compared to the
-commonly used fixed $k=5$ baseline; gains remain meaningful
-(up to 10\% at $d=500$\,ms) even at moderate $\alpha=0.7$.
-
-% 改为(用 placeholder,等您重新跑出 α=0.9 的数据再填具体百分比)
-Simulation across delay regimes $d \in [5, 500]$\,ms and 
-acceptance rates $\alpha \in [0.5, 0.9]$ confirms the 
-predicted phase transition, logarithmic scaling of $k^*$, 
-and regret behavior of UCB-SpecStop. Under high-acceptance 
-($\alpha=0.9$) and high-delay regimes, the communication-aware 
-optimal strategy yields substantial per-token latency reductions 
-over the commonly used fixed $k=5$ baseline; quantitative gains 
-are reported in Section~\ref{sec:experiments}.
-```
-
-> ⚠️ 这样做的好处:摘要先去掉无对应数据的 42% 数字,等您用 Jetson + 3090 跑出真实数据后再回填精确百分比。
+### 建议
+- 用**同一套模型**
+- 用**同一套 prompt 集**
+- 用**同一套 delay 注入方式**
+- 先做 calibration，再做 phase / strategy / regret
 
 ---
 
-### H4:补充缺失文献
+## 2) delay 要统一叫法
+你现在 `bare RTT` 基本 8-9ms，而 `with_sleep` 明显随配置 delay 增长 [9]。  
+这说明你测到的是**仿真/注入后的通信延迟**，不是裸网络本身。
 
-在 `bib.bib` 中添加:
+所以实验内部统一用：
 
-```bibtex
+- `configured_one_way_delay_ms`
+- `measured_comm_round_ms`
+- `bare_rtt_ms`
 
-@article{stern2018blockwise,
-  title={Blockwise parallel decoding for deep autoregressive models},
-  author={Stern, Mitchell and Shazeer, Noam and Uszkoreit, Jakob},
-  journal={Advances in Neural Information Processing Systems},
-  volume={31},
-  year={2018}
-}
-
-
-@article{flexspec2026,
-  title={FlexSpec: Frozen Drafts Meet Evolving Targets in Edge-Cloud Collaborative LLM Speculative Decoding},
-  author={Li, Yuchen and Kong, Rui and Lyu, Zhonghao and Li, Qiyang and Chen, Xinran and Cai, Hengyi and Yan, Lingyong and Wang, Shuaiqiang and Zhao, Jiashu and Zhu, Guangxu and others},
-  journal={arXiv preprint arXiv:2601.00644},
-  year={2026}
-}
-
-
-@inproceedings{configspec2026,
-  title={ConfigSpec: Profiling-Based Configuration Selection for Distributed Edge-Cloud Speculative LLM Serving},
-  author={Li, Xiangchen and Ghafouri, Saeid and Fan, Jiakun and Ali, Babar and Vandierendonck, Hans and Nikolopoulos, Dimitrios S},
-  booktitle={Proceedings of the 4th International Workshop on Testing Distributed Internet of Things Systems},
-  pages={1--6},
-  year={2026}
-}
-
-
-@article{venkatesha2025fastedge,
-  title={Fast and Cost-effective Speculative Edge-Cloud Decoding with Early Exits},
-  author={Venkatesha, Yeshwanth and Kundu, Souvik and Panda, Priyadarshini},
-  journal={Transactions on Machine Learning Research}
-}
-
-@article{auer2002exp3,
-  title={The nonstochastic multiarmed bandit problem},
-  author={Auer, Peter and Cesa-Bianchi, Nicolo and Freund, Yoav and Schapire, Robert E},
-  journal={SIAM journal on computing},
-  volume={32},
-  number={1},
-  pages={48--77},
-  year={2002},
-  publisher={SIAM}
-}
-
-
-```
-
-> ⚠️ FlexSpec/PicoSpec/ConfigSpec 的精确元数据请您去 arXiv / Google Scholar 查证后填入,我不编作者名。
-
-**重写 §II-A 第 1 段开头**(把 Stern et al. 2018 加入历史脉络):
-
-```latex
-Speculative decoding has been extensively studied as a lossless 
-acceleration technique for LLM inference. The draft-and-verify 
-paradigm traces back to Stern et al.~\cite{stern2018blockwise}, 
-who proposed blockwise parallel decoding that predicts multiple 
-future positions and validates the longest acceptable prefix. 
-Leviathan et al.~\cite{leviathan2023fast} and Chen et 
-al.~\cite{chen2023accelerating} formalized speculative decoding 
-with rejection sampling that provably preserves the target 
-distribution. Subsequent work improves the draft mechanism along 
-several dimensions: SpecInfer~\cite{miao2024specinfer} introduces 
-tree-structured speculation; EAGLE~\cite{li2024eagle} leverages 
-feature-level uncertainty for confidence-based adaptive drafting; 
-Medusa~\cite{cai2024medusa} replaces the separate draft model 
-with multiple decoding heads attached to the target model; and 
-REST~\cite{he2024rest} uses retrieval to construct draft 
-sequences. Online Speculative Decoding~\cite{liu2024online} 
-adapts the draft model itself to improve acceptance rates over 
-time.
-```
-
-**重写 §II-D**(加入 2026 文献,标 \label{subsec:related_commaware}):
-
-```latex
-\subsection{Communication-Aware and Adaptive Drafting}
-\label{subsec:related_commaware}
-
-A growing body of work explicitly addresses speculative decoding 
-in edge-cloud or communication-constrained settings.
-SLED~\cite{sled2025} frames speculative decoding as an 
-edge--server orchestration problem with dynamic drafting and 
-timeouts under network uncertainty.
-Venkatesha et al.~\cite{venkatesha2025fastedge} build a real 
-edge-cloud speculative decoding system with early exits and 
-preemptive drafting, demonstrating cost-effective deployment.
-FlexSpec~\cite{flexspec2026} introduces channel-aware adaptive 
-speculation with frozen drafts and evolving targets.
-ConfigSpec~\cite{configspec2026} profiles configurations 
-including speculative length $K^*$, draft model choice, 
-quantization, and device placement for distributed serving.
-
-On the algorithmic side, SpecDec++~\cite{huang2024specdecpp} 
-uses a learned acceptance predictor to adapt candidate lengths; 
-its probability threshold can be viewed as an empirical analogue 
-of our marginal-cost crossing condition 
-(Corollary~\ref{cor:closed_form}), specialized to 
-content-dependent acceptance.
-TETRIS~\cite{tetris2025} studies batch speculative decoding and 
-shows that effective draft depth interacts with batching and 
-hardware saturation; our framework could incorporate this by 
-letting verification cost depend on batch size $c_v(b)$, which 
-we leave for future work.
-Batch speculative decoding with correctness 
-guarantees~\cite{batchspec2025} highlights synchronization 
-overheads from ragged acceptance in batched settings.
-
-Our work differs from these systems in providing a closed-form 
-structural theory (threshold optimality, monotonicity, phase 
-transition, and logarithmic scaling) and regret guarantees for 
-online learning under a simplified stochastic-delay model. We 
-view our analytical results and these systems' empirical 
-evidence as \emph{complementary}: our closed-form $d_c$ and 
-$k^*(d)$ formulas give a fast configuration prior that systems 
-such as ConfigSpec~\cite{configspec2026} can refine through 
-profiling, while platforms such as 
-SLED~\cite{sled2025} provides 
-the deployment substrate on which our policies can be evaluated.
-```
+不要把三者混成一个 `delay_ms`。
 
 ---
 
-### H5:Theorem 4 补充 stochastic monotonicity 假设
+## 3) accepted token 口径必须固定
+论文理论里，accepted token 包含 bonus token，所以每轮应满足 `A_t >= 1` [1]。  
+你新数据里 `mean_accepted_total >= 1` 已经正常了 [12]。这点必须继续保持。
 
-**修改 Assumption 2**(把审稿人点名的隐含条件显式化):
+实验里同时记录两个量：
 
-```latex
-\begin{assumption}[Markov-Modulated Channel]
-\label{asm:markov}
-The network state $\{s_t\}_{t \geq 1}$ is a finite-state Markov 
-chain on $\mathcal{S} = \{1, \ldots, S\}$ with transition matrix 
-$P$. We assume:
-\begin{enumerate}
-    \item[(a)] \emph{Monotone mean delay}: 
-    $d(s) = \mathbb{E}[D \mid s_t = s]$ is non-decreasing in $s$ 
-    (states ordered from low to high delay).
-    \item[(b)] \emph{Stochastic monotonicity of $P$}: for every 
-    non-decreasing function $h: \mathcal{S} \to \mathbb{R}$, the 
-    map $s \mapsto \sum_{s'} P(s' \mid s)\, h(s')$ is 
-    non-decreasing in $s$. Equivalently, $P(\,\cdot\, \mid s)$ 
-    is stochastically increasing in $s$ in the usual stochastic 
-    order.
-\end{enumerate}
-\end{assumption}
+- `L_t = accepted_draft_len`
+- `A_t = accepted_total = L_t + 1`
 
-\begin{remark}
-Condition (b) is standard for monotone MDPs~\cite{topkis1978} 
-and holds, for example, for birth--death chains modeling 
-congestion levels and for any tridiagonal $P$ whose row 
-distributions are stochastically ordered. Without (b), worse 
-states can transition to better states faster than better states 
-do, which can break the monotonicity of value functions.
-\end{remark}
-```
+后面所有：
 
-**修改 Theorem 4 证明**(把 stochastic monotonicity 的使用显式化,补完 Bellman 单调性的归纳论证):
+- cost/token
+- oracle 比较
+- regret
+- VOI
 
-```latex
-\begin{proof}[Proof of Theorem~\ref{thm:markov}]
-We apply the Dinkelbach 
-transformation~\cite{dinkelbach1967} to convert the ratio 
-objective in~\eqref{eq:objective} to an equivalent additive 
-stopping problem.
-
-\textit{Step 1 (parametric reformulation).} 
-For $\lambda \geq 0$, define the $\lambda$-penalized stopping 
-payoff in~\eqref{eq:g_lambda}. Let 
-$J(\lambda) = \min_{\tau} \mathbb{E}[g(\tau, s_\tau; \lambda)]$. 
-By standard fractional 
-programming~\cite{dinkelbach1967}, $J(\cdot)$ is continuous and 
-strictly decreasing on $[0, \infty)$, and the unique root 
-$\lambda^*$ of $J(\lambda) = 0$ equals the optimal ratio 
-$\min_\tau \mathbb{E}[N(\tau)]/\mathbb{E}[B(\tau)]$. Any 
-optimal stopping rule for the additive problem at $\lambda^*$ 
-is optimal for the ratio problem.
-
-\textit{Step 2 (Bellman equation and finite threshold).}
-For fixed $\lambda$, the Bellman equation~\eqref{eq:V_lambda} 
-admits a unique bounded solution because the per-stage cost is 
-bounded and stopping is always feasible. As $n \to \infty$, the 
-stopping payoff $g(n, s; \lambda)$ grows linearly in $n$ since 
-$B(n) \to (1-\alpha)^{-1}$ is bounded, while continuing yields 
-at most a vanishing $\alpha^{n+1}$ marginal reward. Hence for 
-each $s$, stopping is optimal for all sufficiently large $n$, 
-so a finite threshold $k^*(s; \lambda) < \infty$ exists.
-
-\textit{Step 3 (monotonicity in $s$ via stochastic dominance).}
-We show by backward induction on $n$ that $V_\lambda(n, s)$ is 
-non-decreasing in $s$. Truncate at horizon $N_{\max}$ and let 
-$N_{\max} \to \infty$; the truncation limit is justified by the 
-boundedness of $V_\lambda$. 
-\emph{Base case}: at $n = N_{\max}$, the agent must stop, so 
-$V_\lambda(N_{\max}, s) = g(N_{\max}, s; \lambda) = 
-N_{\max}(c_d{+}c_v) + 2d(s) + c_v - \lambda B(N_{\max})$, which 
-is non-decreasing in $s$ by Assumption~\ref{asm:markov}(a). 
-\emph{Inductive step}: suppose $V_\lambda(n+1, \cdot)$ is 
-non-decreasing in $s$. Then by Assumption~\ref{asm:markov}(b), 
-$\sum_{s'} P(s' \mid s)\, V_\lambda(n+1, s')$ is non-decreasing 
-in $s$, hence $u_\lambda(n, s)$ is non-decreasing in $s$. Since 
-$g(n, s; \lambda)$ is also non-decreasing in $s$ by (a), the 
-minimum~\eqref{eq:V_lambda} preserves monotonicity.
-
-\textit{Step 4 (threshold monotonicity in $s$).}
-Define the stopping advantage 
-$\Delta_\lambda(n, s) \triangleq u_\lambda(n, s) - 
-g(n, s; \lambda)$. Continuing is optimal iff 
-$\Delta_\lambda(n, s) \leq 0$. 
-The discrete derivative of $g$ in $n$ is 
-$g(n+1, s; \lambda) - g(n, s; \lambda) = (c_d{+}c_v) - 
-\lambda \alpha^{n+1}$, which is independent of $s$ and 
-non-decreasing in $n$. By Step 3 and 
-Assumption~\ref{asm:markov}(b), the continuation value's 
-discrete derivative inherits monotonicity in $s$. A standard 
-monotone comparative statics argument 
-(Topkis~\cite{topkis1978}) on $\Delta_\lambda(n, s)$, which has 
-decreasing differences in $(n, s)$ under (a)--(b), implies that 
-the smallest $n$ at which $\Delta_\lambda(n, s) \leq 0$, i.e., 
-$k^*(s; \lambda)$, is non-decreasing in $s$.
-
-\textit{Step 5 (transfer to the ratio problem).}
-Setting $\lambda = \lambda^*$ from Step 1, the policy 
-$k^*(s) \triangleq k^*(s; \lambda^*)$ is optimal for the 
-original ratio problem~\eqref{eq:objective} and remains 
-non-decreasing in $s$.
-\end{proof}
-```
+都统一用 `A_t`，不要再混。
 
 ---
 
-### H6:统一 regret bound 表述
+# 二、建议你重跑的实验框架
 
-**摘要中**:
-
-```latex
-% 原句
-We further propose UCB-SpecStop, an online algorithm 
-achieving $O(\sqrt{T \log T})$ regret when system parameters 
-are unknown.
-
-% 改为
-We further propose UCB-SpecStop, an online algorithm achieving 
-$O(\sqrt{K_{\max} T \log T})$ regret (with explicit dependence 
-on the number of candidate draft lengths $K_{\max}$) when system 
-parameters are unknown.
-```
-
-§I-A 第 3 条 contribution 您原文已写对($O(\sqrt{K_{\max} T\log T})$),无需改动,只需保证摘要、§I-A、Theorem 7 三处一致。
+我建议你按 6 组实验重跑，顺序不能乱。
 
 ---
 
-### H7:修正 EXP3 引用
+# 实验 E0：统一日志与随机性控制
 
-§VI-A 第 5 个 baseline:
+这是重跑前必须先做的，不然前面全白跑。
 
-```latex
-% 原文
-\item \textit{EXP3-Ratio}: adversarial bandit
-    EXP3~\cite{auer2002finite} adapted to the ratio
-    objective.
-
-% 改为
-\item \textit{EXP3-Ratio}: adversarial bandit
-    EXP3~\cite{auer2002exp3} adapted to the ratio objective.
+## 每轮日志最少保存这些字段
+```text
+run_id
+prompt_id
+seed
+strategy
+k_selected
+configured_one_way_delay_ms
+bare_rtt_ms
+measured_comm_round_ms
+draft_time_ms
+verify_time_ms
+total_round_time_ms
+accepted_draft_len
+accepted_total
+prefix_accept_indicator_1 ... prefix_accept_indicator_Kmax
+state(optional, for Markov)
 ```
+
+## 随机性控制
+- 同一轮比较不同策略时，尽量用**同一 prompt 集**
+- 生成端尽量固定：
+  - temperature = 0
+  - top_p = 1
+  - 固定 seed
+- delay 注入也固定种子或固定 trace
+
+### 原因
+你现在 phase 和 strategy 图里仍有比较大的方差 [11][12]。  
+先把采样噪声压下去，再谈理论匹配。
 
 ---
 
-### H8 + H9:修正叙述与 Table I 标记错误
+# 实验 E1：重新做 calibration，作为唯一“参数源”
 
-**修改 §VI-C 第二段叙述**(避免 42% 数字引用没有对应表格,等硬件实验后再填):
+这是所有后续实验的基础。
 
-```latex
-% 原文
-Key observations:
-(i)~at $d=5$\,ms, just above $d_c=1.60$\,ms, $k^*=3$
-already improves 3.2\% over $k\!=\!5$;
-(ii)~at $d=100$\,ms with $\alpha=0.9$, the communication-aware
-$k^*$ reduces latency by up to \textit{42.7\%} over $k\!=\!5$;
-at $\alpha=0.7$, the reduction is a more modest
-\textit{6.7\%} but grows to \textit{10.2\%} at $d=500$\,ms;
-(iii)~the gap widens as $d$ grows, because fixed-$k$
-strategies cannot amortize the increasing communication cost.
+## 目标
+测出一套**最终唯一**的：
+- `cd`
+- `cv`
+- `alpha_hat`
+- 通信延迟模型
 
-% 改为(只保留 Table I 中真实存在的数字,42% 等硬件实验数据补充)
-Key observations:
-(i)~at $d=5$\,ms, just above $d_c=1.60$\,ms, $k^*=3$
-already improves 3.3\% over the best fixed baseline 
-$k=5$ (Table~\ref{tab:latency});
-(ii)~at moderate $\alpha=0.7$, the gain over the \emph{best} 
-fixed-$k$ baseline is modest (0.0--3.3\%) because the best 
-fixed-$k$ already approximates $k^*$ within one or two 
-tokens; however, the gap widens substantially when compared 
-against a mismatched fixed-$k$ such as $k=5$ in high-delay 
-regimes (e.g., 10.2\% reduction over $k=5$ at $d=500$\,ms);
-(iii)~quantitative gains under the high-acceptance regime 
-($\alpha=0.9$), as well as real-system measurements on an 
-edge-cloud testbed, are reported in 
-Section~\ref{subsec:hw_validation}\textit{[to be added with 
-Jetson Orin Nano Super + RTX 3090 experiments]}.
-```
+## 配置
+delay 取：
+- `d in {0, 10, 20, 40, 80, 120, 160}` ms
 
-**修复 Table I 的粗体错误**(d=100 行 k=10 和 Ours 都是 65.95,不应同时标粗;按"best per row"语义,只标 Ours):
+比你现在更建议加 `0ms`，因为你需要看到系统固定开销的截距。
 
-```latex
-% 原 d=100 行
-100  & 10  & 118.82 & 70.72  & \textbf{65.95}  & \textbf{65.95} & 0.0\% \\
+## 每个 delay 下做 100-200 轮
+记录：
+- `bare_rtt_ms`
+- `measured_comm_round_ms`
+- `draft_time_ms`
+- `verify_time_ms`
+- `total_round_time_ms`
 
-% 改为
-100  & 10  & 118.82 & 70.72  & 65.95  & \textbf{65.95} & 0.0\% \\
-```
+## 你要检查的不是“绝对值漂亮”，而是这三个关系
 
-类似地 d=10 行 $k=5=9.52$ 和 Ours=9.52 也是同一情况,保持只标 Ours 粗体。
+### 检查 1：注入延迟是否线性生效
+你现在 `measured_rtt_with_sleep_ms` 随配置 delay 增长是合理的 [9]。  
+重跑后你应该拟合：
 
-**修改 Table I 的 caption**,显式定义 Δ:
+\[
+\text{measured\_comm\_round\_ms} \approx a + 2d
+\]
 
-```latex
-% 原 caption
-\caption{Per-token latency $C(k,d)$ (ms/token) under
-deterministic delay, $\alpha=0.7$. Bold: best per row.
-$\Delta$: improvement of $k^*$ over the best fixed baseline.}
+如果线性拟合很好，说明 delay 控制是可信的。
 
-% 改为
-\caption{Per-token latency $C(k,d)$ (ms/token) under
-deterministic delay, $\alpha=0.7$. Bold: $k^*$ entry per row.
-$\Delta_{\text{fix}}$: relative improvement of $k^*$ over 
-the best entry among the fixed-$k$ baselines 
-$k\in\{1,5,10\}$ shown in this table. The full fixed-$k$ 
-sweep ($k\in\{1,3,5,7,10\}$) is reported in 
-Appendix~\ref{app:full_latency}.}
-```
+### 检查 2：总轮次成本是否近似线性
+对 `k=1`，检查：
+
+\[
+N_t \approx b_0 + b_1 d
+\]
+
+如果 `b_1` 接近 2，说明通信项注入逻辑是对的。
+
+### 检查 3：同一套参数能否解释后续实验
+后面 phase、strategy、VOI 都只能用这套参数算理论值。
 
 ---
 
-### H1 + H2:Table 矛盾的处理(不编数据)
+# 实验 E2：重做 acceptance trace，不要只做 80 条
 
-**这是最棘手的硬伤,因为目前三个 Table 互相矛盾,且缺少 α=0.9 的表格支撑摘要的 42% 声明。**
+你现在 acceptance 图已经比以前合理得多：
 
-我**不会替您编 α=0.9 的数字**。处理策略:
+- prefix acceptance 单调下降 [10]
+- 条件接受率大致在 0.79-0.92 区间波动 [10]
+- 图里也画了 geometric fit，均值约 0.85 [15]
 
-#### 步骤 1:统一 Table II 的 k\*=7 → k\*=8(与 Table I/III 对齐)
+但现在最大问题是：**后几个位置样本数还是太少**。  
+例如 `k=10` 时只有 `sample_count=12` [10]。
 
-需要您**重新跑一次 Table II 的 Monte Carlo**,因为按 Table I 和 Appendix Table III,d=50, α=0.7 时 deterministic 的 k\*=8。Table II 的 k\*=7 几乎肯定是早期实验残留的数据未更新。
+## 目标
+不要再做“看起来像几何”，而是做“真实 acceptance trace 的统计画像”。
 
-修改前请用您的脚本验证:对 d=50, α=0.7,deterministic delay 下,exhaustive search 给出的 k\* 应为 8 还是 7。
+## 建议配置
+- prompt 数量：**至少 400-500 条**
+- 每条 prompt 固定 decode 设置
+- `K_max = 10` 或 12
 
-**两种可能**:
-- 若脚本输出 k\*=8,把 Table II 三行的 k\* 改为 8,$C(k^*, d)$ 重新算
-- 若脚本输出 k\*=7,把 Table I 和 Table III 的 d=50 行 k\* 改为 7,latency 数据重新算
+### 为什么要 500 条
+你现在 `P(L>=10)=0.1375` [10]。  
+若想让第 10 位也至少有 50 个样本，初始样本数至少要：
 
-无论哪种,**所有表格必须由同一脚本一次性生成**,以避免再次出现矛盾。
+\[
+50 / 0.1375 \approx 364
+\]
 
-#### 步骤 2:摘要的 42% 声明的处理
+所以 400-500 比较稳。
 
-由于您论文中**没有任何 α=0.9 的表格**,而摘要、§VI-C、Conclusion 都引用了 42% 这个数字,这是审稿人会立即抓到的硬伤。
+## 三类统计一起出
+### 1. Prefix acceptance
+\[
+P(L \ge k)
+\]
 
-**临时处理**(在硬件实验完成前):
-- 把摘要中 "42%" 改为 placeholder(见上面 H3 修改 4)
-- 把 §VI-C 中 "42.7%" 删除(见上面 H8 修改)
-- 在硬件实验完成后,新增 Table I-bis(α=0.9)和 §VI-F(real-system),用真实数字回填
+### 2. Conditional acceptance
+\[
+q_k = P(L \ge k \mid L \ge k-1)
+\]
 
----
+### 3. Sample count
+每个位置的 `n_k`
 
-### H10:Proof Sketch 升级为正式 Proof(已部分给出 H5)
+## 这组实验的合理性标准
+- `P(L>=k)` 必须单调不增
+- `q_k` 可以波动，但后段 `n_k < 30` 的点不要参与主拟合
+- `alpha_hat` 建议给两个版本：
+  - `alpha_hat_prefix`: 由 `log P(L>=k)` 线性拟合得到
+  - `alpha_hat_cond`: 由中间稳定区间 `q_k` 平均得到
 
-Theorem 4 的完整证明已在 H5 中给出。其余 Theorem 1, 2, 3, 5, 6, 7 的正式证明升级我可以**下一轮**逐个补全,本回复篇幅所限。建议优先级:**Theorem 5 > Theorem 7 > Theorem 1, 2, 3, 6**。
-
----
-
-## 三、为后续硬件实验预留的章节占位符
-
-在 §VI 末尾(`\subsection{Value of Network State Information}` 之后)**新增占位章节**,这样审稿人能看到您的实验路线图,且后续插入数据时不需要大改框架:
-
-```latex
-\subsection{Real-System Validation on Edge--Cloud Testbed}
-\label{subsec:hw_validation}
-
-\textit{[This section will be populated with measurements 
-from an NVIDIA Jetson Orin Nano Super (edge, draft model) 
-and an NVIDIA RTX 3090 (cloud, target model) testbed 
-connected via Gigabit Ethernet with delay and jitter injected 
-through Linux \texttt{tc-netem}. We will report 
-(i)~empirical position-dependent acceptance distributions 
-$\hat{q}(k|x)$ on real LLM pairs (e.g., Vicuna-68M $\to$ 
-Vicuna-7B, Sheared-LLaMA-1.3B $\to$ LLaMA-2-7B), 
-(ii)~the gap between the empirical optimum $\hat{k}^*$ and 
-the closed-form prediction~\eqref{eq:dc}, 
-(iii)~comparison of UCB-SpecStop against fixed-$k$ baselines 
-and SpecDec++~\cite{huang2024specdecpp} under realistic 
-cellular RTT traces.]}
-```
-
-同时把 §VII Conclusion 中已被注释的硬件验证段落**删掉注释,但调整措辞**:
-
-```latex
-% 原(注释掉的)
-% A full hardware validation on an edge-cloud testbed
-% (Jetson Orin Nano $\to$ RTX 3090 with \texttt{tc-netem}
-% emulated network) is left to an extended version of this work.
-
-% 解除注释并改为
-A real-system validation on an edge-cloud testbed (Jetson 
-Orin Nano Super edge device with RTX 3090 cloud server, 
-connected via emulated cellular and satellite RTT regimes) 
-is reported in Section~\ref{subsec:hw_validation}.
-```
-
-> ⚠️ 这一句要等您**真正跑完硬件实验**之后才能保留;如果暂时不跑,先在论文里保留占位章节,Conclusion 里这一句先继续注释掉。
+最终只选一个作为主文参数，但两个都存档。
 
 ---
 
-## 四、硬件实验思路(Jetson Orin Nano Super + RTX 3090)
+# 实验 E3：重做 phase transition，围绕临界区密集扫点
 
-只给思路,**不编数字**。
+你现在 phase 图已经出现“趋势正确、但经验阈值偏后”的现象：
 
-### 实验 E1:验证 logarithmic scaling(对应 Theorem 5)
+- 理论在 89/99/119ms 已推荐更大 k
+- 经验最优还偏小 [11]
+- 图上显示 `d_c ≈ 80ms` 左右 [16]
 
-**目标**:验证 $k^* \sim \log d / \log(1/\alpha)$ 在真实 LLM acceptance 分布下是否成立。
+这说明**实验方向是对的**，但点还不够密，噪声还偏大。
 
-**Setup**:
-- Edge: Jetson Orin Nano Super,加载 Vicuna-68M / Sheared-LLaMA-1.3B / Qwen2.5-0.5B 等 draft model
-- Cloud: 3090 工作站,加载对应 target model(Vicuna-7B / LLaMA-2-7B / Qwen2.5-7B)
-- 网络:Gigabit Ethernet + `tc-netem` 注入延迟,扫 $d \in \{10, 30, 50, 100, 200, 500\}$ ms
+## 正确做法
+不要再广撒网扫很多很远的点，重点扫临界区。
 
-**协议**:
-1. 用 MT-Bench / ShareGPT 各 200 个 prompt
-2. 每个 prompt 在每个 d 下,用 exhaustive search 扫 $k \in \{1, 2, ..., 20\}$,得到经验最优 $\hat{k}^*$
-3. 记录每个位置的真实接受率 $\hat{q}_k$,计算几何均值 $\bar{\alpha}$
-4. 用 $\bar{\alpha}$ 和测得的 $c_d, c_v$ 代入公式 (9) 得理论 $k^*_{\text{theory}}$
-5. **预期**:对每个 d,$|\hat{k}^* - k^*_{\text{theory}}| \leq 2$;在 log-scale plot 上 $\hat{k}^*$ vs $d$ 接近直线
+## delay 网格建议
+如果你最终 calibration 算出的 \(d_c\) 仍在 80ms 附近，那就扫：
 
-### 实验 E2:验证 phase transition(对应 Theorem 5 第 1 部分)
+- `50, 60, 70, 75, 80, 85, 90, 100, 110, 120, 140, 160`
 
-**目标**:验证存在 $d_c$,使得 $d < d_c$ 时 $\hat{k}^* = 1$。
+如果新的 \(d_c\) 变了，就围绕新的 \(d_c\pm 30ms\) 重布点。
 
-**协议**:扫 $d \in \{0.5, 1, 1.5, 2, 3, 5, 10\}$ ms(细粒度扫 critical region),观察 $\hat{k}^*$ 何时从 1 跳到 2。
+## 每个 delay 下做什么
+- 固定同一批 prompts
+- 穷举 `k = 1..6` 或 `1..8`
+- 每个 k 跑 200-300 条 prompt
+- 计算 mean cost/token 和 95% CI
 
-### 实验 E3:UCB-SpecStop 在线收敛(对应 Theorem 7)
+## 经验最优 k 的判定规则
+不要简单取最小均值。建议：
 
-**目标**:验证 $O(\sqrt{T \log T})$ regret 在真实 trace 下成立。
+1. 先找均值最小的 `k_min`
+2. 若与相邻 k 的 95% CI 大量重叠，则按“**取更小的 k**”作为 tie-break
 
-**协议**:
-1. 固定 d=50 ms,$\bar{\alpha}$ 来自实测
-2. 跑 UCB-SpecStop 共 T=10000 轮(每轮一个 prompt)
-3. 同时记录:fixed-$k$ baselines, $\varepsilon$-greedy, EXP3, SpecDec++(若可用)
-4. 画 cumulative regret 曲线,验证 log-log 斜率 ≈ 0.5
+### 原因
+你的理论本身强调 threshold 和小 k 区域 [1]，  
+而硬件里大 k 方差更大 [12]。  
+这个 tie-break 比直接 argmin 更稳。
 
-### 实验 E4:与 SpecDec++ 直接对比(回应审稿人)
+## 这组实验要达到的目标
+不是“每个点和理论完全重合”，而是：
 
-**目标**:差异化于 SpecDec++ 的 probability-threshold stopping。
-
-**协议**:
-- SpecDec++:用其官方阈值规则
-- Ours:用 Corollary 1 的 marginal-cost stopping rule
-- 对比指标:end-to-end token throughput、average $k$、acceptance rate
-- **预期**:在 $d$ 较小时两者相近,在 $d$ 较大时(>100 ms)Ours 因为显式建模了 communication cost 而胜出
-
-### 实验 E5:Markov channel(对应 Theorem 4)
-
-**目标**:验证 contextual UCB-SpecStop 的 VOI > 0。
-
-**协议**:
-- 用 `tc-netem` 实现两状态 channel:good (RTT≈5 ms) ↔ bad (RTT≈80 ms),每 100 ms 切换
-- Ours-Blind: 不观察状态
-- Ours-Contextual: 观察 RTT 取上一周期均值作为状态
-- 对比 average per-token latency
-
-### 数据收集脚本骨架(伪代码)
-
-```python
-# hw_experiment/run.py
-
-# (a) Acceptance trace collection
-for prompt in prompts:
-    accept_pattern = []
-    for k in range(1, K_max+1):
-        draft = draft_model.generate(prompt, length=k)
-        accept_pattern.append(target_model.verify(prompt, draft))
-    log_trace(prompt, accept_pattern)
-
-# (b) Estimate q_k and alpha_bar from traces
-q_k = empirical_acceptance_by_position(traces)
-alpha_bar = geometric_mean(q_k[:K_max])
-
-# (c) Measure c_d and c_v on actual hardware
-c_d = profile_draft_latency(draft_model, num_runs=1000)
-c_v = profile_verify_latency(target_model, num_runs=1000)
-
-# (d) tc-netem setup for delay sweep
-for d in [10, 30, 50, 100, 200, 500]:
-    os.system(f"sudo tc qdisc change dev eth0 root netem delay {d}ms")
-    rtt_samples = measure_rtt(num_pings=1000)
-    
-    # (e) Sweep empirical k*
-    latencies = {}
-    for k in range(1, K_max+1):
-        latencies[k] = run_speculative_decode(prompts, k=k, n=100)
-    k_hat_star = argmin(latencies)
-    
-    # (f) Theoretical prediction
-    k_theory = solve_optimal_k(alpha_bar, c_d, c_v, d)
-    
-    log_result(d, k_hat_star, k_theory, latencies)
-
-# (g) UCB-SpecStop online learning
-ucb = UCBSpecStop(K_max=20, beta=1.0)
-regret_trace = []
-for t in range(T):
-    k_t = ucb.select()
-    N_t, A_t = run_round(k_t)
-    ucb.update(k_t, N_t, A_t)
-    regret_trace.append(C(k_t) - C(k_oracle))
-```
+- empirical \( \hat{k}^*(d) \) **总体非减**
+- 经验跳变区和理论 \(d_c\) **同量级**
+- 不再出现上一版那种大幅反复跳回 1 的情况 [5]
 
 ---
 
-## 五、推荐执行顺序
+# 实验 E4：重做策略对比，只保留真正有信息量的 baseline
 
-| 阶段 | 任务 | 依赖 |
-|------|------|------|
-| **W1** | H3-H4-H6-H7-H8-H9 全部修改(纯文本) | 无 |
-| **W1** | H5:Assumption 2 + Theorem 4 证明升级 | 无 |
-| **W2** | H1:用脚本重新生成 Table I/II/III,确保一致 | 现有 simulation 代码 |
-| **W2** | 加入 §VI-F 占位章节 | 无 |
-| **W3-W4** | 编写硬件实验脚本骨架,部署 Jetson + 3090 测试床 | 硬件 |
-| **W5-W7** | 跑实验 E1-E5 | 硬件 |
-| **W8** | 把硬件结果填入 §VI-F,生成 α=0.9 表格,回填摘要 42% 数字 | E1-E5 完成 |
-| **W9** | H10:Theorem 1, 2, 3, 5, 6, 7 的正式证明升级 | 无 |
+你现在 revised strategy compare 的结构已经比以前好很多：
+
+- `mean_accepted_total >= 1` 正常 [12]
+- delay 选在 39/79/119/159ms，确实覆盖了 phase 周边 [12][17]
+
+但还可以更稳。
+
+## delay 点建议
+保留这 4 个代表点即可：
+- `0.5 d_c`
+- `d_c`
+- `1.5 d_c`
+- `2 d_c`
+
+如果 \(d_c \approx 80\)，那就是：
+- 40
+- 80
+- 120
+- 160
+
+你现在这组点已经接近这个思路了 [12]。
+
+## baseline 建议保留
+- fixed1
+- fixed2
+- fixed3
+- fixed5
+- fixed7
+- greedy
+- SpecDec++
+- UCB-SpecStop
+- NaiveUCB
+
+## baseline 建议去掉或单独放
+你现在的 `oracle` 容易和“理论 oracle / 穷举 oracle”混淆。  
+实验阶段先拆成两类内部对象：
+
+- `theory_kstar`: 用理论公式选 k
+- `empirical_best_fixed_k`: 在同一 prompt 集上穷举得到的最优 fixed-k
+
+先在代码和 csv 里这样命名，后面写论文再处理名字。
+
+## 公平性要求
+每个策略都要：
+- 用同一批 prompts
+- 用同一套 delay trace
+- 用同一随机种子规则
+
+### 最好做法
+先录制一个 `delay trace`，然后所有策略都 replay 同一条 trace。  
+这样策略差异就不会混进网络噪声。
+
+## 这组实验的合理性标准
+### 应满足
+- 同一 delay 下，`mean_accepted_total` 随 k 增大通常会上升
+- 低 delay 区 fixed1/fixed2 应很强
+- 过了临界区后 fixed2/fixed3 应开始追平或超过 fixed1
+- 你的方法应接近 `empirical_best_fixed_k`
+
+### 不要强求
+- 你的方法每个点都赢 greedy
+- SpecDec++ 每个点都很差
+
+SpecDec++ 如果没调阈值，结果会很难看；所以重跑前先在验证集调一次 threshold。
 
 ---
 
-## 六、下一步建议
+# 实验 E5：online regret 不要直接全靠真机跑，改成“硬件采样 + trace replay”
 
-本回复中**所有可立即执行的纯文本修改**都已给出完整 LaTeX 替换代码。您现在可以做的是:
+你现在 regret 图：
 
-1. **立即执行 H3-H4-H6-H7-H8-H9-H5**(纯文本修改,半天到一天可完成)
-2. **用您的现有 Monte Carlo 脚本**重跑 Table I/II/III,确保三表一致(H1)
-3. **搭建 Jetson + 3090 测试床**,我下一轮可以帮您:
-   - 详细写硬件实验的 `tc-netem` 配置命令
-   - 详细写 Vicuna / LLaMA / Qwen 的 prompt 集合选择和 acceptance trace 收集脚本
-   - 写 UCB-SpecStop 的 PyTorch 实现框架
-   - 写 SpecDec++ 的对比 baseline 实现
+- 单状态只到 `T=600` [18]
+- Markov 只到 `T=400` [19]
 
-您希望我下一轮重点帮您做哪一块?
+这足够做 sanity check，**不够做 bandit 趋势实验**。
+
+## 正确做法
+把 regret 分成两层：
+
+### 层 1：真机短程 sanity run
+- `T = 300~500`
+- 只证明算法能跑、不会崩、方向合理
+
+### 层 2：trace replay 主实验
+用真实硬件采出来的数据做离线 replay：
+
+1. 预先采集一批 trace
+2. trace 里保存每轮的：
+   - prompt
+   - delay
+   - 对每个 k 的 `N_t`
+   - 对每个 k 的 `A_t`
+3. 在线算法在 replay 环境里选择 k
+4. 环境从 trace 表返回对应观测
+
+## 好处
+- 可以做到 `T=5000` 或 `T=10000`
+- 还是真实硬件 trace 驱动
+- 非常贴近审稿意见里建议的 trace-driven 路线 [2]
+
+## regret 基准怎么定
+单状态：
+- 相对于该 trace 上的 `empirical_best_fixed_k`
+
+上下文状态：
+- 相对于该 trace 上的 `best state-dependent policy`
+
+## 这组实验的合理性标准
+- cumulative regret 单调增，但斜率逐渐变缓
+- UCB-SpecStop 明显优于 NaiveUCB
+- 不一定证明精确 \(O(\sqrt{T\log T})\)，但应“明显低于线性”
+
+---
+
+# 实验 E6：Markov VOI 做成一组“有对照”的实验
+
+你现在这组 VOI 很不错：
+
+- `d_good=39`
+- `d_bad=119`
+- `k_good=1`
+- `k_bad=2`
+- contextual 比 blind 低约 30.6% [20]
+
+这个设计是合理的，因为两个状态跨过了不同 threshold 区间 [20]。
+
+## 但还缺一个对照组
+你应该做两种 Markov 实验：
+
+### A. 有 VOI 组
+- `d_good` 和 `d_bad` 分居不同 k 区域
+- 例如你现在的 `39 / 119` [20]
+
+### B. 无 VOI 组
+- 两个状态都落在同一最优 k 区域
+- 例如 `39 / 79`，如果这两个点经验上都还是 `k=1`
+
+## 这样你就能验证两件事
+1. 状态跨阈值时，contextual 明显优于 blind
+2. 状态不跨阈值时，VOI 接近 0
+
+这比只做一组 39/119 强很多。
+
+## 运行方式
+这组也建议用 replay：
+- 先采 good/bad 两种 delay 下的 trace 池
+- 按转移概率 \(p=0.1\) 生成状态序列 [20]
+- 从对应池中抽样
+
+---
+
+# 三、你这次重跑，建议只保留的主图/主表
+
+为了让数据最稳，我建议你这次只围绕下面 5 组结果组织实验。
+
+## 1. Calibration 图
+横轴：configured one-way delay  
+纵轴：measured communication round time / total round time  
+目标：证明 delay 注入有效 [9][14]
+
+## 2. Acceptance 图
+- 左：prefix acceptance \(P(L\ge k)\)
+- 右：conditional \(q_k\) + sample count [10][15]
+
+## 3. Phase transition 图
+- theory \(k^*(d)\)
+- empirical \(\hat{k}^*(d)\)
+- 只画围绕 \(d_c\) 的密集区 [11][16]
+
+## 4. Strategy compare 图/表
+只选 4 个 delay 点 [12][17]
+
+## 5. Regret + Markov VOI
+- replay 为主
+- 真机短程为辅 [18][19][20]
+
+---
+
+# 四、重跑时的“合理性验收标准”
+
+下面这组标准你可以当成实验 checklist。
+
+## A. calibration 合格标准
+- `measured_comm_round_ms` 随 `configured_one_way_delay_ms` 近似线性增长 [9]
+- 不同 delay 下 `cd`、`cv` 不应大幅漂移
+- 最终只输出一套参数
+
+## B. acceptance 合格标准
+- `P(L>=k)` 严格非增 [10]
+- `q_k` 中段相对平稳，尾部允许波动
+- `n_k < 30` 的尾部点不用于主拟合
+
+## C. phase 合格标准
+- empirical \(\hat{k}^*(d)\) 总体非减
+- 阈值出现在理论 \(d_c\) 附近，而不是差一个量级
+- 用 CI + tie-break 避免噪声导致的跳变
+
+## D. strategy 合格标准
+- `A_t >= 1` 始终成立 [1]
+- 低 delay 下小 k 更强
+- 过阈值后中小 k 开始追平 fixed1
+- 你的方法接近 empirical best fixed-k
+
+## E. regret 合格标准
+- 不追求“漂亮理论线”
+- 只要求：ours < naive_ucb，且增长明显慢于线性 [18][19]
+
+## F. VOI 合格标准
+- 跨阈值状态：contextual 优于 blind [20]
+- 不跨阈值状态：二者接近
+
+---
+
+# 五、推荐的执行顺序
+
+按这个顺序跑，最省时间，也最不容易返工。
+
+## 第 1 步
+先做 E0 + E1  
+把日志和 calibration 定死。
+
+## 第 2 步
+做 E2 acceptance trace  
+拿到最终 `alpha_hat`。
+
+## 第 3 步
+根据 calibration + `alpha_hat` 计算新的 \(d_c\) [1]  
+然后设计 E3 的 phase sweep 点位。
+
+## 第 4 步
+做 E3 phase transition  
+确定哪些 delay 最有代表性。
+
+## 第 5 步
+做 E4 strategy compare  
+只选 4 个代表 delay。
+
+## 第 6 步
+最后做 E5 regret replay + E6 Markov VOI  
+不要一开始就真机硬跑长 horizon。
+
+---
+
+# 六、最重要的提醒
+
+这次你重跑实验时，**目标不是把理论“证成完全正确”**。  
+按你现在的数据形态，更合理的目标是：
+
+1. **通信延迟控制是可信的** [9][14]  
+2. **真实 acceptance trace 是可测、可复现的** [10][15]  
+3. **phase transition 在真实系统里至少定性成立** [11][16]  
+4. **state-aware 策略在跨阈值场景下确实有 VOI** [20]  
+5. **online 方法在 trace-driven 环境里优于 naive baseline** [18][19]
+
+做到这五点，数据就已经“合理且能讲清楚”。
+
+---
+
+# 七、我建议你直接照着这个最小版本重跑
+
+## 最小可行重跑包
+- Calibration: `d={0,10,20,40,80,120,160}`, 每点 100-200 轮
+- Acceptance: 500 prompts, `K_max=10`
+- Phase: 围绕 \(d_c\) 扫 12 个点，每点每个 k 跑 200-300 prompts
+- Strategy: 4 个代表 delay，baseline 保留 8-9 个
+- Regret: 真机 300-500 轮 + replay 5000-10000 轮
+- Markov: 一组跨阈值 + 一组不跨阈值
+
+这套方案最稳，也最接近你现在已有结果的延续。
+
+下一步最实用的不是改论文，而是把**实验配置表**和**日志字段表**先定下来。  
+你按上面思路重跑，基本不会再出现“数据看着不对，但又说不清哪里不对”的情况。

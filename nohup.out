@@ -1,0 +1,6 @@
+`torch_dtype` is deprecated! Use `dtype` instead!
+Loading target model: /home/skk/local/models/Qwen2.5-7B-Instruct  device=cuda local_only=True
+Loading checkpoint shards:   0%|          | 0/4 [00:00<?, ?it/s]Loading checkpoint shards:  25%|██▌       | 1/4 [00:00<00:01,  1.83it/s]Loading checkpoint shards:  50%|█████     | 2/4 [00:01<00:01,  1.87it/s]Loading checkpoint shards:  75%|███████▌  | 3/4 [00:01<00:00,  1.87it/s]Loading checkpoint shards: 100%|██████████| 4/4 [00:02<00:00,  1.96it/s]Loading checkpoint shards: 100%|██████████| 4/4 [00:02<00:00,  1.92it/s]
+`torch_dtype` is deprecated! Use `dtype` instead!
+Loading target model: /home/skk/local/models/Llama-3.1-8B-Instruct  device=cuda local_only=True
+Loading checkpoint shards:   0%|          | 0/4 [00:00<?, ?it/s]Loading checkpoint shards:  25%|██▌       | 1/4 [00:03<00:09,  3.15s/it]Loading checkpoint shards:  50%|█████     | 2/4 [00:05<00:05,  2.65s/it]Loading checkpoint shards:  75%|███████▌  | 3/4 [00:07<00:02,  2.53s/it]Loading checkpoint shards: 100%|██████████| 4/4 [00:07<00:00,  1.59s/it]Loading checkpoint shards: 100%|██████████| 4/4 [00:07<00:00,  2.00s/it]
