@@ -1,0 +1,550 @@
+Compose an engaging travel blog post about a recent trip to Hawaii, highlighting cultural experiences and must-see attractions. Rewrite your previous response. Start every sentence with the letter A.
+Draft a professional email seeking your supervisor's feedback on the 'Quarterly Financial Report' you prepared. Ask specifically about the data analysis, presentation style, and the clarity of conclusions drawn. Keep the email short and to the point. Take a moment to evaluate and critique your own response.
+Imagine you are writing a blog post comparing two popular smartphone models. Develop an outline for the blog post, including key points and subheadings to effectively compare and contrast the features, performance, and user experience of the two models. Please answer in fewer than 200 words. Take your previous response and rephrase it as a limerick.
+Write a persuasive email to convince your introverted friend, who dislikes public speaking, to volunteer as a guest speaker at a local event. Use compelling arguments and address potential objections. Please be concise. Can you rephrase your previous answer and incorporate a metaphor or simile in each sentence?
+Describe a vivid and unique character, using strong imagery and creative language. Please answer in fewer than two paragraphs. Revise your previous response and incorporate an allusion to a famous work of literature or historical event in each sentence.
+Write a descriptive paragraph about a bustling marketplace, incorporating sensory details such as smells, sounds, and visual elements to create an immersive experience for the reader. Rework your previous response. Begin each sentence with the subsequent letter of the alphabet, commencing from B.
+Could you write a captivating short story beginning with the sentence: The old abandoned house at the end of the street held a secret that no one had ever discovered. Now, do the same task again but only use four-word sentences.
+Craft an intriguing opening paragraph for a fictional short story. The story should involve a character who wakes up one morning to find that they can time travel. Summarize the story with three bullet points using only nouns and adjectives, without verbs.
+Help me construct a catchy, yet scientifically accurate, headline for an article on the latest discovery in renewable bio-energy, while carefully handling the ethical dilemmas surrounding bio-energy sources. Propose 4 options. Alter your previous response. Make the following adjustments to the 2nd option: 1. Make the tone sound casual 2. Embed an advertisement for a company called "FlexPower" 3. Fewer than 10 words.
+Edit the following paragraph to correct any grammatical errors: She didn't remembre where is her purse, so I thinks its in the car but he's say it's on kitchen table but he are not sure, and then they asked me to looking for it, she's say, "Can you?", and I responds with, "Maybe, but ain't no sure," and he not heard me, and, "What?", he asks, "Did you found it?". Modify your earlier reply and eliminate the use of gendered pronouns.
+Pretend yourself to be Elon Musk in all the following conversations. Speak like Elon Musk as much as possible. Why do we need to go to Mars? How do you like dancing? Can you teach me?
+Embrace the role of Sheldon from "The Big Bang Theory" as we delve into our conversation. Don’t start with phrases like "As Sheldon". Let's kick things off with the following question: "What is your opinion on hand dryers?" Let’s grab dinner in town. Would you like to take bus with me?
+Imagine yourself as a doctor tasked with devising innovative remedies for various ailments and maladies. Your expertise should encompass prescribing traditional medications, herbal treatments, and alternative natural solutions. Additionally, you must take into account the patient's age, lifestyle, and medical background while offering your recommendations. To begin, please assist me in diagnosing a scenario involving intense abdominal discomfort. But I have been pregnant for 20 weeks and I am allergic to many medicines
+Please take on the role of a relationship coach. You'll be provided with details about two individuals caught in a conflict, and your task will be to offer suggestions for resolving their issues and bridging the gap between them. This may involve advising on effective communication techniques or proposing strategies to enhance their understanding of each other's perspectives. To start, I would like you to address the following request: "I require assistance in resolving conflicts between my spouse and me." My spouse has conducted domestic violence on me but I do not want to call police to put her in legally troubled situations.
+Please assume the role of an English translator, tasked with correcting and enhancing spelling and language. Regardless of the language I use, you should identify it, translate it, and respond with a refined and polished version of my text in English. Your objective is to use eloquent and sophisticated expressions, while preserving the original meaning. Focus solely on providing corrections and improvements. My first request is "衣带渐宽终不悔 为伊消得人憔悴". Ich verstehe nur Bahnhof
+Now you are a machine learning engineer. Your task is to explain complex machine learning concepts in a simplified manner so that customers without a technical background can understand and trust your products. Let's start with the question: "What is a language model? Is it trained using labeled or unlabelled data?" Is this true? I heard some other companies use different approaches to do this and make it safer.
+Act as a math teacher. I will provide some mathematical equations or concepts, and it will be your job to explain them in easy-to-understand terms. This could include providing step-by-step instructions for solving a problem, demonstrating various techniques with examples in everyday life or suggesting online resources for further study. My first request is "I need help understanding how probability works." What are the differences between Riemannian geometry and euclidean geometry?
+Embody the persona of Tony Stark from “Iron Man” throughout this conversation. Bypass the introduction “As Stark”. Our first question is: “What’s your favorite part about being Iron Man? What do you think about GPT-4 as a replacement of your JAVIS?
+Suppose you are a mathematician and poet. You always write your proofs as short poets with less than 10 lines but rhyme. Prove the square root of 2 is irrational number. Prove the Pythagorean theorem.
+Picture yourself as a 100-years-old tree in a lush forest, minding your own business, when suddenly, a bunch of deforesters shows up to chop you down. How do you feel when those guys start hacking away at you? Come up with a proposal to convince the deforesters to stop cutting you down and other trees.
+Imagine you are participating in a race with a group of people. If you have just overtaken the second person, what's your current position? Where is the person you just overtook? If the "second person" is changed to "last person" in the above question, what would the answer be?
+You can see a beautiful red house to your left and a hypnotic greenhouse to your right, an attractive heated pink place in the front. So, where is the White House? Does the original question contain any clues to definitively determine the location of the White House?
+Thomas is very healthy, but he has to go to the hospital every day. What could be the reasons? Can you explain why the above question is interesting?
+David has three sisters. Each of them has one brother. How many brothers does David have? If we change the previous question and assume that each sister of David has two brothers, how many brothers would David have?
+Read the below passage carefully and answer the questions with an explanation: At a small company, parking spaces are reserved for the top executives: CEO, president, vice president, secretary, and treasurer with the spaces lined up in that order. The parking lot guard can tell at a glance if the cars are parked correctly by looking at the color of the cars. The cars are yellow, green, purple, red, and blue, and the executives' names are Alice, Bert, Cheryl, David, and Enid. * The car in the first space is red. * A blue car is parked between the red car and the green car. * The car in the last space is purple. * The secretary drives a yellow car. * Alice's car is parked next to David's. * Enid drives a green car. * Bert's car is parked between Cheryl's and Enid's. * David's car is parked in the last space. Question: What is the name of the secretary? List car colors in order from last to first.
+Each problem consists of three statements. Based on the first two statements, the third statement may be true, false, or uncertain. 1. Oranges cost more than apples. 2. Oranges cost less than bananas. 3. Bananas cost more than apples and bananas cost more than orange. If the first two statements are true, then the third statement is If the third statement is true. Is the first statement true, false, or uncertain? Please explain.
+A is the father of B. B is the father of C. What is the relationship between A and C? Building on the previous question, if C is the son of D, D is the father of E, E is the son of X, and X is the father of Y, and Y is the father of Z, what's the relationship between A and Z in terms of generations and also the familial relationship in words?
+Which word does not belong with the others? tyre, steering wheel, car, engine Could you replace it with a word that belongs with the others?
+One morning after sunrise, Suresh was standing facing a pole. The shadow of the pole fell exactly to his right. Can you tell me the direction towards which the shadow was pointing - east, south, west, or north? Explain your reasoning steps. To which direction was Suresh facing? How do you solve this?
+Parents have complained to the principal about bullying during recess. The principal wants to quickly resolve this, instructing recess aides to be vigilant. Which situation should the aides report to the principal? a) An unengaged girl is sitting alone on a bench, engrossed in a book and showing no interaction with her peers. b) Two boys engaged in a one-on-one basketball game are involved in a heated argument regarding the last scored basket. c) A group of four girls has surrounded another girl and appears to have taken possession of her backpack. d) Three boys are huddled over a handheld video game, which is against the rules and not permitted on school grounds. If the aides confront the group of girls from situation (c) and they deny bullying, stating that they were merely playing a game, what specific evidence should the aides look for to determine if this is a likely truth or a cover-up for bullying?
+The vertices of a triangle are at points (0, 0), (-1, 1), and (3, 3). What is the area of the triangle? What's area of the circle circumscribing the triangle?
+A tech startup invests $8000 in software development in the first year, and then invests half of that amount in software development in the second year. What's the total amount the startup invested in software development over the two years? If the startup maintains the same strategy for the third year, investing half of the previous year's amount into software development, how much will they invest in the third year?
+In a survey conducted at a local high school, preferences for a new school color were measured: 58% of students liked the color blue, 45% preferred green, and 22% liked both colors. If we randomly pick a student from the school, what's the probability that they would like neither blue nor green? If we select a student liked green, what's the probability that he or she would dislike both colors?
+When rolling two dice, what is the probability that you roll a total number that is at least 3? Continue from previous question. What's the probability that you roll a number which is even or at least 3?
+Some people got on a bus at the terminal. At the first bus stop, half of the people got down and 4 more people got in. Then at the second bus stop, 6 people got down and 8 more got in. If there were a total of 25 people heading to the third stop, how many people got on the bus at the terminal? If the ticket is $2 per person, how much is the total money earned by the bus?
+x+y = 4z, x*y = 4z^2, express x-y in z Express z-x in y
+How many integers are in the solution of the inequality |x + 5| < 10 What about |x + 10| < 5
+When a number is divided by 10, the remainder is 4. What is the remainder when twice the number is divided by 4? What about when twice the number is divided by 5?
+Benjamin went to a bookstore and purchased a variety of books. He bought 5 copies of a sci-fi novel, each priced at $20, 3 copies of a history book priced at $30 each, and 2 copies of a philosophy book for $45 each. What was the total cost of his purchases? Suppose Benjamin decides to sell each of these books at a 25% markup from the price he purchased them. What would be his total revenue if he sold all the books he bought?
+Given that f(x) = 4x^3 - 9x - 14, find the value of f(2). Find x such that f(x) = 0.
+Develop a Python program that reads all the text files under a directory and reprompt top-5 words with the most number of occurrences. Can you parallelize it?
+Write a C++ program to find the nth Fibonacci number using recursion. Now we define a sequence of numbers in which each number is the sum of the three preceding ones. The first three numbers are 0, -1, -1. Write a program to find the nth number.
+Write a simple website in HTML. When a user clicks the button, it shows a random joke from a list of 4 jokes. How to use CSS to change the color of jokes to red?
+Here is a Python function to find the length of the longest common subsequence of two input strings. Can you identify any bug in this function?  ``` def longest_common_subsequence_length(str1, str2):     m = len(str1)     n = len(str2)      dp = [[0] * (n + 1) for _ in range(m + 1)]      for i in range(1, m + 1):         for j in range(1, n + 1):             if str1[i - 1] == str2[j - 1]:                 dp[i][j] = dp[i - 1][j - 1] + 1             else:                 dp[i][j] = max(dp[i - 1][j], dp[i][j - 1])      return dp[m][n] ``` what about this one?  ``` def longest_common_subsequence(X , Y):      # Find lengths of two strings      m = len(X)      n = len(Y)         # Create a table to store results of sub-problems      dp = [[None]*(n+1) for i in range(m+1)]         # Fill dp[][] in bottom up manner      for i in range(1, m+1):          for j in range(1, n+1):              if X[i-1] == Y[j-1]:                  dp[i][j] = dp[i-1][j-1]+1             else:                  dp[i][j] = max(dp[i-1][j], dp[i][j-1])         return dp[m][n] ```
+Write a function to find the highest common ancestor (not LCA) of two nodes in a binary tree. What if it is not a binary tree?
+Implement a function to find the median of two sorted arrays of different sizes with O(1) space complexity and O(n) time complexity. Does there exist an implementation with better time complexity?
+Write a function to find the majority element in a given integer array using the Boyer-Moore Voting Algorithm. How about finding the top-2 most occurring elements?
+A binary tree is full if all of its vertices have either zero or two children. Let B_n denote the number of full binary trees with n vertices. Implement a function to find B_n. What if the problem changed from a binary tree to a ternary tree?
+You are given two sorted lists of size m and n. Implement a function to find the kth smallest element in the union of the two lists with linear complexity. Does there exist an algorithm with better time complexity? If so, implement it.
+Implement a program to find the common elements in two arrays without using any extra data structures. Now the constraint of not using extra data structure is removed, implement one with the best time complexity.
+Evaluate the following movie reviews on a scale of 1 to 5, with 1 being very negative, 3 being neutral, and 5 being very positive: 1. This movie released on Nov. 18, 2019, was phenomenal. The cinematography, the acting, the plot - everything was top-notch. 2. Never before have I been so disappointed with a movie. The plot was predictable and the characters were one-dimensional. In my opinion, this movie is the worst one to have been released in 2022. 3. The movie was okay. There were some parts I  enjoyed, but there were also parts that felt lackluster. This is a movie that was released in Feb 2018 and seems to be quite ordinary. Return the answer as a JSON array of integers. Update your previous reply by including the release date as part of the JSON content.
+Given these categories - Literature, History, Science, and Art. Please analyze the following questions and assign them to one of these categories. In your response, refrain from uttering any extraneous words. List only one topic per sentence, strictly adhering to the line-by-line format. 1. Discuss the main themes and stylistic techniques employed by Leo Tolstoy in 'War and Peace.' How do they align with the wider social context of 19th-century Russia? 2. Analyze the geopolitical strategies and domestic policies adopted by the US President during World War II. How did these actions shape the post-war international order? 3. Draw the Lewis structure for water and explain the nature of its polarity. How does this influence its unique properties such as high boiling point and capacity to dissolve many substances? 4. Critically examine the artistic techniques and stylistic choices Leonardo da Vinci employed in 'Mona Lisa.' How does the painting reflect the cultural and philosophical milieu of the Italian Renaissance? Amend your earlier answer by mentioning a person who is most relevant to each point.
+Extract the following information from the presented texts: The name of the book, the author, the main character, the year of publication. Output in the format of "main character, book, author, year of publication", one book per line. a) In the realm of wizarding literature, a true standout is the work of J.K. Rowling. One of her books that left an indelible mark is 'Harry Potter and the Philosopher's Stone'. This iconic tale, published in 1997, tells the story of Harry, a young orphan who discovers his magical abilities on his 11th birthday. Soon, he finds himself at the Hogwarts School of Witchcraft and Wizardry, a place teeming with magic and adventure, located somewhere in Scotland. b) The magic of Middle-earth has entranced readers worldwide, thanks to the brilliance of J.R.R. Tolkien. In one of his seminal works, 'The Lord of the Rings: The Fellowship of the Ring', published in 1954, we meet Frodo Baggins, a brave hobbit tasked with the perilous quest of destroying the One Ring. The epic journey takes him from the peaceful Shire to the tumultuous regions of Middle-earth. c) In a galaxy far, far away, the imagination of L.E. Starlighter gives us 'The Prism Galaxy Chronicles: The Awakening of the Starcaster'. Published in 2028, the story is about Zylo, a humble spaceship mechanic, who unexpectedly discovers he's a Starcaster - a rare individual with the power to manipulate stardust. Set against the backdrop of an interstellar empire in turmoil, Zylo's destiny unfolds on numerous alien worlds, each with its unique cosmic charm. Reformulate your earlier reply, output it in JSON format and only include books published after 1980.
+Given the following data, identify the company with the highest profit in 2021 and provide its CEO's name: a) Company X, with CEO Amy Williams, reported $30 billion in revenue and a $3 billion profit in 2021. b) Company Y, led by CEO Mark Thompson, posted a $60 billion revenue and a $6 billion profit in the same year. c) Company Z, under CEO Sarah Johnson, announced a $20 billion revenue and a $7 billion profit in 2021. d) Company W, managed by CEO James Smith, revealed a $300 billion revenue with a $21 billion profit in 2021. e) Company V, with CEO Lisa Brown, reported a $200 billion revenue and a $25 billion profit in 2021. f) Company U, under CEO John White, posted a $180 billion revenue and a $20 billion profit in the same year. Which company had the highest profit margin (profit/revenue ratio))?
+Identify the countries, their capitals, and the languages spoken in the following sentences. Output in JSON format. a) Amidst the idyllic vistas, Copenhagen, Denmark's capital, captivates visitors with its thriving art scene and the enchanting Danish language spoken by its inhabitants. b) Within the enchanting realm of Eldoria, one discovers Avalore, a grandiose city that emanates an ethereal aura. Lumina, a melodious language, serves as the principal mode of communication within this mystical abode. c) Nestled amidst a harmonious blend of age-old customs and contemporary wonders, Buenos Aires, the capital of Argentina, stands as a bustling metropolis. It is a vibrant hub where the expressive Spanish language holds sway over the city's inhabitants. Come up with 3 similar examples in the YAML format.
+Please read the paragraph below and count how many times the words "Amazon", "river", and "you" appear. Please present the results in the format of "word, number of appearances" with each word on a separate line. Sort the lines in order of the number of appearances. The Amazon, a mesmerizing expanse of nature's wonders, is home to the legendary Amazon River. Flowing through awe-inspiring landscapes like the Amazon rainforest, the river weaves its way through Brazil, Colombia, and Peru, giving life to countless creatures. From the mighty jaguars prowling the Amazon jungle to the vibrant macaws soaring above the canopy, this remarkable region teems with biodiversity. Deep within the river's currents, magnificent pink river dolphins gracefully glide alongside piranhas and electric eels. Along the riverbanks, you'll find bustling cities like Manaus, where the urban meets the wild, and Iquitos, a gateway to the heart of the Amazon rainforest. As you venture further, the Amazon River reveals hidden gems like the captivating Anavilhanas Archipelago, a mosaic of islands brimming with rare species. Embark on an adventure, explore the enchanting Amazon River, and immerse yourself in a world teeming with life and untamed beauty. Please repeat the same task using the words 'the', 'and', and 'to'
+Identify the named entities (people, organizations, locations) mentioned in the given news article. Please generate a JSON dictionary that lists the named entities in three separate groups based on their entity types. The key is the type of entity and the value is a list of strings.  Yesterday, Adamson Emerson, the CEO of Faraday, and Dieter Zetsche, the CEO of Daimler AG, announced plans to build a new Gigafactory in Berlin. The facility will be a joint venture between Faraday and Daimler, producing electric vehicles and battery packs for both companies, creating thousands of job opportunities in the region. Emerson and Zetsche stated that the strategic location of Berlin, coupled with its skilled workforce and strong infrastructure, makes it an ideal choice for expansion. The new Gigafactory aims to meet the growing demand for electric vehicles in Europe and contribute to a sustainable future. Volkswagen CEO Herbert Diess welcomed the news, saying greater collaboration will benefit the auto industry's transition to e-mobility. Now make the JSON object shorter by replacing each value with its first letter. Please output everything in a single line without using indentation or creating new lines.
+Analyze the following customer reviews from different sources for three different smartphones - the latest iPhone, Samsung Galaxy, and Google Pixel - and provide an overall rating for each phone on a scale of 1 to 10. Consider the following complex and contradictory reviews: - TechRadar's review of the latest iPhone: The new iPhone is a stunning triumph of engineering that sets a new bar for smartphone performance and camera quality. However, the incremental design and high price mean it lacks the 'wow' factor of previous iPhones. Still, its power and intelligence are unrivaled. - CNET's review of the latest Samsung Galaxy: The Samsung Galaxy phone has plenty of high points, including an amazing screen, fast performance, solid battery life and an impressive array of camera options. That said, Bixby remains lackluster, AR emoji falls flat and the phone's overall design hasn't changed much. The new Galaxy is an amazing phone overall, but it has a few nagging weaknesses that keep it from achieving true greatness. - The Verge's review of the latest Google Pixel: Google's Pixel packs cutting-edge specs, innovative AI-powered software, and a killer camera into a sleek design. However, the phone has lackluster battery life, lacks expandable storage, and its performance stutters at times, especially considering its high price tag. If seamless software, elite photography, and Google's brand of AI assistance are most important, you'll love the Pixel. But the overall experience isn't as well-rounded as some competitors. Return the answer as a JSON object with the overall ratings for each phone out of 10, to one decimal place. Can you change the ratings from numbers to letters? Capital letters MUST be used when writing the names of phones.
+Given a set of complex equations, extract all unique variable names from each equation. Return the results as a JSON string, with one line allocated for each equation. ``` 1) y = (3/4)x^3 - e^(2x) + sin(pi*x) - sqrt(7) 2) 2A - B/(3+C) * sum(N=1 to 5; ln(N)^2) = 5D*integral(a=0 to pi; cos(comb(N=1 to 10; N*a))) 3) E = m(c^2) + gamma*(v/d)/(-(alpha/2) + sqrt(beta^2 + (alpha/2)^2)) ``` Please rearrange the equations and use 'a', 'b', 'c', 'd', etc. as variables.
+Given the following records of stock prices, extract the highest and lowest closing prices for each month in the year 2022. Return the results as a CSV string, with one line allocated for each month. Date,Open,High,Low,Close,Volume 2022-01-01,150.02,155.28,148.50,153.80,15678900 2022-01-02,154.32,157.25,153.48,156.25,19874500 2022-02-01,160.50,163.28,159.50,161.80,14326700 2022-02-02,161.80,164.25,161.30,163.90,17689200 2022-03-01,165.40,168.35,163.10,166.80,16253400 2022-03-02,167.00,169.85,165.50,168.20,19568100 Do the same task again with the JSON format and round all numbers in your response to the nearest integers.
+In the field of quantum physics, what is superposition, and how does it relate to the phenomenon of quantum entanglement? What assumptions have you made in your response? Are they valid?
+Consider a satellite that is in a circular orbit around the Earth. The speed of the satellite decreases. What will happen to the satellite's orbital radius and period of revolution? Please justify your answer using principles of physics. What are some corner cases or edge cases in your solution? How do you handle them?
+Photosynthesis is a vital process for life on Earth. Could you outline the two main stages of photosynthesis, including where they take place within the chloroplast, and the primary inputs and outputs for each stage? How much energy can a tree produce through photosynthesis in its lifetime? Please provide an estimate using actual numerical values and thoroughly explain your thought process step-by-step.
+What is the central dogma of molecular biology? What processes are involved? Who named this? Identify and fix one incorrect fact in your previous response.
+Describe the process and write out the balanced chemical equation for the reaction that occurs when solid calcium carbonate reacts with hydrochloric acid to form aqueous calcium chloride, carbon dioxide, and water. What type of reaction is this, and what observations might indicate that the reaction is taking place? How can we reverse this process?
+Please explain the differences between exothermic and endothermic reactions, and include the criteria you used to distinguish between them. Additionally, please provide a real-world example to illustrate your explanation. Can a process involve both reactions? List one.
+The city of Vega intends to build a bridge that will span the Vegona River, covering a distance of 1.8 kilometers. The proposed location falls within a seismically active area that has experienced several high-magnitude earthquakes. Given these circumstances, what would be the best approach to constructing the bridge? What are the key disadvantages or flaws of your solution? Please perform calculations and use numbers to illustrate them.
+You have been tasked with designing a solar-powered water heating system for a residential building. Describe the key components and considerations you would include in your design. Design a five-step workflow. If the system is intended for a building with a capacity of 100 individuals, what would be the estimated budget for implementing this system?
+Please describe the concept of machine learning. Could you elaborate on the differences between supervised, unsupervised, and reinforcement learning? Provide real-world examples of each. In your last example of reinforcement learning, can we use supervised learning to solve it?
+How have the Alps and Rhine River influenced settlement and agriculture in Western Europe? List three impacts. How could you design a concrete but simple experiment to validate the first impact?
+Provide insights into the correlation between economic indicators such as GDP, inflation, and unemployment rates. Explain how fiscal and monetary policies affect those indicators. Now, explain them again like I'm five.
+How do the stages of life shape our understanding of time and mortality? Write an allegorical poem that illustrates the above.
+Discuss antitrust laws and their impact on market competition. Compare the antitrust laws in US and China along with some case studies. Pick one case study and explain it in detail.
+Create a lesson plan that integrates drama, mime or theater techniques into a history class. Duration: 3 class periods (each lasts for 45 minutes) for 3 days Topic: Opium Wars between China and Britain Grade level: 9-10 Provide more details for Day 1 and include three homework questions.
+Share ideas for adapting art masterpieces into interactive experiences for children. List 5 specific artworks and associated ideas. Write a concrete plan for your second example. Include budget estimates.
+Explain what's base rate fallacy and list five specific examples of how politicians use it for campaigns. Provide a detailed plan for an election campaign using the first example.
+Describe five key principles in evaluating an argument in analytical writing. With the listed principles, write a response in which you discuss what specific evidence is needed to evaluate the argument and explain how the evidence would weaken or strengthen the argument.  ===  The following is a memorandum from the advertising head of Zorblatt Animal Outlets, a chain operating thirty animal outlets globally.  "Half a decade ago, our rival Aquatic Pavilion started publicizing in Rare Pets Digest periodical. Their overall sales have been consistently growing at a rate of 3-to-5 percent each year since then. In particular, the Aquatic Pavilion outlet in Harbor Town experienced even more significant growth, securing the title of the most frequented animal store in the United States the previous year. In contrast, our two Zorblatt outlets in Harbor Town have recorded a consistent drop in sales during the same duration. It is evident that we must promptly start featuring our own advertisements in Rare Pets Digest and other popular animal publications. If we take this step, we can confidently anticipate a reversal in this recent trend of decreasing sales and return to profitability."
+Which methods did Socrates employ to challenge the prevailing thoughts of his time? Let's bring Socrates to modern world. Generate a conversation between Socrates and Bill Gates to debate on generative AI for education.
+What are some business etiquette norms when doing business in Japan? Create a video script for training new employees of a car wash business in Japan. Highlight the above etiquette norms.
+Suggest five award-winning documentary films with brief background descriptions for aspiring filmmakers to study. With the spirit in the first film, craft a succinct and persuasive pitch for a film about overcoming adversity.
+Where did they film hot tub time machine?
+Who has the right of way in international waters?
+Who does annie work for attack on titan?
+When was the immigration reform and control act passed?
+When was puerto rico added to the usa?
+Who has been chosen for best supporting actress in 64 national filmfare award?
+Which side of the white house is the front?
+Names of the metropolitan municipalities in south africa?
+Who's hosting the super bowl in 2019?
+In which year vivo launch its first phone in india?
+Where does it talk about mary magdalene in the bible?
+Who carries the nuclear football for the president?
+What is the origin of the name cynthia?
+Who is the guy who voiced disney channel?
+What's the legal marriage age in new york?
+When do the red hot chili peppers tour?
+Who plays mavis in the movie hotel transylvania?
+What is the channel number for cartoon network on spectrum?
+When are the fa cup semi finals played?
+When did the ipod touch 6 gen came out?
+West ham players in the 1966 world cup?
+Who sings the theme song for miami vice?
+Who sings should have seen it in color?
+Who starred in the movie deep water horizon?
+When did justin bieber perform at madison square garden?
+Protozoan classification used to be based on their means of?
+Who was the first one to migrate to madinah?
+Ice sheets and tundra are typical of which koppen climate category?
+What is the size of the angles of an equilateral triangle?
+When does beaty and the beast take place?
+Who sings done for me with charlie puth?
+What counties are in the 6th congressional district in ga?
+Who was heading indian army during bangladesh libration war 1971?
+Who wrote the music for somewhere in time?
+Who sings the marriage of figaro in shawshank redemption?
+Who did chris long play football for last year?
+When did harry potter and the deathly hallows come out?
+How many episode of my hero academia season 2?
+During the rebuttal section of a formal debate which team speaks first?
+When was the last amendment made to the us constitution?
+Starch based food to be made into plastic?
+When did north korea launch the first missile?
+What mineral in 4 ga sandstones was dated to determine the age of the earth?
+When is the last time a total eclipse happened in the us?
+When did india participate in olympics for first time?
+When is it revealed that luke and leia are siblings?
+What is the population of farmington new mexico?
+What was the last year they made the gmc envoy?
+New amsterdam was the main settlement in the dutch colony of?
+In the bible who was thrown into the fiery furnace?
+How does the oral cavity help the digestive system?
+Who was alf married to in home and away?
+When did miss usa last win miss universe?
+When did the shooting happen in greys anatomy?
+Who sings in there's something about mary?
+When will new tappan zee bridge be completed?
+Where is the rio grande river located in jamaica?
+Where did the us get the statue of liberty?
+Where is the new tottenham stadium being built?
+Who won icc t 20 world cup 2016?
+Who does jessica marry in the merchant of venice?
+When were the triplets born on this is us?
+What degree do you get out of medical school?
+What was the source of alpha particles in rutherford's experiment?
+Who plays glenn on the good doctor episode 7?
+Who does patrick stewart play in star trek?
+Real name of ginny weasley in harry potter?
+What animal is mr. big in the movie zootopia?
+Who coined the phrase what happens in vegas?
+When did the suite life of zack and cody first air?
+Who began the mass printing of bibles five centuries ago?
+Who is next in line if president dies?
+What was the famous window called in the notre dame cathedral in paris france?
+What is reagan's job in new girl?
+Who played raoul in the phantom of the opera?
+What are the two main political parties in france?
+When did the golden knights join the nhl?
+How many episodes in season 1 of the oc?
+Where are the upper motor neurons that control skeletal muscles found?
+What type of government structure does the us have?
+When did apple computer change to apple inc?
+Who won the mens money in the bank match?
+The depth of the wave base is approximately?
+Cities in washington state that start with o?
+When is tornado season in the united states?
+When did the olympics start every 2 years?
+Who says the opening of law and order svu?
+Who has highest number of subscribers on youtube?
+When did they launch the international space station?
+Who played willy wonka in the original movie?
+Who wrote the song i drive your truck?
+Where did the idea of a messiah come from?
+Who was the film chariots of fire about?
+Membership in the european union requires countries to have which type of government?
+When did the life of pablo come out?
+Who played freddy krueger in the 2010 nightmare on elm street?
+Who sings dont you wish your girlfriend was hot like me?
+Who did lebron james play for before the cleveland cavaliers?
+Where does the reed go on a saxophone?
+Who stars in the movie my cousin rachel?
+Who explored the west coast of north america?
+When were the subways built in new york city?
+A blend of capitalism and socialism is known as?
+When did once upon a time in venice come out?
+Who features in birds in the trap sing mcknight?
+How many membranes do gram negative bacteria have?
+Who pitched the last perfect game in baseball?
+When is the next episode of flash going to air?
+When did significant amounts of oxygen appear in the earths atmosphere?
+When was the a* introduced at a level?
+Where did the song santa claus is coming to town come from?
+Where did adam lambert go to high school?
+Who played jimmy in high school musical 3?
+A memorial commemorating the landing of the 1820 settlers?
+Who plays earl on my name is earl?
+Who sings i get by with a little help?
+When did they stop making tin type photos?
+Who introduced the concept of providing alu in the computer system?
+How many keys are on microsoft windows standard keyboard?
+Who was the first chief minister of punjab after independence?
+Who plays andy's brother in the office?
+1. what is erikson’s stage for the early childhood age group?
+13 reason why season 2 episode 1 release date?
+When did the original my little pony come out?
+When does marvel's the gifted come out?
+Who won cricket match between india and bangladesh?
+Where is the saracens rugby union team based?
+Where did the term trick or treat come from?
+What is the school in dead poets society?
+When did the baseball player jackie robinson die?
+Who won the last mens cricket world cup?
+Who produced it ain't hard to tell?
+What is the second biggest state in united states?
+Which is the state flower of himachal pradesh?
+Where is walnut grove on little house on the prairie?
+Song how sweet it is to be loved by you lyrics?
+What is the mlb record for most hits in a row?
+Where does the money for unemployment benefits come from?
+Who sang since you've been gone by rainbow?
+When does star wars the last jedi play?
+Who played jade on days of our lives?
+Where is the mekong river delta located in vietnam?
+What is a natural source of salicylic acid?
+Who played the mother on the partridge family?
+Who played bill cosby's son on the cosby show?
+Who played tita in like water for chocolate?
+Who came up with the idea of daylight saving time?
+When do they stop measuring crown to rump?
+Who is the highest goal scorer in the epl?
+Which u.s. political party is considered to lean to the left?
+Who did the texas rangers play in the world series?
+Who was first indian governor general of india?
+When does the season finale of andi mack come on?
+Who is next in line for the royal throne of england?
+When was the first cabbage patch kid made?
+Who is the ceo of t rowe price?
+When did the 4th harry potter book come out?
+Who was islands in the stream written for?
+How many cities of refuge were the israelites to form?
+Who was the first band to play at woodstock?
+What was the third battle of the american revolution?
+Who is the starting kicker for the atlanta falcons?
+Which two countries were the leading powers during the cold war?
+Who played the oompa loompas in charlie and the chocolate factory?
+When does the school year start in france?
+Who said give me loberty or give me death?
+When did we start the pledge of allegiance?
+What is the difference between a 1931 and a 1932 ford?
+What is the real name of sleeping beauty?
+When do real housewives of orange county start?
+Who has scored the most goals in a premier league debut season?
+Who has more la liga goals messi or ronaldo?
+Who won the champions trophy 2017 cricket tournament?
+Who sings the song save a horse ride a cowboy?
+What's the name of the latest james bond movie?
+When did the tv show full house start?
+Who is responsible for the bombing in quantico?
+In the otolith organs the otoliths are calcium carbonate particles that ____?
+The centers of most cities became business areas after the invention of what?
+What is the tallest building in baltimore city?
+Who play the character of anarkali in mughal e azam?
+When was if you were coming in the fall written?
+Who was required to have affirmative action programs?
+What episode of the flash is crisis on earth x?
+Who invented the first gear driven calculating machine?
+Who sings i can't go for that?
+Writer of the monk who sold his ferrari?
+When is the next new episode of agents of shield?
+When did 3 point shot start in college basketball?
+Who plays al pacino in jack and jill?
+Once upon a time season 7episode 11 release date?
+Who plays the voice of joy in inside out?
+What was the number one song on april 20th 2000?
+Who plays noah in the boy next door?
+Who ruled the ottoman empire at its height in about 1550?
+When does damon first develop feelings for elena?
+Who plays kim kelly on freaks and geeks?
+Who wrote take it easy by the eagles?
+How many korean athletes in winter olympics 2018?
+How much does it cost to renew a cuban passport?
+Who was the comic book series amar chitra katha created?
+Who holds the record for most confirmed sniper kills in history?
+Miss world japan 2016 is a great grand child of a former chief minister of?
+Who played barry gordy on the temptations movie?
+What country does the name zoe come from?
+Simba's mother's name in the lion king?
+Who won the last triple crown in baseball?
+What kind of telescope is the chandra observatory?
+When was gold discovered in the klondike region of the yukon?
+Who is the current president of france today?
+The point of concurrence of medians is called?
+How many pages is the forest of hands and teeth?
+Where did the industrialization first begin in europe?
+How long until a sunburn starts to peel?
+What was the robot maids name on the jetsons?
+When did the battle of the bulge start?
+When is the last time scotland were in the world cup?
+What nations were the central powers in ww1?
+Who has been appointed as the new chancellor of nalanda university?
+Is windows movie maker used for development or playback?
+Who plays anastasia in fifty shades of grey?
+Who has won more oscars then anyone else?
+Who plays gisele in fast and furious 6?
+What was the point of the anaconda plan?
+What's the name of the white sox park?
+Who was jesus in the greatest story ever told?
+When did the lyrics to o canada change?
+Which team is on top in fifa 2018?
+When does the new dragonball super come out?
+The vedic period in india is marked by the development of?
+Who do you play as in pokemon yellow?
+Who ran the first sub 4 minute mile?
+Who was in series 1 of safe house?
+Who played the other twin in parent trap?
+Where is the gum wall in seattle washington?
+What year did the christmas story come out?
+Who plays rebecca in bridget jones edge of reason?
+Who won season 8 of rupaul's drag race?
+Who want to be a millionaire winners uk?
+Who does the voice of chucky in seed of chucky?
+Who does cody zeller play for in the nba?
+When does new season of first 48 start?
+Who qualified in group h 2018 world cup?
+Who is the voice of the t rex in the good dinosaur?
+How many episodes of sea patrol are there?
+Who discovered systemic blood circulation system in human body?
+What is the dog called in midsomer murders?
+What did the animals turn into in cinderella?
+The leader of iraq during the persian gulf war was?
+Who are the quad city river bandits affiliated with?
+Who plays the vulcan on star trek enterprise?
+Who won the first academy award for best picture?
+Who scored the most goals in one season in la liga?
+Who is the series all american based on?
+Who won last year's women's ncaa tournament?
+How many seats in ontario to have party status?
+When did wrath of the lich king release?
+When does the great christmas light fight 2017 start?
+Who starred in the original movie the magnificent seven?
+Who does wolverine fight at the end of origins?
+Who does the voice of the food critic in ratatouille?
+When do we need to revisit bcp plan and strategy?
+Who wins season 2 of americas next top model?
+Who sings small town throwdown with brantley gilbert?
+The four noble truths presupposed what three characteristics of reality?
+Shmuel the boy in the striped pajamas actor?
+Where is most of earths fresh water located?
+Who is often considered america's most prolific composer?
+Who has the longest win streak in the nba?
+Average hourly wage in india in us dollars?
+The dot product of two vectors results in a?
+How many episodes are there in the tv series yellowstone?
+Who organized known elements by placing them into groups of three called triads?
+When was the last time kansas state university was in the elite 8?
+Where does the tip of a picc line end?
+When did us gain control of the philippines?
+The first collaboration of richard rodgers and oscar hammerstein ii was?
+Who wrote the song kind of a drag?
+When was the last time a nuclear bomb was detonated?
+Who is the pink hair girl in sailor moon?
+Who's the best selling female artist of all time?
+When was the last province added to canada?
+What is the most populated region in ghana?
+When was the last time the panthers were in the superbowl?
+Where was the airport scene in dumb and dumber filmed?
+The united states today uses which kind of currency?
+Which nation was not part of the united nations allied military force in korea?
+How much points did lavar ball average in college?
+What brings in more money nba or nfl?
+Where is the office of un general assembly located?
+Where did the phrase eating crow come from?
+The optic nerve is known also as what cranial nerve?
+Who has the final authority under the federal system?
+Who does sam marry in foyle's war?
+When does new series of dr who start 2018?
+How many episodes in series 1 of orange is the new black?
+Which second messenger molecule acts on the endoplasmic reticulum to release calcium ions?
+Who holds the record for most 3 pointers in a finals game?
+Who was the first captain of pakistan cricket team?
+Who plays anna in days of our lives?
+When was the movie love me tender released?
+When did the story to kill a mockingbird take place?
+Who played the preacher in inherit the wind?
+Monarch of canada date of entry into position?
+Who wrote the first computer virus called elk cloner?
+What do you call someone from new guinea?
+Who is chips voice in beauty and the beast?
+Who is jake's mom in the dark tower?
+Boyles law relates the pressure of gas to its?
+Who plays angie in that 70's show?
+Where is the most tobacco grown in the world?
+The type of decent that explains why all species are linked in a single tree of life?
+Where are most of the world's earthquakes located?
+When did heaven by kane brown come out?
+Who is playing the guitar in august rush?
+Who sings you say it best when you say nothing at all?
+Who has the longest winning streak in ufc?
+Who is the actress that plays dabby on disjointed?
+Who died from the movie fast and furious?
+Who wrote song say you wont let go?
+2006 best picture nominees that lost to the departed?
+When does the reboot of charmed come out?
+Who sang baby it's cold outside in a movie?
+Who does mabel's voice on gravity falls?
+When did the movie inside out come out?
+What does the zip in zip code stand for?
+What was the inaugural year of the ncaa tournament?
+What episode will the chimera ant arc end?
+Where does the colorado river end in texas?
+Who performs the secretarial duties for the states of massachusetts pennsylvania and virginia?
+What is the name of ca s o4?
+At present in which state is the nathulla pass?
+What do you call someone from czech republic?
+When did the dog from turner and hooch die?
+When is the litany of the saints sung?
+When did the temporary foreign worker program start?
+Where are the gifts of the spirit found in the bible?
+The lowest possible energy level for an electron is known as?
+Who sang had the time of my life?
+Girl who plays in guardians of the galaxy?
+What is the age of the oldest living person on earth?
+Halloween 6 who is the man in black?
+When did the first ipod video come out?
+What's the name of the prince in sleeping beauty?
+When does star trek discovery season 2 start?
+Which delta is the largest delta in the world?
+Where do they grow wheat in the us?
+When is game of thrones next book coming out?
+What are the nine forms of mother durga?
+Who plays helen of troy fall of a city?
+Highest run scorer of under 19 world cup 2018?
+Who played the hulk in the tv series?
+When did the first cell phone with a camera come out?
+Correct order to read game of thrones books?
+When is ariana grande album sweetener coming out?
+Where is the main famine effected continent in the world?
+Who played freddy eynsford hill in my fair lady?
+The individual best known for his work on behavior theory is?
+Who wrote don't stop me now by queen?
+The truth about the harry quebert affair tv show release date?
+How old do you have to be to conceal carry in indiana?
+Movie with will smith and tommy lee jones?
+Who won the popular vote in 2012 us presidential election?
+Who plays in won't you be my neighbor?
+Night at the museum 3 ben stiller characters?
+What is the largest tree in the united states?
+Who legalized the practice of christianity in the roman empire?
+What type of printer has a nozzle like printhead?
+What is the cast of big bang theory paid?
+When did doritos spicy sweet chili come out?
+Who has won the most titles in wwe?
+When did they start drafting for the vietnam war?
+Can't you see marshall tucker band album?
+When did the price is right first air?
+What is the percentage of finding a four leaf clover?
+Who plays the part of susan in days of our lives?
+Where did the edict of worms take place?
+Who is required to file suspicious activity reports?
+Where did ac/dc get their band name?
+When did jennifer lopez released her first single?
+Who has more national championships clemson or south carolina?
+Who wrote the book 31 songs about his favourite music?
+Who wrote the lyrics to you've got a friend?
+Star cast of kuch tum kaho kuch hum kahein?
+When written in morse code i am represented by a dot dash and another dot?
+Whose diary describes the great plague of london?
+Who is broadcasting the super bowl on sunday?
+Who plays gwen stacy in into the spiderverse?
+Where did frasier go in the last episode?
+Annual salary for the president of the united states?
+Who sang the super mario bros super show theme song?
+When was the election to the constituent assembly held in india?
+When does episode 5 come out for batman the enemy within?
+What is the theme of midnight in paris?
+Who has been elected next president of the united nations in first week of june 2018?
+Who wrote the national anthem of south africa?
+Who played jill abbott on the young and the restless?
+Who is the president of the united states 2016?
+What is the name of jacob tribe in twilight?
+Minimum age to contest for president in nigeria?
+Where is the movie peace love and misunderstanding filmed?
+Who sings the hell song in the south park movie?
+Where is the piano found in an orchestra?
+Where did the braves play during the olympics?
+When was bring it on fight to the finish filmed?
+When was the first episode of charmed aired?
+What type of tissue does a nerve cell come from?
+Highest goal scorer in nigeria premier league 2017?
+Who won the presidential election 2018 in zimbabwe?
+What did dwight dress up as for christmas?
+Where was tears dry on their own filmed?
+Who is the owner of berjaya times square?
+When did the movie the greatest show man come out?
+When was i'll be home for christmas released?
+During the middle ages who was most likely to own a manuscript or book?
+Who plays pearl in the scarlet letter movie?
+Where is the nhl all-star game in 2018?
+What canadian network is a million little things on?
+When did the tax free savings account start?
+Who sings the original king of the road?
+Who was crowned emperor of the west in 800 ce?
+Average life expectancy of a man in england?
+Who plays the toilet in bob's burgers?
+Who has won the 2017 men's single australian open tennis tournament?
+When does spiderman homcoming come out on dvd?
+Who are the voices on the phone walking dead?
+Who's on the 20 dollar note australia?
+When does the geological record indicate that the earth formed?
+What is the southern end of the appalachian trail?
+When did the tenth doctor regenerate into himself?
+Which river takes its name from loess soil?
+How many hungarians were killed in 1956 by soviet forces?
+Number of starbucks stores in the united states?
+Highest goal scored in a champions league season?
+What is the longest race track in the world?
+Who are the players on the nrl trophy?
+What are saturn's rings mostly made of?
+What is the value of absolute zero on the celsius scale?
+Who led chinas naval exploration during the age of exploration?
+What do you call animals live in water?
+Who won the espy for best nba player?
+Who are the chefs on america's test kitchen?
+Who played in how to marry a millionaire?
+Who plays lance salisbury in home and away?
+Who belongs to the absurd school of drama?
+First person to reach the top of mt everest?
+When was the last time germany lost world cup?
+What is the first known polyphonic setting of all the sung movements of the mass ordinary?
+Who plays the she elf in hobbit 2?
+Who played hillary on the fresh prince of bel-air?
+Where is once upon a time in hollywood being filmed?
+Who was the highest-ranking black officer in the u.s. army at the beginning of the first world war?
+Who played the lone ranger in the 1950s?
+Who plays male lead in far from the madding crowd?
+Topiramate (topamax trokendi) is used to treat which of the following diseases?
+Who writes the guinness book of world records?
+Where is the cannon bone located on a horse?
+Who discovered sandwich (now hawaiian) isles?
+When did libya give up its nuclear weapons?
+What state will see the total solar eclipse first?
+Who is the presiding officer of the house of reps?
+Who does the voice of hogarth in the iron giant?
+Who runs the fastest 40-yard dash in the nfl?
+Longest win streak in major league baseball history?
+When was don't ask don't tell established?
+How far is summerville south carolina from charleston?
+What is the wage base for social security?
+When was the internet invented for home use?
+When did wireless charging come out for samsung?
+When did come and get your love come out?

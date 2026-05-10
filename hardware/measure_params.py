@@ -35,17 +35,44 @@ _tokenizer = None
 _device = "cuda" if torch.cuda.is_available() else "cpu"
 
 
-def load_model(name: str, allow_download: bool = False):
+def load_model(
+    name: str,
+    allow_download: bool = False,
+    offload_folder: str | None = None,
+    max_cpu_mem_gb: float | None = None,
+    max_gpu_mem_gb: float | None = None,
+):
     global _model, _tokenizer
     model_ref = str(Path(name).expanduser())
     local_only = not allow_download or Path(model_ref).exists()
+
+    kwargs = dict(
+        torch_dtype=torch.float16,
+        local_files_only=local_only,
+        low_cpu_mem_usage=True,
+        trust_remote_code=True,
+    )
+    if offload_folder:
+        Path(offload_folder).mkdir(parents=True, exist_ok=True)
+        max_mem = {}
+        if max_cpu_mem_gb is not None:
+            max_mem["cpu"] = f"{max_cpu_mem_gb}GiB"
+        if torch.cuda.is_available() and max_gpu_mem_gb is not None:
+            max_mem[0] = f"{max_gpu_mem_gb}GiB"
+        kwargs.update(
+            device_map="auto",
+            offload_folder=offload_folder,
+            offload_state_dict=True,
+            max_memory=max_mem or None,
+        )
+    else:
+        kwargs.update(device_map={"": _device})
+
     try:
-        _tokenizer = AutoTokenizer.from_pretrained(model_ref, local_files_only=local_only)
-        _model = AutoModelForCausalLM.from_pretrained(
-            model_ref,
-            torch_dtype=torch.float16,
-            local_files_only=local_only,
-        ).to(_device)
+        _tokenizer = AutoTokenizer.from_pretrained(
+            model_ref, local_files_only=local_only, trust_remote_code=True
+        )
+        _model = AutoModelForCausalLM.from_pretrained(model_ref, **kwargs)
     except Exception as e:
         raise RuntimeError(
             f"Could not load model '{name}'. Use a local path or rerun with --allow-download after ensuring network access."
@@ -159,12 +186,24 @@ def main():
     parser.add_argument("--prompts", default="prompts.txt")
     parser.add_argument("--k-max", type=int, default=10)
     parser.add_argument("--allow-download", action="store_true", default=False)
+    parser.add_argument("--offload-folder", default=None,
+                        help="Spill weights to this directory when RAM is short (e.g. /home/jetson/offload).")
+    parser.add_argument("--max-cpu-mem-gb", type=float, default=None,
+                        help="Cap CPU memory budget for accelerate (e.g. 1.0). Only used with --offload-folder.")
+    parser.add_argument("--max-gpu-mem-gb", type=float, default=None,
+                        help="Cap GPU memory budget for accelerate (e.g. 3.0). On Jetson unified memory, this caps the resident slice.")
     args = parser.parse_args()
 
     prompts = Path(args.prompts).read_text().strip().split("\n")
 
     print("Loading draft model...")
-    load_model(args.draft_model, allow_download=args.allow_download)
+    load_model(
+        args.draft_model,
+        allow_download=args.allow_download,
+        offload_folder=args.offload_folder,
+        max_cpu_mem_gb=args.max_cpu_mem_gb,
+        max_gpu_mem_gb=args.max_gpu_mem_gb,
+    )
 
     print("Measuring cd (draft latency)...")
     cd = measure_cd()

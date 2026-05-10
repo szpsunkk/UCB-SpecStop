@@ -68,11 +68,14 @@ _device = "cuda" if torch.cuda.is_available() else "cpu"
 def load_draft_model(model_name: str):
     global _draft_model, _tokenizer
     print(f"Loading draft model: {model_name}  device={_device}")
-    _tokenizer = AutoTokenizer.from_pretrained(model_name)
+    _tokenizer = AutoTokenizer.from_pretrained(model_name, trust_remote_code=True)
     _draft_model = AutoModelForCausalLM.from_pretrained(
         model_name,
         torch_dtype=torch.float16,
-    ).to(_device)
+        low_cpu_mem_usage=True,
+        device_map={"": _device},
+        trust_remote_code=True,
+    )
     _draft_model.eval()
     print("Draft model loaded.")
 

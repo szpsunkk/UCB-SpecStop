@@ -18,7 +18,7 @@
 ### Jetson 侧
 - `hardware/measure_params.py`：H0，测 `cd/cv/alpha`。
 - `hardware/run_revised_experiments.py`：R1-R6 主实验（推荐）。
-- `hardware/run_all_suites.sh`：批量跑 qwen/llama/phi 三组。
+- `hardware/run_all_suites.sh`：批量跑 qwen/llama 两组。
 
 ### 云端 3090 侧
 - `hardware/cloud_server.py`：验证服务。
@@ -35,9 +35,6 @@
 - `llama`
   - draft: `meta-llama/Llama-3.2-1B-Instruct`
   - cloud: `meta-llama/Llama-3.1-8B-Instruct`
-- `phi`
-  - draft: `microsoft/Phi-3-mini-4k-instruct`
-  - cloud: `microsoft/Phi-3-small-128k-instruct`
 
 注意：Llama 模型通常是 gated，必须有授权账号/token。
 
@@ -48,12 +45,10 @@
 ### Jetson
 - `/home/jetson/local/models/Qwen2.5-0.5B`
 - `/home/jetson/local/models/Llama-3.2-1B-Instruct`
-- `/home/jetson/local/models/Phi-3-mini-4k-instruct`
 
 ### 3090
 - `/home/<user>/local/models/Qwen2.5-7B-Instruct`
 - `/home/<user>/local/models/Llama-3.1-8B-Instruct`
-- `/home/<user>/local/models/Phi-3-small-128k-instruct`
 
 不要在 Jetson 上使用 `/home/skk/...` 这种别的机器路径。
 
@@ -66,9 +61,6 @@
 ```bash
 HF_ENDPOINT=https://hf-mirror.com huggingface-cli download Qwen/Qwen2.5-0.5B \
   --local-dir /home/jetson/local/models/Qwen2.5-0.5B
-
-HF_ENDPOINT=https://hf-mirror.com huggingface-cli download microsoft/Phi-3-mini-4k-instruct \
-  --local-dir /home/jetson/local/models/Phi-3-mini-4k-instruct
 ```
 
 Llama 如报 403（gated），先登录并确保账号已获批：
@@ -95,11 +87,6 @@ python hardware/cloud_server.py \
 python hardware/cloud_server.py \
   --model /home/<user>/local/models/Llama-3.1-8B-Instruct \
   --host 0.0.0.0 --port 8000
-
-# Phi
-python hardware/cloud_server.py \
-  --model /home/<user>/local/models/Phi-3-small-128k-instruct \
-  --host 0.0.0.0 --port 8000
 ```
 
 如需在线下载（不推荐）才加 `--allow-download`。
@@ -124,13 +111,6 @@ python hardware/measure_params.py \
   --server http://192.168.3.72:8000 \
   --prompts hardware/prompts.txt
 mv outputs/hardware/params_measured.json outputs/hardware/params_llama.json
-
-# Phi
-python hardware/measure_params.py \
-  --draft-model /home/jetson/local/models/Phi-3-mini-4k-instruct \
-  --server http://192.168.3.72:8000 \
-  --prompts hardware/prompts.txt
-mv outputs/hardware/params_measured.json outputs/hardware/params_phi.json
 ```
 
 ---
@@ -152,7 +132,7 @@ python hardware/run_revised_experiments.py \
 
 输出目录：`outputs/hardware_revised/qwen/`
 
-同理把 `suite/params` 改成 `llama`、`phi`。
+同理把 `suite/params` 改成 `llama`。
 
 ### 批量运行
 

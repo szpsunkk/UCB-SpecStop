@@ -48,12 +48,23 @@ class VerifyRequest(BaseModel):
     # When provided, enables proper rejection sampling (ratio test).
     # When absent, greedy argmax comparison is used as an approximation.
     draft_log_probs: Optional[List[float]] = None
+    # Optional per-request seed: when provided, rejection sampling and bonus
+    # sampling become deterministic for this (prompt, draft_ids) pair, enabling
+    # paired across-strategy comparisons. Pass the same seed across strategies
+    # for the same prompt to remove sampling noise from the comparison.
+    seed: Optional[int] = None
 
 
 class VerifyResponse(BaseModel):
     n_accepted: int
     bonus_token_id: int
     verify_time_ms: float
+    # Timing breakdown (review B1) — backwards compatible: clients that ignore
+    # these fields still work; clients that read them get a clock-independent
+    # decomposition of server-side wall time.
+    server_recv_to_verify_start_ms: float = 0.0
+    verify_split_ms: float = 0.0
+    pack_split_ms: float = 0.0
 
 
 # ---------------------------------------------------------------------------
@@ -67,7 +78,14 @@ def ping():
 
 @app.post("/verify", response_model=VerifyResponse)
 def verify(req: VerifyRequest):
-    t0 = time.perf_counter()
+    t_recv = time.perf_counter()
+
+    if req.seed is not None:
+        rng = random.Random(req.seed)
+        bonus_gen = torch.Generator(device=_device).manual_seed(int(req.seed))
+    else:
+        rng = random
+        bonus_gen = None
 
     ctx_len = len(req.context_ids)
     k = len(req.draft_ids)
@@ -75,6 +93,8 @@ def verify(req: VerifyRequest):
     context = torch.tensor([req.context_ids], device=_device)
     draft = torch.tensor([req.draft_ids], device=_device)
     full_seq = torch.cat([context, draft], dim=1)
+
+    t_verify_start = time.perf_counter()
 
     with torch.no_grad():
         logits = _model(full_seq).logits          # (1, ctx_len+k, vocab)
@@ -91,7 +111,7 @@ def verify(req: VerifyRequest):
             # logits[0, ctx_len+i-1] is the distribution PREDICTING position ctx_len+i
             target_lp = log_probs[ctx_len + i - 1, draft_tok].item()
             accept_prob = min(1.0, math.exp(target_lp - draft_lp))
-            if random.random() < accept_prob:
+            if rng.random() < accept_prob:
                 n_accepted += 1
             else:
                 break
@@ -104,17 +124,30 @@ def verify(req: VerifyRequest):
             else:
                 break
 
+    t_verify_done = time.perf_counter()
+
     # Bonus token: sample from target distribution at rejection position.
     # Position ctx_len+n_accepted-1 in logits predicts token at ctx_len+n_accepted.
     bonus_logits = logits[0, ctx_len + n_accepted - 1]
     bonus_probs = torch.softmax(bonus_logits, dim=-1)
-    bonus_token_id = int(torch.multinomial(bonus_probs, 1).item())
+    if bonus_gen is not None:
+        bonus_token_id = int(torch.multinomial(bonus_probs, 1, generator=bonus_gen).item())
+    else:
+        bonus_token_id = int(torch.multinomial(bonus_probs, 1).item())
 
-    verify_time_ms = (time.perf_counter() - t0) * 1000.0
+    t_pack_done = time.perf_counter()
+
+    server_recv_to_verify_start_ms = (t_verify_start - t_recv) * 1000.0
+    verify_split_ms = (t_verify_done - t_verify_start) * 1000.0
+    pack_split_ms = (t_pack_done - t_verify_done) * 1000.0
+    verify_time_ms = (t_pack_done - t_recv) * 1000.0
     return VerifyResponse(
         n_accepted=n_accepted,
         bonus_token_id=bonus_token_id,
         verify_time_ms=verify_time_ms,
+        server_recv_to_verify_start_ms=server_recv_to_verify_start_ms,
+        verify_split_ms=verify_split_ms,
+        pack_split_ms=pack_split_ms,
     )
 
 

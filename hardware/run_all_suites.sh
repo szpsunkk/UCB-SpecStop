@@ -34,17 +34,15 @@ die()  { echo "ERROR: $*" >&2; exit 1; }
 declare -A PARAMS=(
     [qwen]="outputs/hardware/params_qwen.json"
     [llama]="outputs/hardware/params_llama.json"
-    [phi]="outputs/hardware/params_phi.json"
 )
 
 # Cloud models — you must restart cloud_server.py with the right model before each suite
 declare -A CLOUD_MODEL=(
     [qwen]="Qwen/Qwen2.5-7B-Instruct"
     [llama]="meta-llama/Llama-3.1-8B-Instruct"
-    [phi]="microsoft/Phi-3-small-128k-instruct"
 )
 
-SUITES=(qwen llama phi)
+SUITES=(qwen llama)
 
 for SUITE in "${SUITES[@]}"; do
     log "==============================="
