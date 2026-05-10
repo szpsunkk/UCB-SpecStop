@@ -1,5 +1,0 @@
-algorithm,d_mean_ms,delay_mode,k_star,final_regret_mean,final_regret_std
-UCB-SpecStop,50.0,deterministic,8,9477.859975751757,10487.09103189394
-$\varepsilon$-Greedy-Ratio,50.0,deterministic,8,7581.823395486119,2956.8746858222867
-EXP3-Ratio,50.0,deterministic,8,27089.376830008714,6576.7448700114255
-Per-Round-Ratio UCB,50.0,deterministic,8,27746.261907643948,32103.53779732423

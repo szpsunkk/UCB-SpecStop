@@ -1,8 +1,0 @@
-{
-  "suite": "qwen",
-  "draft_model": "Qwen/Qwen2.5-0.5B",
-  "cloud_model": "Qwen/Qwen2.5-7B-Instruct",
-  "server": "http://192.168.3.72:8000",
-  "params_file": "/home/jetson/Desktop/paper/UCB-SpecStop/outputs/hardware/params_qwen.json",
-  "n_prompts": 500
-}

@@ -1,54 +1,0 @@
-`torch_dtype` is deprecated! Use `dtype` instead!
-Loading target model: /home/skk/local/models/Qwen2.5-7B-Instruct  device=cuda local_only=True
-Loading checkpoint shards:   0%|          | 0/4 [00:00<?, ?it/s]Loading checkpoint shards:  25%|██▌       | 1/4 [00:00<00:01,  1.83it/s]Loading checkpoint shards:  50%|█████     | 2/4 [00:01<00:01,  1.87it/s]Loading checkpoint shards:  75%|███████▌  | 3/4 [00:01<00:00,  1.87it/s]Loading checkpoint shards: 100%|██████████| 4/4 [00:02<00:00,  1.96it/s]Loading checkpoint shards: 100%|██████████| 4/4 [00:02<00:00,  1.92it/s]
-`torch_dtype` is deprecated! Use `dtype` instead!
-Loading target model: /home/skk/local/models/Llama-3.1-8B-Instruct  device=cuda local_only=True
-Loading checkpoint shards:   0%|          | 0/4 [00:00<?, ?it/s]Loading checkpoint shards:  25%|██▌       | 1/4 [00:03<00:09,  3.15s/it]Loading checkpoint shards:  50%|█████     | 2/4 [00:05<00:05,  2.65s/it]Loading checkpoint shards:  75%|███████▌  | 3/4 [00:07<00:02,  2.53s/it]Loading checkpoint shards: 100%|██████████| 4/4 [00:07<00:00,  1.59s/it]Loading checkpoint shards: 100%|██████████| 4/4 [00:07<00:00,  2.00s/it]
-Loading target model: /home/skk/local/models/Phi-3-small-128k-instruct  device=cuda local_only=True
-The repository /home/skk/local/models/Phi-3-small-128k-instruct contains custom code which must be executed to correctly load the model. You can inspect the repository content at /home/skk/local/models/Phi-3-small-128k-instruct .
- You can inspect the repository content at https://hf.co//home/skk/local/models/Phi-3-small-128k-instruct.
-You can avoid this prompt in future by passing the argument `trust_remote_code=True`.
-
-Do you wish to run the custom code? [y/N] Traceback (most recent call last):
-  File "/home/skk/anaconda3/envs/semantic_uncertainty/lib/python3.11/site-packages/transformers/dynamic_module_utils.py", line 722, in resolve_trust_remote_code
-    answer = input(
-             ^^^^^^
-OSError: [Errno 9] Bad file descriptor
-
-During handling of the above exception, another exception occurred:
-
-Traceback (most recent call last):
-  File "/home/skk/paper/UCB-SpecStop/hardware/cloud_server.py", line 131, in load_model
-    _tokenizer = AutoTokenizer.from_pretrained(model_ref, local_files_only=local_only)
-                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/home/skk/anaconda3/envs/semantic_uncertainty/lib/python3.11/site-packages/transformers/models/auto/tokenization_auto.py", line 1102, in from_pretrained
-    trust_remote_code = resolve_trust_remote_code(
-                        ^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/home/skk/anaconda3/envs/semantic_uncertainty/lib/python3.11/site-packages/transformers/dynamic_module_utils.py", line 734, in resolve_trust_remote_code
-    raise ValueError(
-ValueError: The repository /home/skk/local/models/Phi-3-small-128k-instruct contains custom code which must be executed to correctly load the model. You can inspect the repository content at /home/skk/local/models/Phi-3-small-128k-instruct .
- You can inspect the repository content at https://hf.co//home/skk/local/models/Phi-3-small-128k-instruct.
-Please pass the argument `trust_remote_code=True` to allow custom code to be run.
-
-The above exception was the direct cause of the following exception:
-
-Traceback (most recent call last):
-  File "/home/skk/paper/UCB-SpecStop/hardware/cloud_server.py", line 159, in <module>
-    main()
-  File "/home/skk/paper/UCB-SpecStop/hardware/cloud_server.py", line 154, in main
-    load_model(args.model, allow_download=args.allow_download)
-  File "/home/skk/paper/UCB-SpecStop/hardware/cloud_server.py", line 139, in load_model
-    raise RuntimeError(
-RuntimeError: Could not load cloud model '/home/skk/local/models/Phi-3-small-128k-instruct'. Use local path or pass --allow-download after fixing network.
-`torch_dtype` is deprecated! Use `dtype` instead!
-Loading target model: /home/skk/local/models/Qwen2.5-7B-Instruct  device=cuda local_only=True
-Loading checkpoint shards:   0%|          | 0/4 [00:00<?, ?it/s]Loading checkpoint shards:  25%|██▌       | 1/4 [00:00<00:01,  1.80it/s]Loading checkpoint shards:  50%|█████     | 2/4 [00:01<00:01,  1.84it/s]Loading checkpoint shards:  75%|███████▌  | 3/4 [00:01<00:00,  1.84it/s]Loading checkpoint shards: 100%|██████████| 4/4 [00:02<00:00,  1.89it/s]Loading checkpoint shards: 100%|██████████| 4/4 [00:02<00:00,  1.87it/s]
-`torch_dtype` is deprecated! Use `dtype` instead!
-Loading target model: /home/skk/local/models/Qwen2.5-7B-Instruct  device=cuda local_only=True
-Loading checkpoint shards:   0%|          | 0/4 [00:00<?, ?it/s]Loading checkpoint shards:  25%|██▌       | 1/4 [00:00<00:01,  1.81it/s]Loading checkpoint shards:  50%|█████     | 2/4 [00:01<00:01,  1.82it/s]Loading checkpoint shards:  75%|███████▌  | 3/4 [00:01<00:00,  1.81it/s]Loading checkpoint shards: 100%|██████████| 4/4 [00:02<00:00,  1.90it/s]Loading checkpoint shards: 100%|██████████| 4/4 [00:02<00:00,  1.86it/s]
-`torch_dtype` is deprecated! Use `dtype` instead!
-Loading target model: /home/skk/local/models/Qwen2.5-7B-Instruct  device=cuda local_only=True
-Loading checkpoint shards:   0%|          | 0/4 [00:00<?, ?it/s]Loading checkpoint shards:  25%|██▌       | 1/4 [00:00<00:01,  1.83it/s]Loading checkpoint shards:  50%|█████     | 2/4 [00:01<00:01,  1.89it/s]Loading checkpoint shards:  75%|███████▌  | 3/4 [00:01<00:00,  1.89it/s]Loading checkpoint shards: 100%|██████████| 4/4 [00:02<00:00,  1.90it/s]Loading checkpoint shards: 100%|██████████| 4/4 [00:02<00:00,  1.89it/s]
-`torch_dtype` is deprecated! Use `dtype` instead!
-Loading target model: /home/skk/local/models/Llama-3.1-8B-Instruct  device=cuda local_only=True
-Loading checkpoint shards:   0%|          | 0/4 [00:00<?, ?it/s]Loading checkpoint shards:  25%|██▌       | 1/4 [00:00<00:02,  1.42it/s]Loading checkpoint shards:  50%|█████     | 2/4 [00:01<00:01,  1.21it/s]Loading checkpoint shards:  75%|███████▌  | 3/4 [00:02<00:00,  1.30it/s]Loading checkpoint shards: 100%|██████████| 4/4 [00:02<00:00,  1.89it/s]Loading checkpoint shards: 100%|██████████| 4/4 [00:02<00:00,  1.61it/s]
