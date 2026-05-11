@@ -1,6 +1,6 @@
 # UCB-SpecStop
 
-**Paper**: "Optimal Stopping Theory for Speculative Decoding Under Communication Constraints"
+**Paper**: "How Long to Speculate? Optimal Stopping for LLM Inference Under Communication Constraints"
 
 This repository contains simulation and real-hardware experiments for UCB-SpecStop, an online-learning algorithm that adaptively selects the speculative draft length `k` under uncertain edge-cloud communication delay.
 
