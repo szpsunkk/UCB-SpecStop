@@ -25,7 +25,6 @@ This repository contains simulation and real-hardware experiments for UCB-SpecSt
   - [Step 3 — Run Experiments (R1–R6)](#47-step-3--run-experiments-r1r6)
   - [Hardware Outputs](#48-hardware-outputs)
   - [Background Execution](#49-background-execution)
-5. [Baselines Implemented](#5-baselines-implemented)
 
 ---
 
@@ -497,24 +496,6 @@ The tool bootstraps fresh trajectories from the per-arm `(T_r, A_r)` samples alr
 - Saving the PID (`echo $! > logs/<name>.pid`) lets you stop the run cleanly with `kill "$(cat logs/<name>.pid)"`.
 - For sessions that must survive SSH drops, prefer `tmux new -s ucb` then run the foreground command inside; detach with `Ctrl-b d` and reattach with `tmux attach -t ucb`.
 - Re-check `nvidia-smi` and `curl .../ping` before starting a new suite — the previous cloud model must be stopped to free GPU memory.
-
----
-
-## 5. Baselines Implemented
-
-
-| Label               | Description                                                 |
-| ------------------- | ----------------------------------------------------------- |
-| Fixed-k             | Static draft length k ∈ {1, 3, 5, 7, 10}                    |
-| Confidence-Stop     | Halt when α^k < p_min (EAGLE/SpecDec++ analogue, p_min=0.3) |
-| Oracle-Mean         | Optimal fixed k with known delay mean (Theorem 3 baseline)  |
-| ε-Greedy-Ratio      | ε=0.1 greedy with ratio-of-sums estimator                   |
-| EXP3-Ratio          | Adversarial EXP3 adapted to ratio objective                 |
-| Per-Round-Ratio UCB | UCB1 on mean(N_t/A_t) — biased estimator (ablation B6)      |
-| **UCB-SpecStop**    | **Algorithm 1 (ours): ratio-of-sums UCB, `S_N/S_A`**        |
-
-
-> **B6 is a critical ablation target.** Its purpose is to demonstrate why the ratio-of-sums estimator `S_N/S_A` is necessary: using the per-round mean `mean(N_t/A_t)` breaks the regret guarantee.
 
 ---
 
