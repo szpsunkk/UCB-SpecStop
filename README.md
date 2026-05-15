@@ -1,6 +1,6 @@
 # UCB-SpecStop
 
-**Paper**: "How Long to Speculate? Optimal Stopping for LLM Inference Under Communication Constraints"
+**Paper**: "Delay-Adaptive Speculation Control for Low-Latency Edge-Cloud LLM Inference"
 
 This repository contains simulation and real-hardware experiments for UCB-SpecStop, an online-learning algorithm that adaptively selects the speculative draft length `k` under uncertain edge-cloud communication delay.
 
