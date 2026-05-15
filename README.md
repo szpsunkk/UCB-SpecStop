@@ -26,8 +26,6 @@ This repository contains simulation and real-hardware experiments for UCB-SpecSt
   - [Hardware Outputs](#48-hardware-outputs)
   - [Background Execution](#49-background-execution)
 5. [Baselines Implemented](#5-baselines-implemented)
-6. [Reproducibility](#6-reproducibility)
-7. [Notes on Paper Values](#7-notes-on-paper-values)
 
 ---
 
@@ -520,16 +518,4 @@ The tool bootstraps fresh trajectories from the per-arm `(T_r, A_r)` samples alr
 
 ---
 
-## 6. Reproducibility
 
-- **Simulation**: no fabricated data; all numbers computed from closed-form formulas or Monte Carlo. Seeds are fixed via `BaseConfig.seed`.
-- **Hardware**: every round records `run_id`, `prompt_id`, `seed`, `strategy`, and `k_selected` for full traceability. The `run_config.json` in each output directory captures the complete run configuration.
-- **Model loading**: scripts default to `local_files_only=True`. Pass `--allow-download` only when intentionally downloading from HF.
-
----
-
-## 7. Notes on Paper Values
-
-**dc (critical delay):** The paper text states dc ≈ 3.8ms for α=0.7, cd=1ms, cv=0.5ms. The analytic formula (9) and simulation both give **dc ≈ 1.6ms** for these parameters. The derivation (from stopping condition C(1,d) ≤ C(2,d)) has been independently verified.
-
-**"Up to 38%" improvement vs fixed k=5:** At α=0.7, d=100ms, simulation gives **6.7% improvement**. The ~38–42% figure is achieved at α=0.9, d=100ms (see `table_multi_alpha_d100.md`). Since Table I in the paper draft is not yet filled, these estimates may need revision.
