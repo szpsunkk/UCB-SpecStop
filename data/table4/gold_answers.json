@@ -1,0 +1,130 @@
+{
+  "gsm8k-test-159": {
+    "source_index": 159,
+    "answer": "15"
+  },
+  "gsm8k-test-1263": {
+    "source_index": 1263,
+    "answer": "500"
+  },
+  "gsm8k-test-76": {
+    "source_index": 76,
+    "answer": "5"
+  },
+  "gsm8k-test-465": {
+    "source_index": 465,
+    "answer": "30"
+  },
+  "gsm8k-test-1117": {
+    "source_index": 1117,
+    "answer": "9"
+  },
+  "gsm8k-test-779": {
+    "source_index": 779,
+    "answer": "255"
+  },
+  "gsm8k-test-1002": {
+    "source_index": 1002,
+    "answer": "8"
+  },
+  "gsm8k-test-88": {
+    "source_index": 88,
+    "answer": "8000"
+  },
+  "gsm8k-test-8": {
+    "source_index": 8,
+    "answer": "45"
+  },
+  "gsm8k-test-555": {
+    "source_index": 555,
+    "answer": "2"
+  },
+  "gsm8k-test-880": {
+    "source_index": 880,
+    "answer": "10"
+  },
+  "gsm8k-test-839": {
+    "source_index": 839,
+    "answer": "2"
+  },
+  "gsm8k-test-1214": {
+    "source_index": 1214,
+    "answer": "5"
+  },
+  "gsm8k-test-567": {
+    "source_index": 567,
+    "answer": "9"
+  },
+  "gsm8k-test-1043": {
+    "source_index": 1043,
+    "answer": "130000"
+  },
+  "gsm8k-test-873": {
+    "source_index": 873,
+    "answer": "12"
+  },
+  "gsm8k-test-97": {
+    "source_index": 97,
+    "answer": "12"
+  },
+  "gsm8k-test-691": {
+    "source_index": 691,
+    "answer": "25"
+  },
+  "gsm8k-test-91": {
+    "source_index": 91,
+    "answer": "28"
+  },
+  "gsm8k-test-829": {
+    "source_index": 829,
+    "answer": "14,000"
+  },
+  "gsm8k-test-221": {
+    "source_index": 221,
+    "answer": "90"
+  },
+  "gsm8k-test-345": {
+    "source_index": 345,
+    "answer": "310"
+  },
+  "gsm8k-test-426": {
+    "source_index": 426,
+    "answer": "11"
+  },
+  "gsm8k-test-468": {
+    "source_index": 468,
+    "answer": "120"
+  },
+  "gsm8k-test-1040": {
+    "source_index": 1040,
+    "answer": "736"
+  },
+  "gsm8k-test-94": {
+    "source_index": 94,
+    "answer": "348"
+  },
+  "gsm8k-test-943": {
+    "source_index": 943,
+    "answer": "50"
+  },
+  "gsm8k-test-1165": {
+    "source_index": 1165,
+    "answer": "1248"
+  },
+  "gsm8k-test-148": {
+    "source_index": 148,
+    "answer": "30"
+  },
+  "gsm8k-test-727": {
+    "source_index": 727,
+    "answer": "112"
+  },
+  "gsm8k-test-446": {
+    "source_index": 446,
+    "answer": "2"
+  },
+  "gsm8k-test-1044": {
+    "source_index": 1044,
+    "answer": "1"
+  }
+}

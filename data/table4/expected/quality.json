@@ -1,0 +1,32 @@
+{
+  "primary": {
+    "n": 32,
+    "edge_correct": 8,
+    "target_correct": 30,
+    "edge_accuracy_pct": 25.0,
+    "target_accuracy_pct": 93.75,
+    "delta_pp": 68.75,
+    "delta_ci_pp": [
+      53.125,
+      84.375
+    ],
+    "improved_questions": 22,
+    "worsened_questions": 0,
+    "exact_mcnemar_p": 4.76837158203125e-07
+  },
+  "strict": {
+    "n": 32,
+    "edge_correct": 1,
+    "target_correct": 27,
+    "edge_accuracy_pct": 3.125,
+    "target_accuracy_pct": 84.375,
+    "delta_pp": 81.25,
+    "delta_ci_pp": [
+      65.625,
+      93.75
+    ],
+    "improved_questions": 26,
+    "worsened_questions": 0,
+    "exact_mcnemar_p": 2.9802322387695312e-08
+  }
+}

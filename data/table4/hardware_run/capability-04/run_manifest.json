@@ -1,0 +1,131 @@
+{
+  "completed": true,
+  "draft_dtype": "torch.float16",
+  "failure_rows": 0,
+  "finished_wall_ns": 1790572465707463885,
+  "graph_max_cache_len": 1024,
+  "graph_setup": {
+    "actual_enabled": true,
+    "attention": "sdpa",
+    "backend": "cuda_graph_static_cache",
+    "batch_size": 1,
+    "capture_count": 1,
+    "capture_ms": 357.7764639630914,
+    "capture_success": true,
+    "dtype": "float16",
+    "fallback_used": false,
+    "max_cache_len": 1024,
+    "request_prefill_scope": "each request pays cache reset plus eager prefill",
+    "setup_prefill_ms": 444.89836203865707,
+    "setup_scope": "one engine per loaded draft model; excludes model loading; charge separately to service/calibration acquisition",
+    "static_cache_allocation_ms": 9.354632929898798,
+    "total_setup_ms": 1008.2739969948307,
+    "warmup_ms": 196.24453806318343
+  },
+  "hostname": "redacted-deployment-identity",
+  "measurement_session": "capability-04",
+  "native_edge_eos": [
+    151643
+  ],
+  "output_mismatches": 0,
+  "plan_sha256": "dc4592845326a888104b405fb099a21c9b7340b6882ade261c0098bdfe22f718",
+  "python": "3.10.12",
+  "request_count": 72,
+  "request_rows": 72,
+  "round_rows": 4427,
+  "server_pings": {
+    "lan_direct": {
+      "active_target_sessions": 0,
+      "attention_implementation": "sdpa",
+      "canonical_rebuild_policy": "original_prefill_then_single_token_history",
+      "cuda": "12.1",
+      "device": "cuda",
+      "direct_target_streaming": true,
+      "generation_eos_token_ids": [
+        151645,
+        151643
+      ],
+      "gpu": "NVIDIA GeForce RTX 3090 Ti",
+      "model": "Qwen/Qwen2.5-7B-Instruct",
+      "numerical_guard_margin": 0.1,
+      "nvml_telemetry": true,
+      "output_head_precision": "float32",
+      "protocol_version": 3,
+      "request_window_telemetry": true,
+      "server_entrypoint_sha256": "1f384d7dda91aa81e9a9fff2ba866f7344fce83df79cc6cd7d159fe088f93b3e",
+      "session_no_speculation_arm": true,
+      "session_response_cuda_synchronized": true,
+      "session_verification": true,
+      "session_verifier": "parallel",
+      "status": "ok",
+      "target_dtype": "torch.float16",
+      "tokenizer_eos_token_id": 151645,
+      "tokenizer_vocab_sha256": "698c955b0b438a535083d1771ef8b41069afba4b3d51a482558bdb68ea55e800",
+      "tokenizer_vocab_size": 151665,
+      "torch": "2.4.1+cu121",
+      "transformers": "4.46.3",
+      "ts": 1790570492.4495447,
+      "verification_modes": [
+        "greedy_exact",
+        "acceptance_ratio_proxy"
+      ]
+    },
+    "lan_plus150": {
+      "active_target_sessions": 0,
+      "attention_implementation": "sdpa",
+      "canonical_rebuild_policy": "original_prefill_then_single_token_history",
+      "cuda": "12.1",
+      "device": "cuda",
+      "direct_target_streaming": true,
+      "generation_eos_token_ids": [
+        151645,
+        151643
+      ],
+      "gpu": "NVIDIA GeForce RTX 3090 Ti",
+      "model": "Qwen/Qwen2.5-7B-Instruct",
+      "numerical_guard_margin": 0.1,
+      "nvml_telemetry": true,
+      "output_head_precision": "float32",
+      "protocol_version": 3,
+      "request_window_telemetry": true,
+      "server_entrypoint_sha256": "1f384d7dda91aa81e9a9fff2ba866f7344fce83df79cc6cd7d159fe088f93b3e",
+      "session_no_speculation_arm": true,
+      "session_response_cuda_synchronized": true,
+      "session_verification": true,
+      "session_verifier": "parallel",
+      "status": "ok",
+      "target_dtype": "torch.float16",
+      "tokenizer_eos_token_id": 151645,
+      "tokenizer_vocab_sha256": "698c955b0b438a535083d1771ef8b41069afba4b3d51a482558bdb68ea55e800",
+      "tokenizer_vocab_size": 151665,
+      "torch": "2.4.1+cu121",
+      "transformers": "4.46.3",
+      "ts": 1790570492.740301,
+      "verification_modes": [
+        "greedy_exact",
+        "acceptance_ratio_proxy"
+      ]
+    }
+  },
+  "started_wall_ns": 1790570492460270042,
+  "target_native_eos_ids": [
+    151645,
+    151643
+  ],
+  "telemetry_error": null,
+  "termination": {
+    "configured_draft_eos_token": "<|endoftext|>",
+    "configured_draft_eos_token_id": 151643,
+    "configured_generation_eos_token_id": 151643,
+    "configured_generation_pad_token_id": null,
+    "effective_target_eos_token": "<|im_end|>",
+    "effective_target_eos_token_id": 151645,
+    "eos_override_applied": true,
+    "tokenizer_vocab_sha256": "698c955b0b438a535083d1771ef8b41069afba4b3d51a482558bdb68ea55e800",
+    "tokenizer_vocab_size": 151665,
+    "vocabulary_match": true
+  },
+  "torch": "2.5.0a0+872d972e41.nv24.08",
+  "transformers": "4.51.3",
+  "original_plan_sha256": "07d1f3b464378f1ced04666aff42359a44b6398ca6642df7af024683cc8e2747"
+}

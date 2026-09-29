@@ -1,0 +1,503 @@
+{
+  "completed": true,
+  "started_wall_ns": 1790566486559782456,
+  "sessions": [
+    {
+      "name": "capability-01",
+      "server": {
+        "pid": 3250742,
+        "ping": {
+          "status": "ok",
+          "ts": 1790566492.5855248,
+          "protocol_version": 3,
+          "server_entrypoint_sha256": "1f384d7dda91aa81e9a9fff2ba866f7344fce83df79cc6cd7d159fe088f93b3e",
+          "model": "Qwen/Qwen2.5-7B-Instruct",
+          "device": "cuda",
+          "gpu": "NVIDIA GeForce RTX 3090 Ti",
+          "torch": "2.4.1+cu121",
+          "transformers": "4.46.3",
+          "cuda": "12.1",
+          "target_dtype": "torch.float16",
+          "session_verifier": "parallel",
+          "numerical_guard_margin": 0.1,
+          "canonical_rebuild_policy": "original_prefill_then_single_token_history",
+          "attention_implementation": "sdpa",
+          "output_head_precision": "float32",
+          "tokenizer_vocab_size": 151665,
+          "tokenizer_vocab_sha256": "698c955b0b438a535083d1771ef8b41069afba4b3d51a482558bdb68ea55e800",
+          "tokenizer_eos_token_id": 151645,
+          "generation_eos_token_ids": [
+            151645,
+            151643
+          ],
+          "nvml_telemetry": true,
+          "request_window_telemetry": true,
+          "verification_modes": [
+            "greedy_exact",
+            "acceptance_ratio_proxy"
+          ],
+          "session_verification": true,
+          "session_no_speculation_arm": true,
+          "direct_target_streaming": true,
+          "active_target_sessions": 0,
+          "session_response_cuda_synchronized": true
+        }
+      },
+      "status": {
+        "state": "complete",
+        "name": "capability-01",
+        "pid": 739859,
+        "started_wall_ns": 1790566493501060754,
+        "command": [
+          "/usr/bin/python3",
+          "-B",
+          "-u",
+          "public-runtime",
+          "--plan",
+          "public-runtime",
+          "--out-dir",
+          "public-runtime"
+        ],
+        "returncode": 0,
+        "finished_wall_ns": 1790567748219316780,
+        "output": "public-runtime"
+      },
+      "requests": 72
+    },
+    {
+      "name": "capability-02",
+      "server": {
+        "pid": 3286994,
+        "ping": {
+          "status": "ok",
+          "ts": 1790567769.797565,
+          "protocol_version": 3,
+          "server_entrypoint_sha256": "1f384d7dda91aa81e9a9fff2ba866f7344fce83df79cc6cd7d159fe088f93b3e",
+          "model": "Qwen/Qwen2.5-7B-Instruct",
+          "device": "cuda",
+          "gpu": "NVIDIA GeForce RTX 3090 Ti",
+          "torch": "2.4.1+cu121",
+          "transformers": "4.46.3",
+          "cuda": "12.1",
+          "target_dtype": "torch.float16",
+          "session_verifier": "parallel",
+          "numerical_guard_margin": 0.1,
+          "canonical_rebuild_policy": "original_prefill_then_single_token_history",
+          "attention_implementation": "sdpa",
+          "output_head_precision": "float32",
+          "tokenizer_vocab_size": 151665,
+          "tokenizer_vocab_sha256": "698c955b0b438a535083d1771ef8b41069afba4b3d51a482558bdb68ea55e800",
+          "tokenizer_eos_token_id": 151645,
+          "generation_eos_token_ids": [
+            151645,
+            151643
+          ],
+          "nvml_telemetry": true,
+          "request_window_telemetry": true,
+          "verification_modes": [
+            "greedy_exact",
+            "acceptance_ratio_proxy"
+          ],
+          "session_verification": true,
+          "session_no_speculation_arm": true,
+          "direct_target_streaming": true,
+          "active_target_sessions": 0,
+          "session_response_cuda_synchronized": true
+        }
+      },
+      "status": {
+        "state": "complete",
+        "name": "capability-02",
+        "pid": 748102,
+        "started_wall_ns": 1790567770484742682,
+        "command": [
+          "/usr/bin/python3",
+          "-B",
+          "-u",
+          "public-runtime",
+          "--plan",
+          "public-runtime",
+          "--out-dir",
+          "public-runtime"
+        ],
+        "returncode": 0,
+        "finished_wall_ns": 1790568946813717215,
+        "output": "public-runtime"
+      },
+      "requests": 72
+    },
+    {
+      "name": "capability-03",
+      "server": {
+        "pid": 3320762,
+        "ping": {
+          "status": "ok",
+          "ts": 1790568959.9649584,
+          "protocol_version": 3,
+          "server_entrypoint_sha256": "1f384d7dda91aa81e9a9fff2ba866f7344fce83df79cc6cd7d159fe088f93b3e",
+          "model": "Qwen/Qwen2.5-7B-Instruct",
+          "device": "cuda",
+          "gpu": "NVIDIA GeForce RTX 3090 Ti",
+          "torch": "2.4.1+cu121",
+          "transformers": "4.46.3",
+          "cuda": "12.1",
+          "target_dtype": "torch.float16",
+          "session_verifier": "parallel",
+          "numerical_guard_margin": 0.1,
+          "canonical_rebuild_policy": "original_prefill_then_single_token_history",
+          "attention_implementation": "sdpa",
+          "output_head_precision": "float32",
+          "tokenizer_vocab_size": 151665,
+          "tokenizer_vocab_sha256": "698c955b0b438a535083d1771ef8b41069afba4b3d51a482558bdb68ea55e800",
+          "tokenizer_eos_token_id": 151645,
+          "generation_eos_token_ids": [
+            151645,
+            151643
+          ],
+          "nvml_telemetry": true,
+          "request_window_telemetry": true,
+          "verification_modes": [
+            "greedy_exact",
+            "acceptance_ratio_proxy"
+          ],
+          "session_verification": true,
+          "session_no_speculation_arm": true,
+          "direct_target_streaming": true,
+          "active_target_sessions": 0,
+          "session_response_cuda_synchronized": true
+        }
+      },
+      "status": {
+        "state": "complete",
+        "name": "capability-03",
+        "pid": 755862,
+        "started_wall_ns": 1790568960875454376,
+        "command": [
+          "/usr/bin/python3",
+          "-B",
+          "-u",
+          "public-runtime",
+          "--plan",
+          "public-runtime",
+          "--out-dir",
+          "public-runtime"
+        ],
+        "returncode": 0,
+        "finished_wall_ns": 1790570472302398674,
+        "output": "public-runtime"
+      },
+      "requests": 72
+    },
+    {
+      "name": "capability-04",
+      "server": {
+        "pid": 3363926,
+        "ping": {
+          "status": "ok",
+          "ts": 1790570485.432208,
+          "protocol_version": 3,
+          "server_entrypoint_sha256": "1f384d7dda91aa81e9a9fff2ba866f7344fce83df79cc6cd7d159fe088f93b3e",
+          "model": "Qwen/Qwen2.5-7B-Instruct",
+          "device": "cuda",
+          "gpu": "NVIDIA GeForce RTX 3090 Ti",
+          "torch": "2.4.1+cu121",
+          "transformers": "4.46.3",
+          "cuda": "12.1",
+          "target_dtype": "torch.float16",
+          "session_verifier": "parallel",
+          "numerical_guard_margin": 0.1,
+          "canonical_rebuild_policy": "original_prefill_then_single_token_history",
+          "attention_implementation": "sdpa",
+          "output_head_precision": "float32",
+          "tokenizer_vocab_size": 151665,
+          "tokenizer_vocab_sha256": "698c955b0b438a535083d1771ef8b41069afba4b3d51a482558bdb68ea55e800",
+          "tokenizer_eos_token_id": 151645,
+          "generation_eos_token_ids": [
+            151645,
+            151643
+          ],
+          "nvml_telemetry": true,
+          "request_window_telemetry": true,
+          "verification_modes": [
+            "greedy_exact",
+            "acceptance_ratio_proxy"
+          ],
+          "session_verification": true,
+          "session_no_speculation_arm": true,
+          "direct_target_streaming": true,
+          "active_target_sessions": 0,
+          "session_response_cuda_synchronized": true
+        }
+      },
+      "status": {
+        "state": "complete",
+        "name": "capability-04",
+        "pid": 765080,
+        "started_wall_ns": 1790570486407321093,
+        "command": [
+          "/usr/bin/python3",
+          "-B",
+          "-u",
+          "public-runtime",
+          "--plan",
+          "public-runtime",
+          "--out-dir",
+          "public-runtime"
+        ],
+        "returncode": 0,
+        "finished_wall_ns": 1790572467791029081,
+        "output": "public-runtime"
+      },
+      "requests": 72
+    },
+    {
+      "name": "capability-05",
+      "server": {
+        "pid": 3420496,
+        "ping": {
+          "status": "ok",
+          "ts": 1790572497.2387612,
+          "protocol_version": 3,
+          "server_entrypoint_sha256": "1f384d7dda91aa81e9a9fff2ba866f7344fce83df79cc6cd7d159fe088f93b3e",
+          "model": "Qwen/Qwen2.5-7B-Instruct",
+          "device": "cuda",
+          "gpu": "NVIDIA GeForce RTX 3090 Ti",
+          "torch": "2.4.1+cu121",
+          "transformers": "4.46.3",
+          "cuda": "12.1",
+          "target_dtype": "torch.float16",
+          "session_verifier": "parallel",
+          "numerical_guard_margin": 0.1,
+          "canonical_rebuild_policy": "original_prefill_then_single_token_history",
+          "attention_implementation": "sdpa",
+          "output_head_precision": "float32",
+          "tokenizer_vocab_size": 151665,
+          "tokenizer_vocab_sha256": "698c955b0b438a535083d1771ef8b41069afba4b3d51a482558bdb68ea55e800",
+          "tokenizer_eos_token_id": 151645,
+          "generation_eos_token_ids": [
+            151645,
+            151643
+          ],
+          "nvml_telemetry": true,
+          "request_window_telemetry": true,
+          "verification_modes": [
+            "greedy_exact",
+            "acceptance_ratio_proxy"
+          ],
+          "session_verification": true,
+          "session_no_speculation_arm": true,
+          "direct_target_streaming": true,
+          "active_target_sessions": 0,
+          "session_response_cuda_synchronized": true
+        }
+      },
+      "status": {
+        "state": "complete",
+        "name": "capability-05",
+        "pid": 776660,
+        "started_wall_ns": 1790572498240818031,
+        "command": [
+          "/usr/bin/python3",
+          "-B",
+          "-u",
+          "public-runtime",
+          "--plan",
+          "public-runtime",
+          "--out-dir",
+          "public-runtime"
+        ],
+        "returncode": 0,
+        "finished_wall_ns": 1790573823679403320,
+        "output": "public-runtime"
+      },
+      "requests": 72
+    },
+    {
+      "name": "capability-06",
+      "server": {
+        "pid": 3458384,
+        "ping": {
+          "status": "ok",
+          "ts": 1790573834.881098,
+          "protocol_version": 3,
+          "server_entrypoint_sha256": "1f384d7dda91aa81e9a9fff2ba866f7344fce83df79cc6cd7d159fe088f93b3e",
+          "model": "Qwen/Qwen2.5-7B-Instruct",
+          "device": "cuda",
+          "gpu": "NVIDIA GeForce RTX 3090 Ti",
+          "torch": "2.4.1+cu121",
+          "transformers": "4.46.3",
+          "cuda": "12.1",
+          "target_dtype": "torch.float16",
+          "session_verifier": "parallel",
+          "numerical_guard_margin": 0.1,
+          "canonical_rebuild_policy": "original_prefill_then_single_token_history",
+          "attention_implementation": "sdpa",
+          "output_head_precision": "float32",
+          "tokenizer_vocab_size": 151665,
+          "tokenizer_vocab_sha256": "698c955b0b438a535083d1771ef8b41069afba4b3d51a482558bdb68ea55e800",
+          "tokenizer_eos_token_id": 151645,
+          "generation_eos_token_ids": [
+            151645,
+            151643
+          ],
+          "nvml_telemetry": true,
+          "request_window_telemetry": true,
+          "verification_modes": [
+            "greedy_exact",
+            "acceptance_ratio_proxy"
+          ],
+          "session_verification": true,
+          "session_no_speculation_arm": true,
+          "direct_target_streaming": true,
+          "active_target_sessions": 0,
+          "session_response_cuda_synchronized": true
+        }
+      },
+      "status": {
+        "state": "complete",
+        "name": "capability-06",
+        "pid": 785073,
+        "started_wall_ns": 1790573835552680145,
+        "command": [
+          "/usr/bin/python3",
+          "-B",
+          "-u",
+          "public-runtime",
+          "--plan",
+          "public-runtime",
+          "--out-dir",
+          "public-runtime"
+        ],
+        "returncode": 0,
+        "finished_wall_ns": 1790575192493452444,
+        "output": "public-runtime"
+      },
+      "requests": 72
+    },
+    {
+      "name": "capability-07",
+      "server": {
+        "pid": 3497347,
+        "ping": {
+          "status": "ok",
+          "ts": 1790575215.1873963,
+          "protocol_version": 3,
+          "server_entrypoint_sha256": "1f384d7dda91aa81e9a9fff2ba866f7344fce83df79cc6cd7d159fe088f93b3e",
+          "model": "Qwen/Qwen2.5-7B-Instruct",
+          "device": "cuda",
+          "gpu": "NVIDIA GeForce RTX 3090 Ti",
+          "torch": "2.4.1+cu121",
+          "transformers": "4.46.3",
+          "cuda": "12.1",
+          "target_dtype": "torch.float16",
+          "session_verifier": "parallel",
+          "numerical_guard_margin": 0.1,
+          "canonical_rebuild_policy": "original_prefill_then_single_token_history",
+          "attention_implementation": "sdpa",
+          "output_head_precision": "float32",
+          "tokenizer_vocab_size": 151665,
+          "tokenizer_vocab_sha256": "698c955b0b438a535083d1771ef8b41069afba4b3d51a482558bdb68ea55e800",
+          "tokenizer_eos_token_id": 151645,
+          "generation_eos_token_ids": [
+            151645,
+            151643
+          ],
+          "nvml_telemetry": true,
+          "request_window_telemetry": true,
+          "verification_modes": [
+            "greedy_exact",
+            "acceptance_ratio_proxy"
+          ],
+          "session_verification": true,
+          "session_no_speculation_arm": true,
+          "direct_target_streaming": true,
+          "active_target_sessions": 0,
+          "session_response_cuda_synchronized": true
+        }
+      },
+      "status": {
+        "state": "complete",
+        "name": "capability-07",
+        "pid": 793853,
+        "started_wall_ns": 1790575215866247158,
+        "command": [
+          "/usr/bin/python3",
+          "-B",
+          "-u",
+          "public-runtime",
+          "--plan",
+          "public-runtime",
+          "--out-dir",
+          "public-runtime"
+        ],
+        "returncode": 0,
+        "finished_wall_ns": 1790576453608456490,
+        "output": "public-runtime"
+      },
+      "requests": 72
+    },
+    {
+      "name": "capability-08",
+      "server": {
+        "pid": 3532661,
+        "ping": {
+          "status": "ok",
+          "ts": 1790576469.6045918,
+          "protocol_version": 3,
+          "server_entrypoint_sha256": "1f384d7dda91aa81e9a9fff2ba866f7344fce83df79cc6cd7d159fe088f93b3e",
+          "model": "Qwen/Qwen2.5-7B-Instruct",
+          "device": "cuda",
+          "gpu": "NVIDIA GeForce RTX 3090 Ti",
+          "torch": "2.4.1+cu121",
+          "transformers": "4.46.3",
+          "cuda": "12.1",
+          "target_dtype": "torch.float16",
+          "session_verifier": "parallel",
+          "numerical_guard_margin": 0.1,
+          "canonical_rebuild_policy": "original_prefill_then_single_token_history",
+          "attention_implementation": "sdpa",
+          "output_head_precision": "float32",
+          "tokenizer_vocab_size": 151665,
+          "tokenizer_vocab_sha256": "698c955b0b438a535083d1771ef8b41069afba4b3d51a482558bdb68ea55e800",
+          "tokenizer_eos_token_id": 151645,
+          "generation_eos_token_ids": [
+            151645,
+            151643
+          ],
+          "nvml_telemetry": true,
+          "request_window_telemetry": true,
+          "verification_modes": [
+            "greedy_exact",
+            "acceptance_ratio_proxy"
+          ],
+          "session_verification": true,
+          "session_no_speculation_arm": true,
+          "direct_target_streaming": true,
+          "active_target_sessions": 0,
+          "session_response_cuda_synchronized": true
+        }
+      },
+      "status": {
+        "state": "complete",
+        "name": "capability-08",
+        "pid": 801992,
+        "started_wall_ns": 1790576470441098730,
+        "command": [
+          "/usr/bin/python3",
+          "-B",
+          "-u",
+          "public-runtime",
+          "--plan",
+          "public-runtime",
+          "--out-dir",
+          "public-runtime"
+        ],
+        "returncode": 0,
+        "finished_wall_ns": 1790577839975813153,
+        "output": "public-runtime"
+      },
+      "requests": 72
+    }
+  ],
+  "finished_wall_ns": 1790577843885607132
+}

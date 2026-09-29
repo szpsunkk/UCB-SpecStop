@@ -1,0 +1,8 @@
+[tool.pytest.ini_options]
+testpaths = ["tests", "experiments/table4"]
+pythonpath = ["."]
+addopts = "-ra"
+
+[tool.ruff]
+line-length = 100
+target-version = "py310"

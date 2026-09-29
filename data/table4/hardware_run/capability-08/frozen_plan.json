@@ -1,0 +1,129 @@
+{
+  "amendment_wall_ns": 1790561516445248372,
+  "calibration_cells": 27,
+  "calibration_scope": "Original September 24 calibration frozen, equal information for every online controller; no new parameter tuning",
+  "calibration_sha256": "ac648ea9330ffa329f5597b1f392ef812a1b69d22f93ab2e9c0ef9e1b47e29cf",
+  "code_sha256": {
+    "hardware/answer_stopping.py": "50f18ea5eaebbaa7a1dfd319a9342698c4c891b8cc6e143e6002a273261358d4",
+    "hardware/capability_runner.py": "a3db9d825a8a949ad72411d9579d1519a4c2e38832e8ada157c23b0646e31f92",
+    "hardware/cgp_controller.py": "9821aedd62704960e3bbbae55a1771a8eb4f04b445091750da892d6b0f793b03",
+    "hardware/closed_loop.py": "3a7a2e06ace768dbc15a1f70c1b53a625ad1fa13cbb77c10aa104a128be70c43",
+    "hardware/cloud_server.py": "1f384d7dda91aa81e9a9fff2ba866f7344fce83df79cc6cd7d159fe088f93b3e",
+    "hardware/collect_algorithm_calibration.py": "cdb7bf9aecf3e17fb1799c1c4a5d254fec467ae5efb5d79f456de8a0c5c5dadc",
+    "hardware/content_features.py": "4b87e8e899fe15d88ae4216ad70a5b678bd3c58c9ab8049c1864105ebd574ddd",
+    "hardware/delay_proxy.py": "e7f3e5a330022bcdf67cda3e4386945ca77721f9d849c65652b4fd493b460b12",
+    "hardware/edge_only.py": "59de629216792a71266a9b87d5f391acd19f74b2332f3180dbd73ca0f79a5e3a",
+    "hardware/graph_draft.py": "dd4e35eb5f894fc72febf42545135bde1c5223d7d399395f8f1723e8fbc73cff",
+    "hardware/kv_cache.py": "3273dc3d8bc4fbcaf6542c4208fe2a17dde0b0a733437db689b37d52c94d4c52",
+    "hardware/probe_guarded_requests.py": "db2d6c6cecb584e03f7588fb3c85a7e8f1f5b6e107c03e7a18707759715a1fe4",
+    "hardware/probe_prefix_consistency.py": "f3e59bf4afce185a0902d20c359f25fff0d2c6c0a5f8938113a077f6b60b6b6b",
+    "hardware/run_algorithm_closed_loop.py": "1b4c48ad53cd144cfbb24abb03b5ff017a91bc1234d767aee1212d182f68379a",
+    "hardware/run_algorithm_v3.py": "3d22ab8a7f1e742241a651eb810c865d69384b24ae88322fe12cff83bbbb8360",
+    "hardware/run_cgp_closed_loop.py": "7582cfc5bfa3f21966b364a8d62f4512011b807714fb3695a51e78e53db5f3c1",
+    "hardware/run_cgp_coarse_closed_loop.py": "77b96868b922a2df5e00db82a2e06b739fecb591bd4934ed5debd519de79b1b5",
+    "hardware/run_cgp_refresh_closed_loop.py": "0159ae83bcfa87ab428c73c229702f66f078d57fd4ca2bf1fdd632f0b6a4e1ab",
+    "hardware/run_cgp_warm_confirmation.py": "0647ae4ddf5b16fdd38b2262596dd516ae116096ee61f2642f316c7544857d27",
+    "hardware/run_closed_loop_experiment.py": "4e86170fde04397d0a2eca9df548146e7b57ec03398627004556695e47bd3659",
+    "hardware/run_revised_experiments.py": "f1864631c9a120027d03d5b11b3b5760b092ef509b008b479f6c903289ad2f50",
+    "hardware/run_table4_closed_loop.py": "f7d46410c927446287b06ce7478307f062f5156ca0d0834dbdb9787dd32e9cfc",
+    "hardware/run_tmc_revision.py": "2196a340ab62278e280ced1d31f3af3661d25ea05d8465fa71560299a8f57951",
+    "hardware/runtime_eos.py": "9991a1c02a098e01e5b0a61eabc45bbd891a7b7489503f3cbc4fc62632558e5f",
+    "hardware/target_precision.py": "740cc7ea9fda0cb253dafd319726d6cbb317635e9172294e7d362fa04bbdb43e",
+    "src/__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "src/baselines.py": "16c6152ba9b6687814b0c766f3eb4ab6348efdb5d021dafa7e1cca8f6eeaec65",
+    "src/cgp_coarse.py": "76bb084d008043859695f6eb9cf09db2658aff89a7e594afd3fa77866a6a14f3",
+    "src/cgp_refresh.py": "1209cd284cb1835ffc00e50244ae6fbf56382589740e3298c1dfd46025ddebfc",
+    "src/cgp_specstop.py": "e50416c1d71d78c9e1ce652dcc115364830abfd18788a53c95579d0e39ca9a64",
+    "src/config.py": "dac8858e56c1fcfbb345d52fb8d31f5be7f49fa8a0ffd83bb635637f2bf3e9ce",
+    "src/content_ratio.py": "72ad12bf0ba2c524d29c9800574ead5f3a329dad2e01596d0ec07ce44547d1f1",
+    "src/core.py": "57398432473c87e7745d5aad80f17342b4e1fe2fdd26e65d7134c5ef874d4498",
+    "src/horizon_ratio.py": "cc5cdd393ce6f6e288988b1cb929ed8278b4ad179ff3fa4ea478e8df07ab9677",
+    "src/plot_style.py": "0c43309e6bc89a5568fc9e7506f3cfd1c17d2d4336a8b7cd07b816a2d338956c",
+    "src/prefix_hazard.py": "6eea275b1ad3e044e154b00cdb247f40e160d0e6ba7e9b04103dbd859c528285",
+    "src/regularized_ratio.py": "6ebd44d26073a309960319a31eb8d0b67c68ad3853e5433e14aa503e9b07316e",
+    "src/structured_bandits.py": "8e5e89fbe887dc430fc20d7b52d5832b87d4d8da3f8ca7e9ba7aad88e3efe93e"
+  },
+  "conditions": [
+    {
+      "aliases": {
+        "b4_idealized": 1,
+        "b5_calibrated_geometric": 1,
+        "b6_calibrated_fixed": 5,
+        "fixed_k5": 5,
+        "greedy": 1,
+        "specdec_pp_threshold": 7
+      },
+      "condition_id": "lan_direct",
+      "methods": [
+        "fixed_depth_01",
+        "fixed_depth_05",
+        "fixed_depth_07",
+        "sn_warm",
+        "per_round_ucb_warm",
+        "ucbspec_release_warm",
+        "ucbspec_arm_bonus_warm",
+        "direct_target"
+      ],
+      "server": "http://edge-cloud.example.invalid:8000"
+    },
+    {
+      "aliases": {
+        "b4_idealized": 9,
+        "b5_calibrated_geometric": 5,
+        "b6_calibrated_fixed": 9,
+        "fixed_k5": 5,
+        "greedy": 1,
+        "specdec_pp_threshold": 7
+      },
+      "condition_id": "lan_plus150",
+      "methods": [
+        "fixed_depth_01",
+        "fixed_depth_05",
+        "fixed_depth_07",
+        "fixed_depth_09",
+        "sn_warm",
+        "per_round_ucb_warm",
+        "ucbspec_release_warm",
+        "ucbspec_arm_bonus_warm",
+        "direct_target"
+      ],
+      "server": "http://127.0.0.1:18082"
+    }
+  ],
+  "created_wall_ns": 1790560992973434076,
+  "edge_only_scope": "One independent small-model autoregressive request per question, natural small-model EOS; no cloud call. Same CUDA graph engine, prompt and 512-token ceiling. Shared edge-only result in both network comparisons, not duplicated n.",
+  "expected_target_execution": {
+    "attention_implementation": "sdpa",
+    "canonical_rebuild_policy": "original_prefill_then_single_token_history",
+    "generation_eos_token_ids": [
+      151645,
+      151643
+    ],
+    "numerical_guard_margin": 0.1,
+    "output_head_precision": "float32",
+    "session_verifier": "parallel",
+    "target_dtype": "torch.float16"
+  },
+  "generation_token_cap": 512,
+  "graph_max_cache_len": 1024,
+  "latency_inference": "Within each condition, session total milliseconds / total delivered tokens, 8 equal-weight sessions. Four SN contrasts (edge-only, per-round UCB, arm-throughput, calibration-fixed) on each of two paths, single Holm family of eight. Remaining metrics descriptive with paired CIs.",
+  "measurement_session": "capability-08",
+  "online_methods": [
+    "sn_warm",
+    "per_round_ucb_warm",
+    "ucbspec_release_warm",
+    "ucbspec_arm_bonus_warm"
+  ],
+  "prompts_file": "capability-08-prompts.jsonl",
+  "prompts_sha256": "e8e0e4f73046ffc6e27ff6d4d9d9d9f586124b7f0287d2862d927b4f6e9a7140",
+  "protocol": "table4_edge_capability_20260928",
+  "quality_inference": "Paired question-level target versus edge-only: exact McNemar and paired prompt bootstrap CI. Cloud and exact speculative outputs share the quality contrast only after per-request equality checks; report truncation separately.",
+  "runtime_launcher_sha256": "47e28dfc24a1f8c5081ecc86d09e302380ee7815ca248e34e6d086d2592fa4df",
+  "sample_size_rule": "32 unseen questions, 8 restarted sessions of 4 questions. Complete all methods and both paths; no outcome stopping.",
+  "scope": "New fixed-budget answer-quality follow-up; H=512 and m=27, distinct from original H=32/128 table. No claim of intrinsic small-model weight improvement.",
+  "scoring": "First explicit ####, boxed numeric or final-answer marker; if absent use last numeric substring. Report strict no-fallback sensitivity. No ground-truth-aware extraction.",
+  "seed": 202609280107,
+  "status": "frozen",
+  "stopping_rule": "First completed explicit numeric answer, or ANY native model generation_config EOS, or 512-token cap. EOS is excluded from delivered tokens. Shared stopping semantics in target, verification, draft and edge delivery.",
+  "termination_correction": "Complete rerun of unchanged preselected questions after detecting ignored native EOS 151643 in inherited target runtime; no method tuning or sample selection."
+}

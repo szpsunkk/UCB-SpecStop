@@ -1,0 +1,979 @@
+{
+  "scope": "original source hashes before portability edits; no original deployment identity included",
+  "origins": {
+    "hardware/answer_stopping.py": {
+      "source": "outputs/table4_capability_20260928_eosfix/protocol/source_snapshot/hardware/answer_stopping.py",
+      "source_sha256": "50f18ea5eaebbaa7a1dfd319a9342698c4c891b8cc6e143e6002a273261358d4",
+      "public_sha256": "50f18ea5eaebbaa7a1dfd319a9342698c4c891b8cc6e143e6002a273261358d4",
+      "byte_identical": true
+    },
+    "hardware/capability_runner.py": {
+      "source": "outputs/table4_capability_20260928_eosfix/protocol/source_snapshot/hardware/capability_runner.py",
+      "source_sha256": "a3db9d825a8a949ad72411d9579d1519a4c2e38832e8ada157c23b0646e31f92",
+      "public_sha256": "caf9dccc2d75f3a0d286f98067308408b7eb16b3daae8c2ea1555176ba196ec3",
+      "byte_identical": false
+    },
+    "hardware/cgp_controller.py": {
+      "source": "outputs/table4_capability_20260928_eosfix/protocol/source_snapshot/hardware/cgp_controller.py",
+      "source_sha256": "9821aedd62704960e3bbbae55a1771a8eb4f04b445091750da892d6b0f793b03",
+      "public_sha256": "9821aedd62704960e3bbbae55a1771a8eb4f04b445091750da892d6b0f793b03",
+      "byte_identical": true
+    },
+    "hardware/closed_loop.py": {
+      "source": "outputs/table4_capability_20260928_eosfix/protocol/source_snapshot/hardware/closed_loop.py",
+      "source_sha256": "3a7a2e06ace768dbc15a1f70c1b53a625ad1fa13cbb77c10aa104a128be70c43",
+      "public_sha256": "3a7a2e06ace768dbc15a1f70c1b53a625ad1fa13cbb77c10aa104a128be70c43",
+      "byte_identical": true
+    },
+    "hardware/cloud_server.py": {
+      "source": "outputs/table4_capability_20260928_eosfix/protocol/source_snapshot/hardware/cloud_server.py",
+      "source_sha256": "1f384d7dda91aa81e9a9fff2ba866f7344fce83df79cc6cd7d159fe088f93b3e",
+      "public_sha256": "1f384d7dda91aa81e9a9fff2ba866f7344fce83df79cc6cd7d159fe088f93b3e",
+      "byte_identical": true
+    },
+    "hardware/collect_algorithm_calibration.py": {
+      "source": "outputs/table4_capability_20260928_eosfix/protocol/source_snapshot/hardware/collect_algorithm_calibration.py",
+      "source_sha256": "cdb7bf9aecf3e17fb1799c1c4a5d254fec467ae5efb5d79f456de8a0c5c5dadc",
+      "public_sha256": "cdb7bf9aecf3e17fb1799c1c4a5d254fec467ae5efb5d79f456de8a0c5c5dadc",
+      "byte_identical": true
+    },
+    "hardware/content_features.py": {
+      "source": "outputs/table4_capability_20260928_eosfix/protocol/source_snapshot/hardware/content_features.py",
+      "source_sha256": "4b87e8e899fe15d88ae4216ad70a5b678bd3c58c9ab8049c1864105ebd574ddd",
+      "public_sha256": "4b87e8e899fe15d88ae4216ad70a5b678bd3c58c9ab8049c1864105ebd574ddd",
+      "byte_identical": true
+    },
+    "hardware/delay_proxy.py": {
+      "source": "outputs/table4_capability_20260928_eosfix/protocol/source_snapshot/hardware/delay_proxy.py",
+      "source_sha256": "e7f3e5a330022bcdf67cda3e4386945ca77721f9d849c65652b4fd493b460b12",
+      "public_sha256": "51151ee7ceb411bbea021ee2a9d63d41e3b3180c79900646326b54ebba18149e",
+      "byte_identical": false
+    },
+    "hardware/edge_only.py": {
+      "source": "outputs/table4_capability_20260928_eosfix/protocol/source_snapshot/hardware/edge_only.py",
+      "source_sha256": "59de629216792a71266a9b87d5f391acd19f74b2332f3180dbd73ca0f79a5e3a",
+      "public_sha256": "59de629216792a71266a9b87d5f391acd19f74b2332f3180dbd73ca0f79a5e3a",
+      "byte_identical": true
+    },
+    "hardware/graph_draft.py": {
+      "source": "outputs/table4_capability_20260928_eosfix/protocol/source_snapshot/hardware/graph_draft.py",
+      "source_sha256": "dd4e35eb5f894fc72febf42545135bde1c5223d7d399395f8f1723e8fbc73cff",
+      "public_sha256": "dd4e35eb5f894fc72febf42545135bde1c5223d7d399395f8f1723e8fbc73cff",
+      "byte_identical": true
+    },
+    "hardware/kv_cache.py": {
+      "source": "outputs/table4_capability_20260928_eosfix/protocol/source_snapshot/hardware/kv_cache.py",
+      "source_sha256": "3273dc3d8bc4fbcaf6542c4208fe2a17dde0b0a733437db689b37d52c94d4c52",
+      "public_sha256": "3273dc3d8bc4fbcaf6542c4208fe2a17dde0b0a733437db689b37d52c94d4c52",
+      "byte_identical": true
+    },
+    "hardware/probe_guarded_requests.py": {
+      "source": "outputs/table4_capability_20260928_eosfix/protocol/source_snapshot/hardware/probe_guarded_requests.py",
+      "source_sha256": "db2d6c6cecb584e03f7588fb3c85a7e8f1f5b6e107c03e7a18707759715a1fe4",
+      "public_sha256": "db2d6c6cecb584e03f7588fb3c85a7e8f1f5b6e107c03e7a18707759715a1fe4",
+      "byte_identical": true
+    },
+    "hardware/probe_prefix_consistency.py": {
+      "source": "outputs/table4_capability_20260928_eosfix/protocol/source_snapshot/hardware/probe_prefix_consistency.py",
+      "source_sha256": "f3e59bf4afce185a0902d20c359f25fff0d2c6c0a5f8938113a077f6b60b6b6b",
+      "public_sha256": "f3e59bf4afce185a0902d20c359f25fff0d2c6c0a5f8938113a077f6b60b6b6b",
+      "byte_identical": true
+    },
+    "hardware/run_algorithm_closed_loop.py": {
+      "source": "outputs/table4_capability_20260928_eosfix/protocol/source_snapshot/hardware/run_algorithm_closed_loop.py",
+      "source_sha256": "1b4c48ad53cd144cfbb24abb03b5ff017a91bc1234d767aee1212d182f68379a",
+      "public_sha256": "1b4c48ad53cd144cfbb24abb03b5ff017a91bc1234d767aee1212d182f68379a",
+      "byte_identical": true
+    },
+    "hardware/run_algorithm_v3.py": {
+      "source": "outputs/table4_capability_20260928_eosfix/protocol/source_snapshot/hardware/run_algorithm_v3.py",
+      "source_sha256": "3d22ab8a7f1e742241a651eb810c865d69384b24ae88322fe12cff83bbbb8360",
+      "public_sha256": "3d22ab8a7f1e742241a651eb810c865d69384b24ae88322fe12cff83bbbb8360",
+      "byte_identical": true
+    },
+    "hardware/run_cgp_closed_loop.py": {
+      "source": "outputs/table4_capability_20260928_eosfix/protocol/source_snapshot/hardware/run_cgp_closed_loop.py",
+      "source_sha256": "7582cfc5bfa3f21966b364a8d62f4512011b807714fb3695a51e78e53db5f3c1",
+      "public_sha256": "7582cfc5bfa3f21966b364a8d62f4512011b807714fb3695a51e78e53db5f3c1",
+      "byte_identical": true
+    },
+    "hardware/run_cgp_coarse_closed_loop.py": {
+      "source": "outputs/table4_capability_20260928_eosfix/protocol/source_snapshot/hardware/run_cgp_coarse_closed_loop.py",
+      "source_sha256": "77b96868b922a2df5e00db82a2e06b739fecb591bd4934ed5debd519de79b1b5",
+      "public_sha256": "77b96868b922a2df5e00db82a2e06b739fecb591bd4934ed5debd519de79b1b5",
+      "byte_identical": true
+    },
+    "hardware/run_cgp_refresh_closed_loop.py": {
+      "source": "outputs/table4_capability_20260928_eosfix/protocol/source_snapshot/hardware/run_cgp_refresh_closed_loop.py",
+      "source_sha256": "0159ae83bcfa87ab428c73c229702f66f078d57fd4ca2bf1fdd632f0b6a4e1ab",
+      "public_sha256": "0159ae83bcfa87ab428c73c229702f66f078d57fd4ca2bf1fdd632f0b6a4e1ab",
+      "byte_identical": true
+    },
+    "hardware/run_cgp_warm_confirmation.py": {
+      "source": "outputs/table4_capability_20260928_eosfix/protocol/source_snapshot/hardware/run_cgp_warm_confirmation.py",
+      "source_sha256": "0647ae4ddf5b16fdd38b2262596dd516ae116096ee61f2642f316c7544857d27",
+      "public_sha256": "0647ae4ddf5b16fdd38b2262596dd516ae116096ee61f2642f316c7544857d27",
+      "byte_identical": true
+    },
+    "hardware/run_closed_loop_experiment.py": {
+      "source": "outputs/table4_capability_20260928_eosfix/protocol/source_snapshot/hardware/run_closed_loop_experiment.py",
+      "source_sha256": "4e86170fde04397d0a2eca9df548146e7b57ec03398627004556695e47bd3659",
+      "public_sha256": "4e86170fde04397d0a2eca9df548146e7b57ec03398627004556695e47bd3659",
+      "byte_identical": true
+    },
+    "hardware/run_revised_experiments.py": {
+      "source": "outputs/table4_capability_20260928_eosfix/protocol/source_snapshot/hardware/run_revised_experiments.py",
+      "source_sha256": "f1864631c9a120027d03d5b11b3b5760b092ef509b008b479f6c903289ad2f50",
+      "public_sha256": "0ce58fa14264b1049701dc112677f4d395c6ef98786e0b735f6e7769888f8fa0",
+      "byte_identical": false
+    },
+    "hardware/run_table4_closed_loop.py": {
+      "source": "outputs/table4_capability_20260928_eosfix/protocol/source_snapshot/hardware/run_table4_closed_loop.py",
+      "source_sha256": "f7d46410c927446287b06ce7478307f062f5156ca0d0834dbdb9787dd32e9cfc",
+      "public_sha256": "f7d46410c927446287b06ce7478307f062f5156ca0d0834dbdb9787dd32e9cfc",
+      "byte_identical": true
+    },
+    "hardware/run_tmc_revision.py": {
+      "source": "outputs/table4_capability_20260928_eosfix/protocol/source_snapshot/hardware/run_tmc_revision.py",
+      "source_sha256": "2196a340ab62278e280ced1d31f3af3661d25ea05d8465fa71560299a8f57951",
+      "public_sha256": "2196a340ab62278e280ced1d31f3af3661d25ea05d8465fa71560299a8f57951",
+      "byte_identical": true
+    },
+    "hardware/runtime_eos.py": {
+      "source": "outputs/table4_capability_20260928_eosfix/protocol/source_snapshot/hardware/runtime_eos.py",
+      "source_sha256": "9991a1c02a098e01e5b0a61eabc45bbd891a7b7489503f3cbc4fc62632558e5f",
+      "public_sha256": "9991a1c02a098e01e5b0a61eabc45bbd891a7b7489503f3cbc4fc62632558e5f",
+      "byte_identical": true
+    },
+    "hardware/target_precision.py": {
+      "source": "outputs/table4_capability_20260928_eosfix/protocol/source_snapshot/hardware/target_precision.py",
+      "source_sha256": "740cc7ea9fda0cb253dafd319726d6cbb317635e9172294e7d362fa04bbdb43e",
+      "public_sha256": "740cc7ea9fda0cb253dafd319726d6cbb317635e9172294e7d362fa04bbdb43e",
+      "byte_identical": true
+    },
+    "src/__init__.py": {
+      "source": "outputs/table4_capability_20260928_eosfix/protocol/source_snapshot/src/__init__.py",
+      "source_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "public_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "byte_identical": true
+    },
+    "src/baselines.py": {
+      "source": "outputs/table4_capability_20260928_eosfix/protocol/source_snapshot/src/baselines.py",
+      "source_sha256": "16c6152ba9b6687814b0c766f3eb4ab6348efdb5d021dafa7e1cca8f6eeaec65",
+      "public_sha256": "16c6152ba9b6687814b0c766f3eb4ab6348efdb5d021dafa7e1cca8f6eeaec65",
+      "byte_identical": true
+    },
+    "src/cgp_coarse.py": {
+      "source": "outputs/table4_capability_20260928_eosfix/protocol/source_snapshot/src/cgp_coarse.py",
+      "source_sha256": "76bb084d008043859695f6eb9cf09db2658aff89a7e594afd3fa77866a6a14f3",
+      "public_sha256": "76bb084d008043859695f6eb9cf09db2658aff89a7e594afd3fa77866a6a14f3",
+      "byte_identical": true
+    },
+    "src/cgp_refresh.py": {
+      "source": "outputs/table4_capability_20260928_eosfix/protocol/source_snapshot/src/cgp_refresh.py",
+      "source_sha256": "1209cd284cb1835ffc00e50244ae6fbf56382589740e3298c1dfd46025ddebfc",
+      "public_sha256": "1209cd284cb1835ffc00e50244ae6fbf56382589740e3298c1dfd46025ddebfc",
+      "byte_identical": true
+    },
+    "src/cgp_specstop.py": {
+      "source": "outputs/table4_capability_20260928_eosfix/protocol/source_snapshot/src/cgp_specstop.py",
+      "source_sha256": "e50416c1d71d78c9e1ce652dcc115364830abfd18788a53c95579d0e39ca9a64",
+      "public_sha256": "e50416c1d71d78c9e1ce652dcc115364830abfd18788a53c95579d0e39ca9a64",
+      "byte_identical": true
+    },
+    "src/config.py": {
+      "source": "outputs/table4_capability_20260928_eosfix/protocol/source_snapshot/src/config.py",
+      "source_sha256": "dac8858e56c1fcfbb345d52fb8d31f5be7f49fa8a0ffd83bb635637f2bf3e9ce",
+      "public_sha256": "dac8858e56c1fcfbb345d52fb8d31f5be7f49fa8a0ffd83bb635637f2bf3e9ce",
+      "byte_identical": true
+    },
+    "src/content_ratio.py": {
+      "source": "outputs/table4_capability_20260928_eosfix/protocol/source_snapshot/src/content_ratio.py",
+      "source_sha256": "72ad12bf0ba2c524d29c9800574ead5f3a329dad2e01596d0ec07ce44547d1f1",
+      "public_sha256": "72ad12bf0ba2c524d29c9800574ead5f3a329dad2e01596d0ec07ce44547d1f1",
+      "byte_identical": true
+    },
+    "src/core.py": {
+      "source": "outputs/table4_capability_20260928_eosfix/protocol/source_snapshot/src/core.py",
+      "source_sha256": "57398432473c87e7745d5aad80f17342b4e1fe2fdd26e65d7134c5ef874d4498",
+      "public_sha256": "57398432473c87e7745d5aad80f17342b4e1fe2fdd26e65d7134c5ef874d4498",
+      "byte_identical": true
+    },
+    "src/horizon_ratio.py": {
+      "source": "outputs/table4_capability_20260928_eosfix/protocol/source_snapshot/src/horizon_ratio.py",
+      "source_sha256": "cc5cdd393ce6f6e288988b1cb929ed8278b4ad179ff3fa4ea478e8df07ab9677",
+      "public_sha256": "cc5cdd393ce6f6e288988b1cb929ed8278b4ad179ff3fa4ea478e8df07ab9677",
+      "byte_identical": true
+    },
+    "src/plot_style.py": {
+      "source": "outputs/table4_capability_20260928_eosfix/protocol/source_snapshot/src/plot_style.py",
+      "source_sha256": "0c43309e6bc89a5568fc9e7506f3cfd1c17d2d4336a8b7cd07b816a2d338956c",
+      "public_sha256": "0c43309e6bc89a5568fc9e7506f3cfd1c17d2d4336a8b7cd07b816a2d338956c",
+      "byte_identical": true
+    },
+    "src/prefix_hazard.py": {
+      "source": "outputs/table4_capability_20260928_eosfix/protocol/source_snapshot/src/prefix_hazard.py",
+      "source_sha256": "6eea275b1ad3e044e154b00cdb247f40e160d0e6ba7e9b04103dbd859c528285",
+      "public_sha256": "6eea275b1ad3e044e154b00cdb247f40e160d0e6ba7e9b04103dbd859c528285",
+      "byte_identical": true
+    },
+    "src/regularized_ratio.py": {
+      "source": "outputs/table4_capability_20260928_eosfix/protocol/source_snapshot/src/regularized_ratio.py",
+      "source_sha256": "6ebd44d26073a309960319a31eb8d0b67c68ad3853e5433e14aa503e9b07316e",
+      "public_sha256": "6ebd44d26073a309960319a31eb8d0b67c68ad3853e5433e14aa503e9b07316e",
+      "byte_identical": true
+    },
+    "src/structured_bandits.py": {
+      "source": "outputs/table4_capability_20260928_eosfix/protocol/source_snapshot/src/structured_bandits.py",
+      "source_sha256": "8e5e89fbe887dc430fc20d7b52d5832b87d4d8da3f8ca7e9ba7aad88e3efe93e",
+      "public_sha256": "8e5e89fbe887dc430fc20d7b52d5832b87d4d8da3f8ca7e9ba7aad88e3efe93e",
+      "byte_identical": true
+    },
+    "src/sim_s1_phase_transition.py": {
+      "source": "src/sim_s1_phase_transition.py",
+      "source_sha256": "0f564c3c1d7f4ec65d10aac0aa2d8e3f1d8f1279ae8894ba41f274845c360fba",
+      "public_sha256": "0f564c3c1d7f4ec65d10aac0aa2d8e3f1d8f1279ae8894ba41f274845c360fba",
+      "byte_identical": true
+    },
+    "src/sim_s2_latency_table.py": {
+      "source": "src/sim_s2_latency_table.py",
+      "source_sha256": "e240d09d11fa13fc39c76bde76deb19395cb71091a85c649b5ab956d80006940",
+      "public_sha256": "e240d09d11fa13fc39c76bde76deb19395cb71091a85c649b5ab956d80006940",
+      "byte_identical": true
+    },
+    "src/sim_s3_regret.py": {
+      "source": "src/sim_s3_regret.py",
+      "source_sha256": "42e8e91292785c1390f7a4066c89af32a605a236c9abd0323a273801f671c0b0",
+      "public_sha256": "42e8e91292785c1390f7a4066c89af32a605a236c9abd0323a273801f671c0b0",
+      "byte_identical": true
+    },
+    "src/sim_s4_voi.py": {
+      "source": "src/sim_s4_voi.py",
+      "source_sha256": "d35e4516a1384ff51ee2e13100a33f0918137fd9441145b176f3268649cc8cf6",
+      "public_sha256": "d35e4516a1384ff51ee2e13100a33f0918137fd9441145b176f3268649cc8cf6",
+      "byte_identical": true
+    },
+    "src/sim_s5_robustness.py": {
+      "source": "src/sim_s5_robustness.py",
+      "source_sha256": "f32fc3ccb5e13ca6b7ffc64903dac2beefdea404a1034b02e33af10327a8ce85",
+      "public_sha256": "f32fc3ccb5e13ca6b7ffc64903dac2beefdea404a1034b02e33af10327a8ce85",
+      "byte_identical": true
+    },
+    "src/sim_objective_consistency.py": {
+      "source": "src/sim_objective_consistency.py",
+      "source_sha256": "3a12b5f45baf62586c58d321b6f6aefb577676bcd26bb12eac148f352a9b5ff9",
+      "public_sha256": "3a12b5f45baf62586c58d321b6f6aefb577676bcd26bb12eac148f352a9b5ff9",
+      "byte_identical": true
+    },
+    "hardware/analyze_tmc_revision.py": {
+      "source": "hardware/analyze_tmc_revision.py",
+      "source_sha256": "2150b455cf7fe8eca8aaa658db78b85e32d00aa2c49bbd0fd345cf74111dcde3",
+      "public_sha256": "2150b455cf7fe8eca8aaa658db78b85e32d00aa2c49bbd0fd345cf74111dcde3",
+      "byte_identical": true
+    },
+    "hardware/analyze_exact_prediction_calibration.py": {
+      "source": "hardware/analyze_exact_prediction_calibration.py",
+      "source_sha256": "5332104b9f47c7a49a4236202598c4daa73e74592eb33d2d1b6bdab7cda6fe3b",
+      "public_sha256": "5332104b9f47c7a49a4236202598c4daa73e74592eb33d2d1b6bdab7cda6fe3b",
+      "byte_identical": true
+    },
+    "hardware/collect_tailscale_icmp_trace.py": {
+      "source": "hardware/collect_tailscale_icmp_trace.py",
+      "source_sha256": "8f3ed82c0d2d08cc790081d12d009c33e35df82960278f507f2c12f77aed2c48",
+      "public_sha256": "8f3ed82c0d2d08cc790081d12d009c33e35df82960278f507f2c12f77aed2c48",
+      "byte_identical": true
+    },
+    "hardware/validate_hw.py": {
+      "source": "hardware/validate_hw.py",
+      "source_sha256": "99503a995dcbabd99159825fa0f25cdbc7c1cb25cf6826fa301a256448b57103",
+      "public_sha256": "62c5b73ee376fbd88d76413c9a6abeebe99ad7fcb40481f990994c95f190884f",
+      "byte_identical": false
+    },
+    "hardware/validate_closed_loop_extensions.py": {
+      "source": "hardware/validate_closed_loop_extensions.py",
+      "source_sha256": "11a60e980a2a3498dfa66ec12673f75a7064c877e7a791b21f52d39122c6892c",
+      "public_sha256": "11a60e980a2a3498dfa66ec12673f75a7064c877e7a791b21f52d39122c6892c",
+      "byte_identical": true
+    },
+    "hardware/validate_delay_proxy.py": {
+      "source": "hardware/validate_delay_proxy.py",
+      "source_sha256": "5b00db51348635f138658851124d55ecc923b554541e4616e9643667a264bbe4",
+      "public_sha256": "5b00db51348635f138658851124d55ecc923b554541e4616e9643667a264bbe4",
+      "byte_identical": true
+    },
+    "hardware/validate_target_precision.py": {
+      "source": "hardware/validate_target_precision.py",
+      "source_sha256": "c1b91952f1bb9743c23bdd2293be46b30d6bf3bd98ce968eb91bb1816fdbf140",
+      "public_sha256": "c1b91952f1bb9743c23bdd2293be46b30d6bf3bd98ce968eb91bb1816fdbf140",
+      "byte_identical": true
+    },
+    "hardware/validate_graph_draft.py": {
+      "source": "hardware/validate_graph_draft.py",
+      "source_sha256": "de83adb170d029b9373ba09c560126c8772efca644127c82d2d4fd51462c8842",
+      "public_sha256": "de83adb170d029b9373ba09c560126c8772efca644127c82d2d4fd51462c8842",
+      "byte_identical": true
+    },
+    "hardware/prompts.txt": {
+      "source": "hardware/prompts.txt",
+      "source_sha256": "97756fb891177639d5ba19921df5e72ff4033dd953335eb7cacb274c320db947",
+      "public_sha256": "97756fb891177639d5ba19921df5e72ff4033dd953335eb7cacb274c320db947",
+      "byte_identical": true
+    },
+    "run_all.sh": {
+      "source": "run_all.sh",
+      "source_sha256": "53311c1862e5dcf473cc3a1957a4799977ca9c78ac7e1e703eb60154ee8faf32",
+      "public_sha256": "53311c1862e5dcf473cc3a1957a4799977ca9c78ac7e1e703eb60154ee8faf32",
+      "byte_identical": true
+    },
+    "hardware/validate_lazy_draft.py": {
+      "source": "hardware/validate_lazy_draft.py",
+      "source_sha256": "72e6278b288dcf28e3684257d018a714ec798e312ec8aa6b7dc5ece36b00b87a",
+      "public_sha256": "72e6278b288dcf28e3684257d018a714ec798e312ec8aa6b7dc5ece36b00b87a",
+      "byte_identical": true
+    },
+    "experiments/table4/analyze.py": {
+      "source": "outputs/table4_capability_20260928_eosfix/analyze.py",
+      "source_sha256": "db109987806eed0d60d7523d06268d045703cb3918d66af2ec0da7fea3953f8d",
+      "public_sha256": "ab3899e17130c7a61e480e8bd9c8ac1b5183de94b76dccf21040b6200e25ad8e",
+      "byte_identical": false
+    },
+    "experiments/table4/score.py": {
+      "source": "outputs/table4_capability_20260928_eosfix/score.py",
+      "source_sha256": "72da09d698fac1796a5bf90d6b07e23b79b267f470e20d6e62ef15c80c0750bb",
+      "public_sha256": "72da09d698fac1796a5bf90d6b07e23b79b267f470e20d6e62ef15c80c0750bb",
+      "byte_identical": true
+    },
+    "experiments/table4/test_capability.py": {
+      "source": "outputs/table4_capability_20260928_eosfix/test_capability.py",
+      "source_sha256": "adc3dd8cfeace26f88bb4ec2db7d1424292b1ea5acabe8a567714ddcf8c87777",
+      "public_sha256": "9b24a5c11c3da2118c53b0dacbfb9f59617835b9c676d772bcae292c3ab5aea6",
+      "byte_identical": false
+    },
+    "experiments/table4/test_analysis.py": {
+      "source": "outputs/table4_capability_20260928_eosfix/test_analysis.py",
+      "source_sha256": "82ecde7814cebfaed60bdfa9b598e9e65a2c656884b056c3818929ac50dd28b2",
+      "public_sha256": "751f7c5a6573bfebac198f3234211b1bdb1b4c7becb3478bbe452248c4e1d3c2",
+      "byte_identical": false
+    },
+    "data/table4/gold_answers.json": {
+      "source": "outputs/table4_capability_20260928_eosfix/gold_answers.json",
+      "source_sha256": "c7baac714698b2ea116f2b14bdaf2312a7c442192388af57c7599b012f0c1ec0",
+      "public_sha256": "c7baac714698b2ea116f2b14bdaf2312a7c442192388af57c7599b012f0c1ec0",
+      "byte_identical": true
+    },
+    "data/table4/campaign.json": {
+      "source": "outputs/table4_capability_20260928_eosfix/campaign.json",
+      "source_sha256": "a3008456d383df151999df8885133177ded129af0e47356fe9713b39ea7eb65c",
+      "public_sha256": "e5f72dfeaeb7fa37dfed7e264696ede7b5e218e7a7e35a6ca3e9120bc22bfa9d",
+      "byte_identical": false
+    },
+    "data/table4/frozen_manifest.json": {
+      "source": "outputs/table4_capability_20260928_eosfix/frozen_manifest.json",
+      "source_sha256": "7df982d9945141c4b9d6191dda137278a593dfd8f237d9c872d611fc67b2c09a",
+      "public_sha256": "2804040c0f64bdd3a1532815832c4bb83f7b98a780d2140d5edf56970a96f660",
+      "byte_identical": false
+    },
+    "data/table4/protocol/protocol.json": {
+      "source": "outputs/table4_capability_20260928_eosfix/protocol/protocol.json",
+      "source_sha256": "0f8dd8200a29bf3f64e7fc65a74cd95518bf7b1f6f0b4b133e6503079891210e",
+      "public_sha256": "83d5c7306c32756d32b5f1869fc6f0968400373d0d6bb72dc2653ec0759a2ea3",
+      "byte_identical": false
+    },
+    "data/table4/protocol/calibration-27.json": {
+      "source": "outputs/table4_capability_20260928_eosfix/protocol/calibration-27.json",
+      "source_sha256": "ac648ea9330ffa329f5597b1f392ef812a1b69d22f93ab2e9c0ef9e1b47e29cf",
+      "public_sha256": "ac648ea9330ffa329f5597b1f392ef812a1b69d22f93ab2e9c0ef9e1b47e29cf",
+      "byte_identical": true
+    },
+    "data/table4/protocol/static_selectors.json": {
+      "source": "outputs/table4_capability_20260928_eosfix/protocol/static_selectors.json",
+      "source_sha256": "80fea6ad04ad5ce5f68e7189fa23aa49e1bd0a97faaff6453200c8c4dbe29d7a",
+      "public_sha256": "80fea6ad04ad5ce5f68e7189fa23aa49e1bd0a97faaff6453200c8c4dbe29d7a",
+      "byte_identical": true
+    },
+    "data/table4/protocol/capability-01-plan.json": {
+      "source": "outputs/table4_capability_20260928_eosfix/protocol/capability-01-plan.json",
+      "source_sha256": "c47a2887d508e68109acf927b9313cc4517d828a094718f64415c18ef8810a8a",
+      "public_sha256": "bf61629a47340293d2be0b623b96b170b6bb5b62b25c22bf45350414db2fe040",
+      "byte_identical": false
+    },
+    "data/table4/protocol/capability-01-prompts.jsonl": {
+      "source": "outputs/table4_capability_20260928_eosfix/protocol/capability-01-prompts.jsonl",
+      "source_sha256": "0f3188fcb7c88b2951d00c9b9e647089856658cd0eabf54b87c44b9499c7db29",
+      "public_sha256": "0f3188fcb7c88b2951d00c9b9e647089856658cd0eabf54b87c44b9499c7db29",
+      "byte_identical": true
+    },
+    "data/table4/hardware_run/capability-01/request_metrics.jsonl": {
+      "source": "outputs/table4_capability_20260928_eosfix/hardware_run/capability-01/request_metrics.jsonl",
+      "source_sha256": "14ae3486d4545574a5b1615d2daf5b40dca59c638e949d2a9e069afd282ab2e1",
+      "public_sha256": "14ae3486d4545574a5b1615d2daf5b40dca59c638e949d2a9e069afd282ab2e1",
+      "byte_identical": true
+    },
+    "data/table4/hardware_run/capability-01/round_metrics.jsonl": {
+      "source": "outputs/table4_capability_20260928_eosfix/hardware_run/capability-01/round_metrics.jsonl",
+      "source_sha256": "0035b4b2652feafe7480998c5627f494868f6f455a0f4424ccd41691b047a982",
+      "public_sha256": "0035b4b2652feafe7480998c5627f494868f6f455a0f4424ccd41691b047a982",
+      "byte_identical": true
+    },
+    "data/table4/hardware_run/capability-01/output_equality.jsonl": {
+      "source": "outputs/table4_capability_20260928_eosfix/hardware_run/capability-01/output_equality.jsonl",
+      "source_sha256": "6cdc693cb9213ddbecf98e4a55de280d0230af64106e96027d489e1b395c1f8f",
+      "public_sha256": "6cdc693cb9213ddbecf98e4a55de280d0230af64106e96027d489e1b395c1f8f",
+      "byte_identical": true
+    },
+    "data/table4/hardware_run/capability-01/failures.jsonl": {
+      "source": "outputs/table4_capability_20260928_eosfix/hardware_run/capability-01/failures.jsonl",
+      "source_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "public_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "byte_identical": true
+    },
+    "data/table4/hardware_run/capability-01/frozen_plan.json": {
+      "source": "outputs/table4_capability_20260928_eosfix/hardware_run/capability-01/frozen_plan.json",
+      "source_sha256": "a69e0129fe69bd4a5d8930a0d830680634d087874281d69df0686a30dea0a128",
+      "public_sha256": "98b67a8053a06a03ffb82f8c4d733af966e30f66ef99a6addffece2cf29c42dd",
+      "byte_identical": false
+    },
+    "data/table4/hardware_run/capability-01/run_manifest.json": {
+      "source": "outputs/table4_capability_20260928_eosfix/hardware_run/capability-01/run_manifest.json",
+      "source_sha256": "19f3ea37ceff8ca85451ea805d056b0855db6a12f730dde0fa4ffd08b830e698",
+      "public_sha256": "bd3bc58eebfb81e3b0e65941c1ac5568de1c419384bc717b8499df4b80636b86",
+      "byte_identical": false
+    },
+    "data/table4/protocol/capability-02-plan.json": {
+      "source": "outputs/table4_capability_20260928_eosfix/protocol/capability-02-plan.json",
+      "source_sha256": "889303cd78d7b9c5603dc45dc9a50bc119c229978a6279b042a9cbc0c3bbd1c2",
+      "public_sha256": "c1199d8950d87b829d3941117e1adae43715b2b48359cf3bfe680484abb4f2ce",
+      "byte_identical": false
+    },
+    "data/table4/protocol/capability-02-prompts.jsonl": {
+      "source": "outputs/table4_capability_20260928_eosfix/protocol/capability-02-prompts.jsonl",
+      "source_sha256": "5312fc1f9b09ca0f57f8e272b509a42c08987b904fa6a7c079a3f60c64ec1e10",
+      "public_sha256": "5312fc1f9b09ca0f57f8e272b509a42c08987b904fa6a7c079a3f60c64ec1e10",
+      "byte_identical": true
+    },
+    "data/table4/hardware_run/capability-02/request_metrics.jsonl": {
+      "source": "outputs/table4_capability_20260928_eosfix/hardware_run/capability-02/request_metrics.jsonl",
+      "source_sha256": "f70a7c6a004b6ff61f9207223ab8114a6230ba63b34f70fff92493e87263943f",
+      "public_sha256": "f70a7c6a004b6ff61f9207223ab8114a6230ba63b34f70fff92493e87263943f",
+      "byte_identical": true
+    },
+    "data/table4/hardware_run/capability-02/round_metrics.jsonl": {
+      "source": "outputs/table4_capability_20260928_eosfix/hardware_run/capability-02/round_metrics.jsonl",
+      "source_sha256": "3e4102adcdf1a4c18bc7dbf0b5ead0b45da80741efb0d045b549a5d334d2676c",
+      "public_sha256": "3e4102adcdf1a4c18bc7dbf0b5ead0b45da80741efb0d045b549a5d334d2676c",
+      "byte_identical": true
+    },
+    "data/table4/hardware_run/capability-02/output_equality.jsonl": {
+      "source": "outputs/table4_capability_20260928_eosfix/hardware_run/capability-02/output_equality.jsonl",
+      "source_sha256": "47992a1e52819916a07dc4ce0cb2ca91274cb100d5379386e5105cdad5c3a52a",
+      "public_sha256": "47992a1e52819916a07dc4ce0cb2ca91274cb100d5379386e5105cdad5c3a52a",
+      "byte_identical": true
+    },
+    "data/table4/hardware_run/capability-02/failures.jsonl": {
+      "source": "outputs/table4_capability_20260928_eosfix/hardware_run/capability-02/failures.jsonl",
+      "source_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "public_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "byte_identical": true
+    },
+    "data/table4/hardware_run/capability-02/frozen_plan.json": {
+      "source": "outputs/table4_capability_20260928_eosfix/hardware_run/capability-02/frozen_plan.json",
+      "source_sha256": "81bbe8f1e7d3e3693af769f9ef4c36080a679de3bb742de3d92d9d9c866d4170",
+      "public_sha256": "dd046a0b617a5cb3cc0f8e54b68e8404bef854790e165013e11766ff15496d88",
+      "byte_identical": false
+    },
+    "data/table4/hardware_run/capability-02/run_manifest.json": {
+      "source": "outputs/table4_capability_20260928_eosfix/hardware_run/capability-02/run_manifest.json",
+      "source_sha256": "43c11000f6ce2eae46468b9e092dc629c0fb1ea0c49849b4ea8733fd590529c6",
+      "public_sha256": "d0fb345e110b2cdd52c862c81290a1f93238b4a2f736bacce8c4dbfc5d680224",
+      "byte_identical": false
+    },
+    "data/table4/protocol/capability-03-plan.json": {
+      "source": "outputs/table4_capability_20260928_eosfix/protocol/capability-03-plan.json",
+      "source_sha256": "12732b3306f90008c783a867977e5d007365308c4aca8b7096a44a2e9915f71b",
+      "public_sha256": "c5f15a79f9983092948e6a40427c17e4573c749112660e8c838a4ec5e10e8777",
+      "byte_identical": false
+    },
+    "data/table4/protocol/capability-03-prompts.jsonl": {
+      "source": "outputs/table4_capability_20260928_eosfix/protocol/capability-03-prompts.jsonl",
+      "source_sha256": "3816255ba71be6887b93d8591ca1c182117be345db4396c6a0ca02b8b47e93c9",
+      "public_sha256": "3816255ba71be6887b93d8591ca1c182117be345db4396c6a0ca02b8b47e93c9",
+      "byte_identical": true
+    },
+    "data/table4/hardware_run/capability-03/request_metrics.jsonl": {
+      "source": "outputs/table4_capability_20260928_eosfix/hardware_run/capability-03/request_metrics.jsonl",
+      "source_sha256": "13e9f209518aa4180dfde5f33086944ee77f02e9a52b758a29bbd783e3e43331",
+      "public_sha256": "13e9f209518aa4180dfde5f33086944ee77f02e9a52b758a29bbd783e3e43331",
+      "byte_identical": true
+    },
+    "data/table4/hardware_run/capability-03/round_metrics.jsonl": {
+      "source": "outputs/table4_capability_20260928_eosfix/hardware_run/capability-03/round_metrics.jsonl",
+      "source_sha256": "854d3e8c5cbcfcbeb6c28f15e545a45086e997d0bb41b8db135136984172d371",
+      "public_sha256": "854d3e8c5cbcfcbeb6c28f15e545a45086e997d0bb41b8db135136984172d371",
+      "byte_identical": true
+    },
+    "data/table4/hardware_run/capability-03/output_equality.jsonl": {
+      "source": "outputs/table4_capability_20260928_eosfix/hardware_run/capability-03/output_equality.jsonl",
+      "source_sha256": "dde3665e19a622a1ea7ea427f0fd929c597facf682814b324655456c492cc5d1",
+      "public_sha256": "dde3665e19a622a1ea7ea427f0fd929c597facf682814b324655456c492cc5d1",
+      "byte_identical": true
+    },
+    "data/table4/hardware_run/capability-03/failures.jsonl": {
+      "source": "outputs/table4_capability_20260928_eosfix/hardware_run/capability-03/failures.jsonl",
+      "source_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "public_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "byte_identical": true
+    },
+    "data/table4/hardware_run/capability-03/frozen_plan.json": {
+      "source": "outputs/table4_capability_20260928_eosfix/hardware_run/capability-03/frozen_plan.json",
+      "source_sha256": "3c62466c30edef4862d20729ed2510dc3d0e9a883cc00f7c34a0b551071f5afa",
+      "public_sha256": "852f4b4d65a85f74e9b0aeefa5cb56fa18b60bfeb6c51a753f1963dd9676ceeb",
+      "byte_identical": false
+    },
+    "data/table4/hardware_run/capability-03/run_manifest.json": {
+      "source": "outputs/table4_capability_20260928_eosfix/hardware_run/capability-03/run_manifest.json",
+      "source_sha256": "3b1b12d340997bc7893a8a42047e77c72cac2c5a3b1663ca230093871072d8b8",
+      "public_sha256": "89bc0e9d5f8fb9d2b920eb852aced32fd6b031355fe6c60dc4f30e6fdc3215df",
+      "byte_identical": false
+    },
+    "data/table4/protocol/capability-04-plan.json": {
+      "source": "outputs/table4_capability_20260928_eosfix/protocol/capability-04-plan.json",
+      "source_sha256": "07d1f3b464378f1ced04666aff42359a44b6398ca6642df7af024683cc8e2747",
+      "public_sha256": "dc4592845326a888104b405fb099a21c9b7340b6882ade261c0098bdfe22f718",
+      "byte_identical": false
+    },
+    "data/table4/protocol/capability-04-prompts.jsonl": {
+      "source": "outputs/table4_capability_20260928_eosfix/protocol/capability-04-prompts.jsonl",
+      "source_sha256": "34023bee88e524469747e7a7c82ed5f5e58c84f636694c5034d8e6692c3314ee",
+      "public_sha256": "34023bee88e524469747e7a7c82ed5f5e58c84f636694c5034d8e6692c3314ee",
+      "byte_identical": true
+    },
+    "data/table4/hardware_run/capability-04/request_metrics.jsonl": {
+      "source": "outputs/table4_capability_20260928_eosfix/hardware_run/capability-04/request_metrics.jsonl",
+      "source_sha256": "ba2b32dc09f5832856aa16fe397bc575ef02c1f6fa976271c134ae2454e00a63",
+      "public_sha256": "ba2b32dc09f5832856aa16fe397bc575ef02c1f6fa976271c134ae2454e00a63",
+      "byte_identical": true
+    },
+    "data/table4/hardware_run/capability-04/round_metrics.jsonl": {
+      "source": "outputs/table4_capability_20260928_eosfix/hardware_run/capability-04/round_metrics.jsonl",
+      "source_sha256": "4348a0b6887f823e074ebf0836f47ea1b61e7e4818275db04fc60e220e1e2cc7",
+      "public_sha256": "4348a0b6887f823e074ebf0836f47ea1b61e7e4818275db04fc60e220e1e2cc7",
+      "byte_identical": true
+    },
+    "data/table4/hardware_run/capability-04/output_equality.jsonl": {
+      "source": "outputs/table4_capability_20260928_eosfix/hardware_run/capability-04/output_equality.jsonl",
+      "source_sha256": "bf10a6ca89c69c541435b493243d86278732df926af2d41cdd46bd852368e18c",
+      "public_sha256": "bf10a6ca89c69c541435b493243d86278732df926af2d41cdd46bd852368e18c",
+      "byte_identical": true
+    },
+    "data/table4/hardware_run/capability-04/failures.jsonl": {
+      "source": "outputs/table4_capability_20260928_eosfix/hardware_run/capability-04/failures.jsonl",
+      "source_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "public_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "byte_identical": true
+    },
+    "data/table4/hardware_run/capability-04/frozen_plan.json": {
+      "source": "outputs/table4_capability_20260928_eosfix/hardware_run/capability-04/frozen_plan.json",
+      "source_sha256": "a91c5f8569fc6d059f30471b4799a7fae2c6d669933631e16a2200a956377411",
+      "public_sha256": "9d6918816487d48ca99627a11f753e7816fd840a36c49804f0251bc4adde5ab5",
+      "byte_identical": false
+    },
+    "data/table4/hardware_run/capability-04/run_manifest.json": {
+      "source": "outputs/table4_capability_20260928_eosfix/hardware_run/capability-04/run_manifest.json",
+      "source_sha256": "8d56d1ef409bc8ac46ce3c7797e0d6023fdf3b75e013836243836b7147f58c7e",
+      "public_sha256": "95d21d213a4b1444bccd679a3594f2ad7108be3f0688576e8e94822abc4eee40",
+      "byte_identical": false
+    },
+    "data/table4/protocol/capability-05-plan.json": {
+      "source": "outputs/table4_capability_20260928_eosfix/protocol/capability-05-plan.json",
+      "source_sha256": "177956917ef63955b0e9ba56caaa3463cf98d6dc6188dde4571127bdbe8b361c",
+      "public_sha256": "50d55a854ee99997dbec56ee457aae430b0bad90a1161e990acedcdd32a6284f",
+      "byte_identical": false
+    },
+    "data/table4/protocol/capability-05-prompts.jsonl": {
+      "source": "outputs/table4_capability_20260928_eosfix/protocol/capability-05-prompts.jsonl",
+      "source_sha256": "c5f72ba4539acd6be58d47dd0aafc4ca744633cc1de7adfe482155de72ab678e",
+      "public_sha256": "c5f72ba4539acd6be58d47dd0aafc4ca744633cc1de7adfe482155de72ab678e",
+      "byte_identical": true
+    },
+    "data/table4/hardware_run/capability-05/request_metrics.jsonl": {
+      "source": "outputs/table4_capability_20260928_eosfix/hardware_run/capability-05/request_metrics.jsonl",
+      "source_sha256": "7065d28e76524f1006b3bcd66c904b2b0a284336949cfeb5d07bf46d1137a602",
+      "public_sha256": "7065d28e76524f1006b3bcd66c904b2b0a284336949cfeb5d07bf46d1137a602",
+      "byte_identical": true
+    },
+    "data/table4/hardware_run/capability-05/round_metrics.jsonl": {
+      "source": "outputs/table4_capability_20260928_eosfix/hardware_run/capability-05/round_metrics.jsonl",
+      "source_sha256": "558397057d5b247441cdc4c3949ac35742f178e15f93ef11b750f5efdeb9347e",
+      "public_sha256": "558397057d5b247441cdc4c3949ac35742f178e15f93ef11b750f5efdeb9347e",
+      "byte_identical": true
+    },
+    "data/table4/hardware_run/capability-05/output_equality.jsonl": {
+      "source": "outputs/table4_capability_20260928_eosfix/hardware_run/capability-05/output_equality.jsonl",
+      "source_sha256": "379c6af4d67b4112e3c38dfb65e2fa16b1632bf415d7c3207d27bba3d74c315d",
+      "public_sha256": "379c6af4d67b4112e3c38dfb65e2fa16b1632bf415d7c3207d27bba3d74c315d",
+      "byte_identical": true
+    },
+    "data/table4/hardware_run/capability-05/failures.jsonl": {
+      "source": "outputs/table4_capability_20260928_eosfix/hardware_run/capability-05/failures.jsonl",
+      "source_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "public_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "byte_identical": true
+    },
+    "data/table4/hardware_run/capability-05/frozen_plan.json": {
+      "source": "outputs/table4_capability_20260928_eosfix/hardware_run/capability-05/frozen_plan.json",
+      "source_sha256": "62c68a159eb6e5e31387394dbff06ea2979b4d4efe7f25c40982971f84bf1113",
+      "public_sha256": "74057058972019cfdf5219249bfe64780da5da5f92500a29bae562852d5b6dfd",
+      "byte_identical": false
+    },
+    "data/table4/hardware_run/capability-05/run_manifest.json": {
+      "source": "outputs/table4_capability_20260928_eosfix/hardware_run/capability-05/run_manifest.json",
+      "source_sha256": "bd4b8189d411914b5f5b8f5af39788db14214610667f953ded7c80c2978a7376",
+      "public_sha256": "a42a48f86423edc0aeb0b38c6bc4ac36cee5c57fc90db3f7f672f1922b89fa82",
+      "byte_identical": false
+    },
+    "data/table4/protocol/capability-06-plan.json": {
+      "source": "outputs/table4_capability_20260928_eosfix/protocol/capability-06-plan.json",
+      "source_sha256": "3b0bfe9e604263e6fedc4d8afb6f6c9c6e04c6c5c1276248b9d7bda1d69485f0",
+      "public_sha256": "2dd244d6227af5a1c832f3744c8c198d33ef0058a76c707b229a3460da3f8ea0",
+      "byte_identical": false
+    },
+    "data/table4/protocol/capability-06-prompts.jsonl": {
+      "source": "outputs/table4_capability_20260928_eosfix/protocol/capability-06-prompts.jsonl",
+      "source_sha256": "f21d6da2c2b4140066dd2e20d974359504f4426bfa18afabbc10b1f12acc2283",
+      "public_sha256": "f21d6da2c2b4140066dd2e20d974359504f4426bfa18afabbc10b1f12acc2283",
+      "byte_identical": true
+    },
+    "data/table4/hardware_run/capability-06/request_metrics.jsonl": {
+      "source": "outputs/table4_capability_20260928_eosfix/hardware_run/capability-06/request_metrics.jsonl",
+      "source_sha256": "3686cfc4d008e4ee40ef9a0f95774c56890c81100d98341a479b45143f2af810",
+      "public_sha256": "3686cfc4d008e4ee40ef9a0f95774c56890c81100d98341a479b45143f2af810",
+      "byte_identical": true
+    },
+    "data/table4/hardware_run/capability-06/round_metrics.jsonl": {
+      "source": "outputs/table4_capability_20260928_eosfix/hardware_run/capability-06/round_metrics.jsonl",
+      "source_sha256": "09250c98dbc246f5fabf5cf3711e641ea27fe7e7bead5f47afa00a0343431528",
+      "public_sha256": "09250c98dbc246f5fabf5cf3711e641ea27fe7e7bead5f47afa00a0343431528",
+      "byte_identical": true
+    },
+    "data/table4/hardware_run/capability-06/output_equality.jsonl": {
+      "source": "outputs/table4_capability_20260928_eosfix/hardware_run/capability-06/output_equality.jsonl",
+      "source_sha256": "480679f2f9b8a0fa3fbddad091382664d45c211f8e868b60b7c995336f181eed",
+      "public_sha256": "480679f2f9b8a0fa3fbddad091382664d45c211f8e868b60b7c995336f181eed",
+      "byte_identical": true
+    },
+    "data/table4/hardware_run/capability-06/failures.jsonl": {
+      "source": "outputs/table4_capability_20260928_eosfix/hardware_run/capability-06/failures.jsonl",
+      "source_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "public_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "byte_identical": true
+    },
+    "data/table4/hardware_run/capability-06/frozen_plan.json": {
+      "source": "outputs/table4_capability_20260928_eosfix/hardware_run/capability-06/frozen_plan.json",
+      "source_sha256": "d809deaeef695153eef824d92f7d2cc7c4bb0bdbd07d91a661901efd982ffc06",
+      "public_sha256": "ec8d3a36b333bf8d5d6732526c173a19a6d563b1729078a5a2032251df1e8de0",
+      "byte_identical": false
+    },
+    "data/table4/hardware_run/capability-06/run_manifest.json": {
+      "source": "outputs/table4_capability_20260928_eosfix/hardware_run/capability-06/run_manifest.json",
+      "source_sha256": "1f99961f373e71c0441bad0c304fb44569799a80f55aa684a6128a68cf5e0ccd",
+      "public_sha256": "c40f37232e8154d05a0145f58a13b77f59fafbcad2bb8dc65c2513ff7f67ac14",
+      "byte_identical": false
+    },
+    "data/table4/protocol/capability-07-plan.json": {
+      "source": "outputs/table4_capability_20260928_eosfix/protocol/capability-07-plan.json",
+      "source_sha256": "6417e80940e5997202d251be3560964f7227204e220f9298259922de885d70bc",
+      "public_sha256": "40a6dfe8bbc11abb6aae734625f623b9cd9aa34c81317fa814fe077689ccb653",
+      "byte_identical": false
+    },
+    "data/table4/protocol/capability-07-prompts.jsonl": {
+      "source": "outputs/table4_capability_20260928_eosfix/protocol/capability-07-prompts.jsonl",
+      "source_sha256": "9decaba87862861f3940b4c96f1c9dbfde0496a3f957f29928ef5c76a943f22a",
+      "public_sha256": "9decaba87862861f3940b4c96f1c9dbfde0496a3f957f29928ef5c76a943f22a",
+      "byte_identical": true
+    },
+    "data/table4/hardware_run/capability-07/request_metrics.jsonl": {
+      "source": "outputs/table4_capability_20260928_eosfix/hardware_run/capability-07/request_metrics.jsonl",
+      "source_sha256": "11a6120a5c89ef91dc38dc1b33e85302f80b5129da70983e7c40162750a13667",
+      "public_sha256": "11a6120a5c89ef91dc38dc1b33e85302f80b5129da70983e7c40162750a13667",
+      "byte_identical": true
+    },
+    "data/table4/hardware_run/capability-07/round_metrics.jsonl": {
+      "source": "outputs/table4_capability_20260928_eosfix/hardware_run/capability-07/round_metrics.jsonl",
+      "source_sha256": "2814ba65e52856f19fbd35f0f9b773958082657e9e12ed593e6fc44c1fec6840",
+      "public_sha256": "2814ba65e52856f19fbd35f0f9b773958082657e9e12ed593e6fc44c1fec6840",
+      "byte_identical": true
+    },
+    "data/table4/hardware_run/capability-07/output_equality.jsonl": {
+      "source": "outputs/table4_capability_20260928_eosfix/hardware_run/capability-07/output_equality.jsonl",
+      "source_sha256": "c490a321a4b4fe79d787ef67253e2a98630e1387057882b88928df2635d07686",
+      "public_sha256": "c490a321a4b4fe79d787ef67253e2a98630e1387057882b88928df2635d07686",
+      "byte_identical": true
+    },
+    "data/table4/hardware_run/capability-07/failures.jsonl": {
+      "source": "outputs/table4_capability_20260928_eosfix/hardware_run/capability-07/failures.jsonl",
+      "source_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "public_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "byte_identical": true
+    },
+    "data/table4/hardware_run/capability-07/frozen_plan.json": {
+      "source": "outputs/table4_capability_20260928_eosfix/hardware_run/capability-07/frozen_plan.json",
+      "source_sha256": "c327fd9cf2577f93caf4c3d13886ec071c709123fe2468c341378c6c81015b88",
+      "public_sha256": "9588c6b0ff689cd6fcfcc6bec14751256646731c00afde120b72475a81fe31e6",
+      "byte_identical": false
+    },
+    "data/table4/hardware_run/capability-07/run_manifest.json": {
+      "source": "outputs/table4_capability_20260928_eosfix/hardware_run/capability-07/run_manifest.json",
+      "source_sha256": "4abda53ab14d9e55d3916d812816a569cc1929226e5875e6d6fec756bd680a9a",
+      "public_sha256": "c7f989c4471fce14777ea34df025c98996e88e57cc18a5330952bc78633981a0",
+      "byte_identical": false
+    },
+    "data/table4/protocol/capability-08-plan.json": {
+      "source": "outputs/table4_capability_20260928_eosfix/protocol/capability-08-plan.json",
+      "source_sha256": "a17a60958a87b875f20281cf7f8aa1e9bc78a924de0989c1c182cd819a9146c4",
+      "public_sha256": "5a3d22b58bca7863d33cbd2d697c201b797313c28c03fa3d4f52b1b7cc32462c",
+      "byte_identical": false
+    },
+    "data/table4/protocol/capability-08-prompts.jsonl": {
+      "source": "outputs/table4_capability_20260928_eosfix/protocol/capability-08-prompts.jsonl",
+      "source_sha256": "e8e0e4f73046ffc6e27ff6d4d9d9d9f586124b7f0287d2862d927b4f6e9a7140",
+      "public_sha256": "e8e0e4f73046ffc6e27ff6d4d9d9d9f586124b7f0287d2862d927b4f6e9a7140",
+      "byte_identical": true
+    },
+    "data/table4/hardware_run/capability-08/request_metrics.jsonl": {
+      "source": "outputs/table4_capability_20260928_eosfix/hardware_run/capability-08/request_metrics.jsonl",
+      "source_sha256": "8ac8afac5d44857ae2fc02e1e2ec8721ac32730ca5cd114dd07ca65c161aeba6",
+      "public_sha256": "8ac8afac5d44857ae2fc02e1e2ec8721ac32730ca5cd114dd07ca65c161aeba6",
+      "byte_identical": true
+    },
+    "data/table4/hardware_run/capability-08/round_metrics.jsonl": {
+      "source": "outputs/table4_capability_20260928_eosfix/hardware_run/capability-08/round_metrics.jsonl",
+      "source_sha256": "20d8a84fb6a7c0e796209e64b6b72580f17990c1509253837b621cd2fe107bad",
+      "public_sha256": "20d8a84fb6a7c0e796209e64b6b72580f17990c1509253837b621cd2fe107bad",
+      "byte_identical": true
+    },
+    "data/table4/hardware_run/capability-08/output_equality.jsonl": {
+      "source": "outputs/table4_capability_20260928_eosfix/hardware_run/capability-08/output_equality.jsonl",
+      "source_sha256": "e5cbf3fa1122c5a6c1898680085ec3e8174f2713b10bee9699409bb1755daf63",
+      "public_sha256": "e5cbf3fa1122c5a6c1898680085ec3e8174f2713b10bee9699409bb1755daf63",
+      "byte_identical": true
+    },
+    "data/table4/hardware_run/capability-08/failures.jsonl": {
+      "source": "outputs/table4_capability_20260928_eosfix/hardware_run/capability-08/failures.jsonl",
+      "source_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "public_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "byte_identical": true
+    },
+    "data/table4/hardware_run/capability-08/frozen_plan.json": {
+      "source": "outputs/table4_capability_20260928_eosfix/hardware_run/capability-08/frozen_plan.json",
+      "source_sha256": "b1250c41a234523413045c4305b5d92d3c0adcfcb1c84ec4ad946fc3d26b32bd",
+      "public_sha256": "286aad0fadbc9ddc59478dc6698c2b80a525702d8b3b2b0d8a35099a80936b60",
+      "byte_identical": false
+    },
+    "data/table4/hardware_run/capability-08/run_manifest.json": {
+      "source": "outputs/table4_capability_20260928_eosfix/hardware_run/capability-08/run_manifest.json",
+      "source_sha256": "6e5a3bfc614468fff390eec15756658ab10e304ce8a058d5920b33ebc4707085",
+      "public_sha256": "f0f62e5d8677b0be2e032a82add4864fc787da9cf188d3942887e36908d77a13",
+      "byte_identical": false
+    },
+    "data/table4/expected/table4_all_metrics.csv": {
+      "source": "outputs/table4_capability_20260928_eosfix/analysis/table4_all_metrics.csv",
+      "source_sha256": "6a4404acc2104f2427fa8e4aa5163226e4d04f1fd4f881c6542f954df71220ec",
+      "public_sha256": "6a4404acc2104f2427fa8e4aa5163226e4d04f1fd4f881c6542f954df71220ec",
+      "byte_identical": true
+    },
+    "data/table4/expected/session_costs.csv": {
+      "source": "outputs/table4_capability_20260928_eosfix/analysis/session_costs.csv",
+      "source_sha256": "e806e61303972cf952d3f8661d10422079aaf312645afc2ba4c45098fd4d2cf2",
+      "public_sha256": "e806e61303972cf952d3f8661d10422079aaf312645afc2ba4c45098fd4d2cf2",
+      "byte_identical": true
+    },
+    "data/table4/expected/quality.json": {
+      "source": "outputs/table4_capability_20260928_eosfix/analysis/quality.json",
+      "source_sha256": "4fa842d7b12d1f382cd3da8ea8c423123d8200b1a89f0afdfa9f94111e710b19",
+      "public_sha256": "4fa842d7b12d1f382cd3da8ea8c423123d8200b1a89f0afdfa9f94111e710b19",
+      "byte_identical": true
+    },
+    "data/table4/expected/latency_contrasts.json": {
+      "source": "outputs/table4_capability_20260928_eosfix/analysis/latency_contrasts.json",
+      "source_sha256": "7eeccd013ad0fb92c2efec05b241f7b81b013d144e0ca2e7f60b1951ceab2c37",
+      "public_sha256": "7eeccd013ad0fb92c2efec05b241f7b81b013d144e0ca2e7f60b1951ceab2c37",
+      "byte_identical": true
+    },
+    "data/table4/gsm8k_test.jsonl": {
+      "source": "outputs/revision/workloads/task_diversity_20260821/source/gsm8k_test.jsonl",
+      "source_sha256": "3730d312f6e3440559ace48831e51066acaca737f6eabec99bccb9e4b3c39d14",
+      "public_sha256": "3730d312f6e3440559ace48831e51066acaca737f6eabec99bccb9e4b3c39d14",
+      "byte_identical": true
+    },
+    "docs/STATISTICS.md": {
+      "source": "outputs/table4_capability_20260928_eosfix/STATISTICS.md",
+      "source_sha256": "13b2b40be6b4ba60c48005c58e25eb701288648ee4968b3988a9a2ef42774e30",
+      "public_sha256": "13b2b40be6b4ba60c48005c58e25eb701288648ee4968b3988a9a2ef42774e30",
+      "byte_identical": true
+    },
+    "docs/TERMINATION_AUDIT.md": {
+      "source": "outputs/table4_capability_20260928_eosfix/TERMINATION_AUDIT.md",
+      "source_sha256": "fd35799efb2839d9a1a42ba540ca023d97d75719b0317d2370f9bc348a5c2be3",
+      "public_sha256": "fd35799efb2839d9a1a42ba540ca023d97d75719b0317d2370f9bc348a5c2be3",
+      "byte_identical": true
+    },
+    "data/markov/markov_all_inputs_outputs.jsonl": {
+      "source": "outputs/fig_s1_revision_20260929_ymyH0t/source/source_data/markov/markov_all_inputs_outputs.jsonl",
+      "source_sha256": "9ae72465e3c5ee3d4f7879c76f9916f7208190bc74a6a721eb9c0c9a141e345d",
+      "public_sha256": "9ae72465e3c5ee3d4f7879c76f9916f7208190bc74a6a721eb9c0c9a141e345d",
+      "byte_identical": true
+    },
+    "data/markov/markov_nominal.json": {
+      "source": "outputs/fig_s1_revision_20260929_ymyH0t/source/source_data/markov/markov_nominal.json",
+      "source_sha256": "3ab518ab0da77effed1abbafc2f0f9e6345e8ec6737e1af39ae0473050cbbcbb",
+      "public_sha256": "3ab518ab0da77effed1abbafc2f0f9e6345e8ec6737e1af39ae0473050cbbcbb",
+      "byte_identical": true
+    },
+    "data/markov/markov_groups.csv": {
+      "source": "outputs/fig_s1_revision_20260929_ymyH0t/source/source_data/markov/markov_groups.csv",
+      "source_sha256": "6aca9fdf86d8ea2d3de67c530b4fcaa589684a21e4779788443dd86faeb5ab14",
+      "public_sha256": "6aca9fdf86d8ea2d3de67c530b4fcaa589684a21e4779788443dd86faeb5ab14",
+      "byte_identical": true
+    },
+    "data/markov/markov_instances.csv": {
+      "source": "outputs/fig_s1_revision_20260929_ymyH0t/source/source_data/markov/markov_instances.csv",
+      "source_sha256": "40ab80edc4a68f4dd30bd5e288029214cff372a60a5a5d03aa4745a452168ef5",
+      "public_sha256": "40ab80edc4a68f4dd30bd5e288029214cff372a60a5a5d03aa4745a452168ef5",
+      "byte_identical": true
+    },
+    "data/markov/recomputation.json": {
+      "source": "outputs/fig_s1_revision_20260929_ymyH0t/source/source_data/markov/recomputation.json",
+      "source_sha256": "3bb01c774bb376015ebd584049d000bf49ceba1ef7decd77cadd57e1fa561cb3",
+      "public_sha256": "3bb01c774bb376015ebd584049d000bf49ceba1ef7decd77cadd57e1fa561cb3",
+      "byte_identical": true
+    },
+    "data/markov/recompute.py": {
+      "source": "outputs/fig_s1_revision_20260929_ymyH0t/source/source_data/markov/recompute.py",
+      "source_sha256": "6980e153b56cc0a0e569e19064395f459c1d32329fa61543ec9d1c25b6bb7cca",
+      "public_sha256": "edb401a1745b885aea07867fd2201848c21444465d56f5b85aa74ea909f8bcc8",
+      "byte_identical": false
+    },
+    "data/figure_s1/adjacent_arm_crossing_summary.csv": {
+      "source": "outputs/fig_s1_revision_20260929_ymyH0t/source/source_data/figure_s1/adjacent_arm_crossing_summary.csv",
+      "source_sha256": "4d9966eaed0d0669c4e607ba56a60eddb8e2991084d8549d35b3bf1825d41091",
+      "public_sha256": "4d9966eaed0d0669c4e607ba56a60eddb8e2991084d8549d35b3bf1825d41091",
+      "byte_identical": true
+    },
+    "data/figure_s1/context_adjacent_arm_crossing_summary.csv": {
+      "source": "outputs/fig_s1_revision_20260929_ymyH0t/source/source_data/figure_s1/context_adjacent_arm_crossing_summary.csv",
+      "source_sha256": "78927cdb155ae72b204f213fbbd45492f8abef3f4e4e6d6bc1ff575b5a4da468",
+      "public_sha256": "78927cdb155ae72b204f213fbbd45492f8abef3f4e4e6d6bc1ff575b5a4da468",
+      "byte_identical": true
+    },
+    "data/figure_s1/plot_s1.py": {
+      "source": "outputs/fig_s1_revision_20260929_ymyH0t/source/source_data/figure_s1/plot_s1.py",
+      "source_sha256": "3f9419e69d63d53b37458bd8e8a06d50f1368d0482f33f6c5aa8c8ee5aaf77d3",
+      "public_sha256": "3170bbc0ac3c561af656efb8ae7f35debe543afb9350d9a27e13926bc561d5ac",
+      "byte_identical": false
+    },
+    "data/figure_s1/audit_panel_alignment.py": {
+      "source": "outputs/fig_s1_revision_20260929_ymyH0t/source/source_data/figure_s1/audit_panel_alignment.py",
+      "source_sha256": "43958e6b49d897f326ff64e73cbed0bf057e17c06533b5b57d3dededf8111e76",
+      "public_sha256": "43958e6b49d897f326ff64e73cbed0bf057e17c06533b5b57d3dededf8111e76",
+      "byte_identical": true
+    },
+    "data/figure_s7/qwen_r5_curves.csv": {
+      "source": "outputs/fig_s1_revision_20260929_ymyH0t/source/source_data/figure_s7/qwen_r5_curves.csv",
+      "source_sha256": "07a88d77e86f08f2478a4c2d3a76e886a7038eda3a14e52b5204b910ee958b41",
+      "public_sha256": "07a88d77e86f08f2478a4c2d3a76e886a7038eda3a14e52b5204b910ee958b41",
+      "byte_identical": true
+    },
+    "data/figure_s7/llama_r5_curves.csv": {
+      "source": "outputs/fig_s1_revision_20260929_ymyH0t/source/source_data/figure_s7/llama_r5_curves.csv",
+      "source_sha256": "3061120d66f80da82bc57932b3efe6aa0f6796ef877ae4281790f4b94e85932c",
+      "public_sha256": "3061120d66f80da82bc57932b3efe6aa0f6796ef877ae4281790f4b94e85932c",
+      "byte_identical": true
+    },
+    "data/figure_s7/replot.py": {
+      "source": "outputs/fig_s1_revision_20260929_ymyH0t/source/source_data/figure_s7/replot.py",
+      "source_sha256": "950e003b09bcadf91006166d9651de3435d8b8ad7a9578a89309691d17cfe294",
+      "public_sha256": "7641cb678420db75599f7b1ec495cb5bbbc3e2e77f5d3268e8093ebb4c08f731",
+      "byte_identical": false
+    },
+    "data/figure_s7/audit_panel_alignment.py": {
+      "source": "outputs/fig_s1_revision_20260929_ymyH0t/source/source_data/figure_s7/audit_panel_alignment.py",
+      "source_sha256": "43958e6b49d897f326ff64e73cbed0bf057e17c06533b5b57d3dededf8111e76",
+      "public_sha256": "43958e6b49d897f326ff64e73cbed0bf057e17c06533b5b57d3dededf8111e76",
+      "byte_identical": true
+    },
+    "data/exact_replay/wifi.csv": {
+      "source": "outputs/revision/experiments/qwen7b_wifi_greedy_20260818/potential_outcomes.csv",
+      "source_sha256": "c4710727cc2047349f35b7561116f96d25dac9325f20fd8bcd1133b6fb451f5b",
+      "public_sha256": "c4710727cc2047349f35b7561116f96d25dac9325f20fd8bcd1133b6fb451f5b",
+      "byte_identical": true
+    },
+    "data/exact_replay/plus150.csv": {
+      "source": "outputs/revision/experiments/qwen7b_wifi_plus150_greedy_20260818/potential_outcomes.csv",
+      "source_sha256": "0c80c271abd9362d40133685bef5b6a4b47dc81555286648f57914db01e7740d",
+      "public_sha256": "0c80c271abd9362d40133685bef5b6a4b47dc81555286648f57914db01e7740d",
+      "byte_identical": true
+    },
+    "data/exact_replay/remote.csv": {
+      "source": "outputs/revision/experiments/qwen7b_wan_greedy_20260818/potential_outcomes.csv",
+      "source_sha256": "35e114ad9708a0649535a14482857b3f0f0eb2a9771a3395bfdeb23128c8f0f6",
+      "public_sha256": "35e114ad9708a0649535a14482857b3f0f0eb2a9771a3395bfdeb23128c8f0f6",
+      "byte_identical": true
+    }
+  },
+  "sanitized_files": {
+    "data/table4/campaign.json": "deployment addresses, local paths or machine identity",
+    "data/table4/frozen_manifest.json": "deployment addresses, local paths or machine identity",
+    "data/table4/hardware_run/capability-01/frozen_plan.json": "deployment addresses, local paths or machine identity",
+    "data/table4/hardware_run/capability-01/run_manifest.json": "deployment addresses, local paths or machine identity",
+    "data/table4/hardware_run/capability-02/frozen_plan.json": "deployment addresses, local paths or machine identity",
+    "data/table4/hardware_run/capability-02/run_manifest.json": "deployment addresses, local paths or machine identity",
+    "data/table4/hardware_run/capability-03/frozen_plan.json": "deployment addresses, local paths or machine identity",
+    "data/table4/hardware_run/capability-03/run_manifest.json": "deployment addresses, local paths or machine identity",
+    "data/table4/hardware_run/capability-04/frozen_plan.json": "deployment addresses, local paths or machine identity",
+    "data/table4/hardware_run/capability-04/run_manifest.json": "deployment addresses, local paths or machine identity",
+    "data/table4/hardware_run/capability-05/frozen_plan.json": "deployment addresses, local paths or machine identity",
+    "data/table4/hardware_run/capability-05/run_manifest.json": "deployment addresses, local paths or machine identity",
+    "data/table4/hardware_run/capability-06/frozen_plan.json": "deployment addresses, local paths or machine identity",
+    "data/table4/hardware_run/capability-06/run_manifest.json": "deployment addresses, local paths or machine identity",
+    "data/table4/hardware_run/capability-07/frozen_plan.json": "deployment addresses, local paths or machine identity",
+    "data/table4/hardware_run/capability-07/run_manifest.json": "deployment addresses, local paths or machine identity",
+    "data/table4/hardware_run/capability-08/frozen_plan.json": "deployment addresses, local paths or machine identity",
+    "data/table4/hardware_run/capability-08/run_manifest.json": "deployment addresses, local paths or machine identity",
+    "data/table4/protocol/capability-01-plan.json": "deployment addresses, local paths or machine identity",
+    "data/table4/protocol/capability-02-plan.json": "deployment addresses, local paths or machine identity",
+    "data/table4/protocol/capability-03-plan.json": "deployment addresses, local paths or machine identity",
+    "data/table4/protocol/capability-04-plan.json": "deployment addresses, local paths or machine identity",
+    "data/table4/protocol/capability-05-plan.json": "deployment addresses, local paths or machine identity",
+    "data/table4/protocol/capability-06-plan.json": "deployment addresses, local paths or machine identity",
+    "data/table4/protocol/capability-07-plan.json": "deployment addresses, local paths or machine identity",
+    "data/table4/protocol/capability-08-plan.json": "deployment addresses, local paths or machine identity",
+    "data/table4/protocol/protocol.json": "deployment addresses, local paths or machine identity",
+    "hardware/capability_runner.py": "deployment addresses, local paths or machine identity",
+    "hardware/run_revised_experiments.py": "deployment addresses, local paths or machine identity",
+    "hardware/validate_hw.py": "deployment addresses, local paths or machine identity"
+  },
+  "measurement_preservation": {
+    "byte_identical_files": [
+      "data/table4/hardware_run/capability-01/request_metrics.jsonl",
+      "data/table4/hardware_run/capability-01/round_metrics.jsonl",
+      "data/table4/hardware_run/capability-02/request_metrics.jsonl",
+      "data/table4/hardware_run/capability-02/round_metrics.jsonl",
+      "data/table4/hardware_run/capability-03/request_metrics.jsonl",
+      "data/table4/hardware_run/capability-03/round_metrics.jsonl",
+      "data/table4/hardware_run/capability-04/request_metrics.jsonl",
+      "data/table4/hardware_run/capability-04/round_metrics.jsonl",
+      "data/table4/hardware_run/capability-05/request_metrics.jsonl",
+      "data/table4/hardware_run/capability-05/round_metrics.jsonl",
+      "data/table4/hardware_run/capability-06/request_metrics.jsonl",
+      "data/table4/hardware_run/capability-06/round_metrics.jsonl",
+      "data/table4/hardware_run/capability-07/request_metrics.jsonl",
+      "data/table4/hardware_run/capability-07/round_metrics.jsonl",
+      "data/table4/hardware_run/capability-08/request_metrics.jsonl",
+      "data/table4/hardware_run/capability-08/round_metrics.jsonl",
+      "data/exact_replay/wifi.csv",
+      "data/exact_replay/plus150.csv",
+      "data/exact_replay/remote.csv"
+    ],
+    "count": 19
+  }
+}

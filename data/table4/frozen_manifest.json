@@ -1,0 +1,27 @@
+{
+  "scope": "public sanitized archive; original code hashes in protocol",
+  "original_frozen_manifest_sha256": "7df982d9945141c4b9d6191dda137278a593dfd8f237d9c872d611fc67b2c09a",
+  "original_scoring_sha256": "72da09d698fac1796a5bf90d6b07e23b79b267f470e20d6e62ef15c80c0750bb",
+  "scoring_sha256": "72da09d698fac1796a5bf90d6b07e23b79b267f470e20d6e62ef15c80c0750bb",
+  "files": {
+    "protocol/calibration-27.json": "ac648ea9330ffa329f5597b1f392ef812a1b69d22f93ab2e9c0ef9e1b47e29cf",
+    "protocol/capability-01-plan.json": "bf61629a47340293d2be0b623b96b170b6bb5b62b25c22bf45350414db2fe040",
+    "protocol/capability-01-prompts.jsonl": "0f3188fcb7c88b2951d00c9b9e647089856658cd0eabf54b87c44b9499c7db29",
+    "protocol/capability-02-plan.json": "c1199d8950d87b829d3941117e1adae43715b2b48359cf3bfe680484abb4f2ce",
+    "protocol/capability-02-prompts.jsonl": "5312fc1f9b09ca0f57f8e272b509a42c08987b904fa6a7c079a3f60c64ec1e10",
+    "protocol/capability-03-plan.json": "c5f15a79f9983092948e6a40427c17e4573c749112660e8c838a4ec5e10e8777",
+    "protocol/capability-03-prompts.jsonl": "3816255ba71be6887b93d8591ca1c182117be345db4396c6a0ca02b8b47e93c9",
+    "protocol/capability-04-plan.json": "dc4592845326a888104b405fb099a21c9b7340b6882ade261c0098bdfe22f718",
+    "protocol/capability-04-prompts.jsonl": "34023bee88e524469747e7a7c82ed5f5e58c84f636694c5034d8e6692c3314ee",
+    "protocol/capability-05-plan.json": "50d55a854ee99997dbec56ee457aae430b0bad90a1161e990acedcdd32a6284f",
+    "protocol/capability-05-prompts.jsonl": "c5f72ba4539acd6be58d47dd0aafc4ca744633cc1de7adfe482155de72ab678e",
+    "protocol/capability-06-plan.json": "2dd244d6227af5a1c832f3744c8c198d33ef0058a76c707b229a3460da3f8ea0",
+    "protocol/capability-06-prompts.jsonl": "f21d6da2c2b4140066dd2e20d974359504f4426bfa18afabbc10b1f12acc2283",
+    "protocol/capability-07-plan.json": "40a6dfe8bbc11abb6aae734625f623b9cd9aa34c81317fa814fe077689ccb653",
+    "protocol/capability-07-prompts.jsonl": "9decaba87862861f3940b4c96f1c9dbfde0496a3f957f29928ef5c76a943f22a",
+    "protocol/capability-08-plan.json": "5a3d22b58bca7863d33cbd2d697c201b797313c28c03fa3d4f52b1b7cc32462c",
+    "protocol/capability-08-prompts.jsonl": "e8e0e4f73046ffc6e27ff6d4d9d9d9f586124b7f0287d2862d927b4f6e9a7140",
+    "protocol/protocol.json": "83d5c7306c32756d32b5f1869fc6f0968400373d0d6bb72dc2653ec0759a2ea3",
+    "protocol/static_selectors.json": "80fea6ad04ad5ce5f68e7189fa23aa49e1bd0a97faaff6453200c8c4dbe29d7a"
+  }
+}

@@ -1,0 +1,106 @@
+{
+  "3": {
+    "lan_direct": {
+      "arms": {
+        "fixed_k5": 5,
+        "greedy": 1,
+        "specdec_pp_threshold": 9,
+        "b4_idealized": 1,
+        "b5_calibrated_geometric": 1,
+        "b6_calibrated_fixed": 2,
+        "geometric_measured_cost": 9
+      },
+      "alpha": 0.8666666666666667,
+      "alpha_unclipped": 0.8666666666666667,
+      "geometric_successes": 13.0,
+      "geometric_failures": 2,
+      "cd_ms": 18.353730483801293,
+      "cv_ms": 12.787678543962727,
+      "configured_one_way_ms": 0.0,
+      "calibration_cells": 3,
+      "acquisition_scope": "existing independent calibration only",
+      "alpha_scope": "censored geometric MLE; historical proxy alpha is not reused",
+      "b5_scope": "historical linear-cost rule recalibrated to this runtime",
+      "strengthened_geometric_scope": "measured complete cost curve / geometric yield",
+      "specdec_scope": "historical threshold adaptation, p_min=0.3; no trained predictor",
+      "alias_scope": "identical constant-depth policies reuse their fixed-depth request logs"
+    },
+    "lan_plus150": {
+      "arms": {
+        "fixed_k5": 5,
+        "greedy": 1,
+        "specdec_pp_threshold": 9,
+        "b4_idealized": 9,
+        "b5_calibrated_geometric": 5,
+        "b6_calibrated_fixed": 10,
+        "geometric_measured_cost": 9
+      },
+      "alpha": 0.8666666666666667,
+      "alpha_unclipped": 0.8666666666666667,
+      "geometric_successes": 13.0,
+      "geometric_failures": 2,
+      "cd_ms": 19.857766585033488,
+      "cv_ms": 11.742308096985951,
+      "configured_one_way_ms": 75.0,
+      "calibration_cells": 3,
+      "acquisition_scope": "existing independent calibration only",
+      "alpha_scope": "censored geometric MLE; historical proxy alpha is not reused",
+      "b5_scope": "historical linear-cost rule recalibrated to this runtime",
+      "strengthened_geometric_scope": "measured complete cost curve / geometric yield",
+      "specdec_scope": "historical threshold adaptation, p_min=0.3; no trained predictor",
+      "alias_scope": "identical constant-depth policies reuse their fixed-depth request logs"
+    }
+  },
+  "27": {
+    "lan_direct": {
+      "arms": {
+        "fixed_k5": 5,
+        "greedy": 1,
+        "specdec_pp_threshold": 7,
+        "b4_idealized": 1,
+        "b5_calibrated_geometric": 1,
+        "b6_calibrated_fixed": 5,
+        "geometric_measured_cost": 5
+      },
+      "alpha": 0.8307692307692308,
+      "alpha_unclipped": 0.8307692307692308,
+      "geometric_successes": 108.0,
+      "geometric_failures": 22,
+      "cd_ms": 18.02495442364792,
+      "cv_ms": 12.233823672563625,
+      "configured_one_way_ms": 0.0,
+      "calibration_cells": 27,
+      "acquisition_scope": "existing independent calibration only",
+      "alpha_scope": "censored geometric MLE; historical proxy alpha is not reused",
+      "b5_scope": "historical linear-cost rule recalibrated to this runtime",
+      "strengthened_geometric_scope": "measured complete cost curve / geometric yield",
+      "specdec_scope": "historical threshold adaptation, p_min=0.3; no trained predictor",
+      "alias_scope": "identical constant-depth policies reuse their fixed-depth request logs"
+    },
+    "lan_plus150": {
+      "arms": {
+        "fixed_k5": 5,
+        "greedy": 1,
+        "specdec_pp_threshold": 7,
+        "b4_idealized": 9,
+        "b5_calibrated_geometric": 5,
+        "b6_calibrated_fixed": 9,
+        "geometric_measured_cost": 8
+      },
+      "alpha": 0.8307692307692308,
+      "alpha_unclipped": 0.8307692307692308,
+      "geometric_successes": 108.0,
+      "geometric_failures": 22,
+      "cd_ms": 19.30424490717881,
+      "cv_ms": 12.427823244370028,
+      "configured_one_way_ms": 75.0,
+      "calibration_cells": 27,
+      "acquisition_scope": "existing independent calibration only",
+      "alpha_scope": "censored geometric MLE; historical proxy alpha is not reused",
+      "b5_scope": "historical linear-cost rule recalibrated to this runtime",
+      "strengthened_geometric_scope": "measured complete cost curve / geometric yield",
+      "specdec_scope": "historical threshold adaptation, p_min=0.3; no trained predictor",
+      "alias_scope": "identical constant-depth policies reuse their fixed-depth request logs"
+    }
+  }
+}

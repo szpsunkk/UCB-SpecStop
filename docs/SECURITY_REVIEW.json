@@ -1,0 +1,11 @@
+{
+  "scope": "new publication branch only; older branches are retained and not certified",
+  "scanner": "detect-secrets 1.5.0, all plugins, credential verification disabled",
+  "reviewed_findings": {
+    "sha256_checksums": 1030,
+    "upstream_git_commit": 1
+  },
+  "unresolved_findings": [],
+  "additional_check": "custom scanner for provider credentials, private keys, literal IPs, home paths and credential URLs",
+  "included_data": "public dataset and measurement records; model weights and private deployment scripts excluded"
+}

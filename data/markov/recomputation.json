@@ -1,0 +1,201 @@
+{
+  "scope": "full-precision inputs packaged with the supplement",
+  "counts": {
+    "nominal": 8,
+    "bootstrap": 1600,
+    "both_pass": 401,
+    "continuation_group": 297,
+    "invalid_prefix": 30,
+    "invalid_and_both_pass": 0,
+    "invalid_and_continuation": 0
+  },
+  "maximum_errors": {
+    "policy_cost_error": 1.1368683772161603e-13,
+    "threshold_cost_error": 1.1368683772161603e-13,
+    "root_residual": 9.984627014070213e-11,
+    "relative_restriction_loss": 4.440892098500626e-16
+  },
+  "mismatches": [],
+  "invalid_details": [
+    {
+      "index": 24,
+      "condition": "wifi",
+      "bootstrap": 22,
+      "max_q_increase": 0.007000000000000339
+    },
+    {
+      "index": 35,
+      "condition": "wifi",
+      "bootstrap": 33,
+      "max_q_increase": 0.0040000000000000036
+    },
+    {
+      "index": 170,
+      "condition": "wifi",
+      "bootstrap": 168,
+      "max_q_increase": 0.006000000000000005
+    },
+    {
+      "index": 177,
+      "condition": "wifi",
+      "bootstrap": 175,
+      "max_q_increase": 0.006000000000000005
+    },
+    {
+      "index": 189,
+      "condition": "wifi",
+      "bootstrap": 187,
+      "max_q_increase": 0.001000000000000112
+    },
+    {
+      "index": 336,
+      "condition": "wifi",
+      "bootstrap": 134,
+      "max_q_increase": 0.001000000000000112
+    },
+    {
+      "index": 426,
+      "condition": "plus150",
+      "bootstrap": 22,
+      "max_q_increase": 0.007000000000000339
+    },
+    {
+      "index": 437,
+      "condition": "plus150",
+      "bootstrap": 33,
+      "max_q_increase": 0.0040000000000000036
+    },
+    {
+      "index": 572,
+      "condition": "plus150",
+      "bootstrap": 168,
+      "max_q_increase": 0.006000000000000005
+    },
+    {
+      "index": 579,
+      "condition": "plus150",
+      "bootstrap": 175,
+      "max_q_increase": 0.006000000000000005
+    },
+    {
+      "index": 591,
+      "condition": "plus150",
+      "bootstrap": 187,
+      "max_q_increase": 0.001000000000000112
+    },
+    {
+      "index": 738,
+      "condition": "plus150",
+      "bootstrap": 134,
+      "max_q_increase": 0.001000000000000112
+    },
+    {
+      "index": 813,
+      "condition": "remote",
+      "bootstrap": 7,
+      "max_q_increase": 0.001000000000000112
+    },
+    {
+      "index": 851,
+      "condition": "remote",
+      "bootstrap": 45,
+      "max_q_increase": 0.0009999999999998899
+    },
+    {
+      "index": 864,
+      "condition": "remote",
+      "bootstrap": 58,
+      "max_q_increase": 0.0009999999999998899
+    },
+    {
+      "index": 910,
+      "condition": "remote",
+      "bootstrap": 104,
+      "max_q_increase": 0.00800000000000023
+    },
+    {
+      "index": 928,
+      "condition": "remote",
+      "bootstrap": 122,
+      "max_q_increase": 0.0029999999999998916
+    },
+    {
+      "index": 950,
+      "condition": "remote",
+      "bootstrap": 144,
+      "max_q_increase": 0.009999999999999787
+    },
+    {
+      "index": 1050,
+      "condition": "remote",
+      "bootstrap": 44,
+      "max_q_increase": 0.0020000000000000018
+    },
+    {
+      "index": 1064,
+      "condition": "remote",
+      "bootstrap": 58,
+      "max_q_increase": 0.0020000000000000018
+    },
+    {
+      "index": 1158,
+      "condition": "remote",
+      "bootstrap": 152,
+      "max_q_increase": 0.0009999999999998899
+    },
+    {
+      "index": 1189,
+      "condition": "remote",
+      "bootstrap": 183,
+      "max_q_increase": 0.0039999999999997815
+    },
+    {
+      "index": 1192,
+      "condition": "remote",
+      "bootstrap": 186,
+      "max_q_increase": 0.0029999999999998916
+    },
+    {
+      "index": 1202,
+      "condition": "remote",
+      "bootstrap": 196,
+      "max_q_increase": 0.002000000000000224
+    },
+    {
+      "index": 1230,
+      "condition": "plus350",
+      "bootstrap": 22,
+      "max_q_increase": 0.007000000000000339
+    },
+    {
+      "index": 1241,
+      "condition": "plus350",
+      "bootstrap": 33,
+      "max_q_increase": 0.0040000000000000036
+    },
+    {
+      "index": 1376,
+      "condition": "plus350",
+      "bootstrap": 168,
+      "max_q_increase": 0.006000000000000005
+    },
+    {
+      "index": 1383,
+      "condition": "plus350",
+      "bootstrap": 175,
+      "max_q_increase": 0.006000000000000005
+    },
+    {
+      "index": 1395,
+      "condition": "plus350",
+      "bootstrap": 187,
+      "max_q_increase": 0.001000000000000112
+    },
+    {
+      "index": 1542,
+      "condition": "plus350",
+      "bootstrap": 134,
+      "max_q_increase": 0.001000000000000112
+    }
+  ]
+}
